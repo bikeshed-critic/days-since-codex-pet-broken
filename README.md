@@ -1,5 +1,7 @@
 # Days since Codex pet broken
 
+[Visit the live site](https://bikeshed-critic.github.io/days-since-codex-pet-broken/).
+
 An independent, facts-first, satirical observatory of `openai/codex` desktop-pet
 input and hit-region reports. Generic i18n, with English enabled initially.
 
@@ -27,7 +29,7 @@ No GitHub token is written to the project. Issue bodies, comments, attachments,
 profiles, and diagnostic identifiers are not persisted. A failed fetch leaves the
 existing snapshot intact. Metadata refresh does not re-review editorial evidence.
 
-## Build and preview
+## Building from source
 
 The generator requires Python 3.10+ and no installed packages. It builds offline
 from the checked-in snapshot, with complete HTML, an SVG graph, and a source
@@ -35,11 +37,10 @@ ledger. No JavaScript is needed to read the reports or follow links.
 
 ```powershell
 py -3 scripts/build.py
-py -3 -m http.server 8765 --bind 127.0.0.1 --directory docs
 ```
 
-Open [the local preview](http://127.0.0.1:8765). Edit `site/`, `locales/`,
-`data/`, or `scripts/`; `docs/` is generated output and should be rebuilt and
+Edit `site/`, `locales/`, `data/`, or `scripts/`;
+`docs/` is generated output and should be rebuilt and
 committed with its source changes. No external fonts, CDNs, or runtime framework
 are required. Files use project-relative URLs for GitHub Pages subpaths.
 
@@ -93,8 +94,6 @@ request limits, timeouts, malformed responses, partial failure, safe data handli
 and the filter/refresh event wiring. They do not perform real GitHub requests.
 
 ## GitHub Pages
-
-Public site: [days-since-codex-pet-broken](https://bikeshed-critic.github.io/days-since-codex-pet-broken/).
 
 GitHub Pages is configured to publish the generated `docs/` directory using
 **Deploy from a branch**, with **main** and **/docs** selected and HTTPS enforced.
