@@ -16,3 +16,8 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Local Python tooling and atomic snapshot intermediates
+__pycache__/
+*.py[cod]
+data/*.tmp
