@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "repository": "openai/codex",
+  "fetched_at": "2026-09-06T16:47:06Z",
+  "issues": [
+    {
+      "number": 21359,
+      "title": "The pet function of Codex does not allow normal mouse dragging on the secondary screen.",
+      "url": "https://github.com/openai/codex/issues/21359",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-05-06T14:51:51Z",
+      "updated_at": "2026-05-06T14:53:36Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets"
+      ]
+    },
+    {
+      "number": 21508,
+      "title": "Codex Desktop pet overlay cannot be dragged on secondary monitor on Windows multi-display setup",
+      "url": "https://github.com/openai/codex/issues/21508",
+      "state": "closed",
+      "state_reason": "completed",
+      "created_at": "2026-05-07T08:04:48Z",
+      "updated_at": "2026-06-06T14:18:01Z",
+      "closed_at": "2026-06-06T14:18:01Z",
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 33565,
+      "title": "Windows: pet/avatar overlay makes task switching and mouse dragging freeze",
+      "url": "https://github.com/openai/codex/issues/33565",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-16T09:54:36Z",
+      "updated_at": "2026-08-15T16:03:56Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "performance",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 34012,
+      "title": "[Windows] Pet activity badge becomes unclickable after being moved to bottom-right",
+      "url": "https://github.com/openai/codex/issues/34012",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-18T12:59:30Z",
+      "updated_at": "2026-07-18T13:00:08Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 34227,
+      "title": "Windows pet overlay hit region desynchronizes from the visible mascot over time",
+      "url": "https://github.com/openai/codex/issues/34227",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-19T20:41:57Z",
+      "updated_at": "2026-09-06T16:22:29Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 34309,
+      "title": "[Windows] Pets cannot be dragged in Codex 26.715.4045, including default pet",
+      "url": "https://github.com/openai/codex/issues/34309",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-20T09:34:31Z",
+      "updated_at": "2026-09-06T00:09:13Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 35868,
+      "title": "Custom pet selected at first wake initializes a persistently undersized drag hit region on Windows",
+      "url": "https://github.com/openai/codex/issues/35868",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-29T02:11:31Z",
+      "updated_at": "2026-08-09T13:08:48Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41267,
+      "title": "Pet animations and interactions stopped working after update to 26.825.31414 on Windows 11",
+      "url": "https://github.com/openai/codex/issues/41267",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-28T05:03:13Z",
+      "updated_at": "2026-09-06T03:57:51Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41306,
+      "title": "Pet can only be repositioned once after refreshing or reselecting it",
+      "url": "https://github.com/openai/codex/issues/41306",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-28T09:21:48Z",
+      "updated_at": "2026-09-01T00:00:54Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41465,
+      "title": "Windows floating pet remains click-through and cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/41465",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-29T04:01:57Z",
+      "updated_at": "2026-09-04T13:02:28Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41501,
+      "title": "Windows pet overlay loses its hit region after the first drag",
+      "url": "https://github.com/openai/codex/issues/41501",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-29T08:40:26Z",
+      "updated_at": "2026-09-04T17:09:15Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41506,
+      "title": "Windows: Pet overlay reacts to hover but ignores clicks, dragging, and voice controls",
+      "url": "https://github.com/openai/codex/issues/41506",
+      "state": "closed",
+      "state_reason": "completed",
+      "created_at": "2026-08-29T09:27:44Z",
+      "updated_at": "2026-09-05T07:12:01Z",
+      "closed_at": "2026-08-31T01:46:30Z",
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41513,
+      "title": "[Windows][Pets] Built-in and custom floating pets become click-through and cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/41513",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-29T10:09:49Z",
+      "updated_at": "2026-09-05T17:04:23Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41519,
+      "title": "[Windows] Custom v2 desktop pet cannot be clicked or dragged and may become invisible after switching",
+      "url": "https://github.com/openai/codex/issues/41519",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-29T10:46:29Z",
+      "updated_at": "2026-09-06T10:39:14Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41535,
+      "title": "[Windows] Desktop pet becomes click-through and cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/41535",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-29T13:37:13Z",
+      "updated_at": "2026-09-04T03:48:35Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 41596,
+      "title": "[Windows][Pets] Transparent overlay captures a large screen area, blocks Codex controls, and pet cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/41596",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-08-30T02:41:45Z",
+      "updated_at": "2026-09-05T03:19:10Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    }
+  ]
+}

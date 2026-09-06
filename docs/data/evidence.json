@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "repository": "openai/codex",
+  "reviewed_at": "2026-09-06",
+  "counter_issue": 34227,
+  "issues": [
+    {
+      "number": 21359,
+      "position": [
+        95,
+        80
+      ],
+      "label": {
+        "en": "Secondary screen"
+      },
+      "summary": {
+        "en": "Dragging to a secondary screen is reported to prevent the next drag. A display-specific report, not proof of the single-screen failure."
+      }
+    },
+    {
+      "number": 21508,
+      "position": [
+        95,
+        230
+      ],
+      "label": {
+        "en": "Negative coordinates"
+      },
+      "summary": {
+        "en": "A second monitor report records negative window coordinates. GitHub marks it closed/completed; that state alone does not establish a released fix."
+      }
+    },
+    {
+      "number": 33565,
+      "position": [
+        95,
+        380
+      ],
+      "label": {
+        "en": "Overlay + UI stalls"
+      },
+      "summary": {
+        "en": "Opening the overlay reportedly coincides with task-switching stalls and unresponsive dragging. Its broader performance symptoms may have a different cause."
+      }
+    },
+    {
+      "number": 34012,
+      "position": [
+        95,
+        530
+      ],
+      "label": {
+        "en": "Badge corner"
+      },
+      "summary": {
+        "en": "The activity badge reportedly stops accepting input after moving to the lower-right corner. The badge is overlay UI, not the pet artwork."
+      }
+    },
+    {
+      "number": 34227,
+      "position": [
+        325,
+        150
+      ],
+      "label": {
+        "en": "Hit region drifts"
+      },
+      "summary": {
+        "en": "A July report describes the usable input area shrinking away from the visible pet over time, affecting both built-in and custom pets. This is the counter's anchor."
+      }
+    },
+    {
+      "number": 34309,
+      "position": [
+        325,
+        320
+      ],
+      "label": {
+        "en": "No drag, one screen"
+      },
+      "summary": {
+        "en": "A single-display regression report covers built-in and custom pets. A community comment redirects discussion to #34227; this is not an official duplicate decision."
+      }
+    },
+    {
+      "number": 35868,
+      "position": [
+        325,
+        490
+      ],
+      "label": {
+        "en": "First-wake state"
+      },
+      "summary": {
+        "en": "The reporter ties an undersized input area to selecting a custom pet at the first wake. The reported built-in-first workaround should not be generalized to all reports."
+      }
+    },
+    {
+      "number": 41267,
+      "position": [
+        560,
+        65
+      ],
+      "label": {
+        "en": "Update regression"
+      },
+      "summary": {
+        "en": "A report after update 26.825.31414 includes frozen animation as well as failed interaction. It is broader than a click-through-only report."
+      }
+    },
+    {
+      "number": 41306,
+      "position": [
+        560,
+        205
+      ],
+      "label": {
+        "en": "One move only"
+      },
+      "summary": {
+        "en": "Reselecting or refreshing the pet reportedly permits exactly one reposition before dragging stops again."
+      }
+    },
+    {
+      "number": 41513,
+      "position": [
+        560,
+        355
+      ],
+      "label": {
+        "en": "Click-through hub"
+      },
+      "summary": {
+        "en": "Built-in and custom pets reportedly pass clicks to the window behind them. Its discussion connects several reports; this editorial hub is not an official master issue."
+      }
+    },
+    {
+      "number": 41596,
+      "position": [
+        560,
+        510
+      ],
+      "label": {
+        "en": "Invisible input wall"
+      },
+      "summary": {
+        "en": "The transparent overlay reportedly blocks clicks over a large area while the pet remains unusable. This is the opposite input-routing outcome to click-through."
+      }
+    },
+    {
+      "number": 41465,
+      "position": [
+        795,
+        90
+      ],
+      "label": {
+        "en": "Clicks pass through"
+      },
+      "summary": {
+        "en": "The reporter describes a visible floating pet whose clicks reach the application behind it, despite resets and switching built-in pets."
+      }
+    },
+    {
+      "number": 41501,
+      "position": [
+        795,
+        250
+      ],
+      "label": {
+        "en": "First drag, then lost"
+      },
+      "summary": {
+        "en": "This report isolates input loss after the first drag while animation continues, across built-in and custom pets in a multi-monitor setup."
+      }
+    },
+    {
+      "number": 41506,
+      "position": [
+        795,
+        415
+      ],
+      "label": {
+        "en": "Hover without clicks"
+      },
+      "summary": {
+        "en": "Hover responses continue but clicks and dragging fail. The issue is closed/completed; the bot's suggestion of #41465 does not establish a fix or official duplicate decision."
+      }
+    },
+    {
+      "number": 41519,
+      "position": [
+        1020,
+        180
+      ],
+      "label": {
+        "en": "Custom pet switching"
+      },
+      "summary": {
+        "en": "A validated custom pet reportedly cannot receive input and may disappear after switching. The reporter's local workaround is not a shipped fix."
+      }
+    },
+    {
+      "number": 41535,
+      "position": [
+        1020,
+        360
+      ],
+      "label": {
+        "en": "Partial click-through"
+      },
+      "summary": {
+        "en": "This report describes partial or complete click-through at 150% display scaling and explicitly points to #34227."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": 34227,
+      "to": 21359,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The report's related-issues list points to the secondary-screen report."
+      }
+    },
+    {
+      "from": 21508,
+      "to": 21359,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/21508#issuecomment-4395314808",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "The bot suggests a potential duplicate. It does not declare the reports equivalent."
+      }
+    },
+    {
+      "from": 34227,
+      "to": 34012,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227#issuecomment-5017307121",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "The bot suggests the badge-corner report as a potential duplicate."
+      }
+    },
+    {
+      "from": 34309,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34309#issuecomment-5021993191",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community commenter proposes consolidating discussion. This is not a maintainer decision."
+      }
+    },
+    {
+      "from": 35868,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/35868#issuecomment-5231681985",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment links an independent reproduction and compares first-wake behavior."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly names the earlier hit-region report as possibly related."
+      }
+    },
+    {
+      "from": 41306,
+      "to": 41267,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41306#issuecomment-5450793645",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated potential-duplicate suggestion connects the one-move report to the broader regression."
+      }
+    },
+    {
+      "from": 41501,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41501#issuecomment-5461357271",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "The bot points to the earlier one-reposition report as a possible duplicate."
+      }
+    },
+    {
+      "from": 41506,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41506#issuecomment-5461552857",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated suggestion names #41465. The later closure alone does not upgrade this to an official decision."
+      }
+    },
+    {
+      "from": 41519,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41519#issuecomment-5461889210",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "The bot includes #41513 among several possible duplicates; this graph is a selected subset."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community diagnostic report explicitly links the older hit-region report."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 34309,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report includes the older single-display regression."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 35868,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report distinguishes the custom-first-wake subtype."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41267,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report references the wider update regression."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report references the one-reposition symptom."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report explicitly links the broad click-through report."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report identifies the first-drag-then-failure variant."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The diagnostic report also links the opposite, full-overlay capture outcome."
+      }
+    },
+    {
+      "from": 34227,
+      "to": 34309,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/34309",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Editorial comparison: both describe visible pets failing to receive input, with different onset and extent. Similarity does not establish a common bug."
+      }
+    },
+    {
+      "from": 41306,
+      "to": 41501,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41306",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/41501",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Editorial comparison: both describe a successful first move followed by lost interaction. Their environments and diagnostic detail differ."
+      }
+    },
+    {
+      "from": 33565,
+      "to": 34227,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/33565",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/34227",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Weak editorial connection: both involve the Windows pet overlay and impaired mouse interaction. The stall report may be a separate performance failure."
+      }
+    },
+    {
+      "from": 35868,
+      "to": 34227,
+      "type": "hypothesis",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/35868#issuecomment-5231681985",
+          "kind": "community_comment"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/34227",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Unconfirmed hypothesis: stale region measurements might connect initialization and later drift. No shared root cause is asserted."
+      }
+    },
+    {
+      "from": 41501,
+      "to": 41513,
+      "type": "hypothesis",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5474465932",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "Unconfirmed hypothesis: region synchronization after moving the overlay might connect first-drag failure and click-through. Community analysis is not an official diagnosis."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41596,
+      "type": "opposite",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/41596",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Opposite observed outcomes: clicks escape the pet in one report and are swallowed by transparent space in the other. A shared mechanism remains unconfirmed."
+      }
+    }
+  ]
+}

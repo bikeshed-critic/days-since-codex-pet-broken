@@ -1,0 +1,107 @@
+from copy import deepcopy
+from datetime import datetime, timedelta
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+from urllib.parse import urljoin, urlsplit
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import build
+
+
+class Page(HTMLParser):
+    def __init__(self, content):
+        super().__init__()
+        self.tags = []
+        self.feed(content)
+
+    def handle_starttag(self, tag, attributes):
+        self.tags.append((tag, dict(attributes)))
+
+
+class StaticBuildTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.curated = build.read_json(ROOT / "data/curated.json")
+        cls.snapshot = build.read_json(ROOT / "data/snapshot.json")
+        cls.bundles = build.load_locales(ROOT / "locales")
+
+    def render(self, locale="en", bundles=None):
+        return build.render(self.curated, self.snapshot, locale, bundles or self.bundles)
+
+    def test_initial_locale_is_english(self):
+        self.assertEqual(set(self.bundles), {"en"})
+        self.assertIn('<html lang="en" dir="ltr">', self.render())
+        self.assertNotIn('<nav class="languages"', self.render())
+
+    def test_static_page_contains_every_issue_and_relationship(self):
+        page = Page(self.render())
+        nodes = [attrs for tag, attrs in page.tags if tag == "a" and "node" in attrs.get("class", "").split()]
+        edges = [attrs for tag, attrs in page.tags if "data-edge-type" in attrs]
+        issue_labels = [attrs for tag, attrs in page.tags if "data-state-for" in attrs]
+        ledger_entries = [attrs for tag, attrs in page.tags if tag == "li"]
+        self.assertEqual(len(nodes), len(self.curated["issues"]))
+        self.assertEqual(len(issue_labels), len(nodes))
+        self.assertEqual(len(edges), len(self.curated["relationships"]))
+        self.assertEqual(len(ledger_entries), len(edges))
+        self.assertTrue(all(attrs["href"].startswith("https://github.com/openai/codex/issues/") for attrs in nodes))
+        anchor = next(issue for issue in self.snapshot["issues"] if issue["number"] == self.curated["counter_issue"])
+        days = (datetime.fromisoformat(self.snapshot["fetched_at"].replace("Z", "+00:00")) - datetime.fromisoformat(anchor["created_at"].replace("Z", "+00:00"))) // timedelta(days=1)
+        self.assertIn(f'class="digits">{days}<', self.render())
+
+    def test_escapes_issue_and_editorial_text(self):
+        snapshot, curated = deepcopy(self.snapshot), deepcopy(self.curated)
+        payload = '<img src=x onerror="alert(1)">'
+        snapshot["issues"][0]["title"] = payload
+        curated["issues"][0]["summary"]["en"] = payload
+        output = build.render(curated, snapshot, "en", self.bundles)
+        self.assertNotIn(payload, output)
+        self.assertIn("&lt;img", output)
+        self.assertFalse(any(key.startswith("on") for _, attrs in Page(output).tags for key in attrs))
+
+    def test_locale_discovery_fallback_subpaths_and_rtl(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            (path / "en.json").write_text(json.dumps(self.bundles["en"]), encoding="utf-8")
+            (path / "fr-CA.json").write_text(json.dumps({"_meta": {"name": "Français", "direction": "ltr"}, "headline": "Où est la zone cliquable ?"}), encoding="utf-8")
+            (path / "ar.json").write_text(json.dumps({"_meta": {"name": "العربية", "direction": "rtl"}}), encoding="utf-8")
+            bundles = build.load_locales(path)
+            self.assertEqual(len(bundles), 3)
+            output = self.render("fr-CA", bundles)
+            self.assertIn('href="../assets/style.css"', output)
+            self.assertIn('href="../ar/index.html"', output)
+            self.assertIn('href="../index.html"', output)
+            self.assertIn("Où est la zone cliquable ?", output)
+            self.assertIn(self.bundles["en"]["method_privacy"], output)
+            self.assertIn('<html lang="ar" dir="rtl">', self.render("ar", bundles))
+
+    def test_offline_build_is_deterministic_and_project_relative(self):
+        with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
+            with patch("socket.create_connection", side_effect=AssertionError("Build must be offline")):
+                build.build(Path(first))
+                build.build(Path(second))
+            outputs = {p.relative_to(first): p.read_bytes() for p in Path(first).rglob("*") if p.is_file()}
+            self.assertEqual(outputs, {p.relative_to(second): p.read_bytes() for p in Path(second).rglob("*") if p.is_file()})
+            page = Page((Path(first) / "index.html").read_text(encoding="utf-8"))
+            ids = [attrs["id"] for _, attrs in page.tags if "id" in attrs]
+            self.assertEqual(len(ids), len(set(ids)))
+            for _, attrs in page.tags:
+                for key in ("href", "src"):
+                    target = attrs.get(key, "")
+                    if not target or target.startswith("https:"):
+                        continue
+                    if target.startswith("#"):
+                        self.assertIn(target[1:], ids)
+                    else:
+                        resolved = urlsplit(urljoin("https://example.com/project/index.html", target)).path
+                        self.assertTrue(resolved.startswith("/project/"), resolved)
+                        self.assertTrue((Path(first) / resolved.removeprefix("/project/")).is_file(), target)
+
+
+if __name__ == "__main__":
+    unittest.main()

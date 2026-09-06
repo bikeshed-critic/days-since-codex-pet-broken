@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="$locale" dir="$direction">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$description">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>$page_title</title>
+  <link rel="stylesheet" href="${base}assets/style.css">
+  $alternate_links
+</head>
+<body>
+  <a class="skip" href="#reports">$skip</a>
+  <header class="masthead">
+    <a class="brand" href="${base}index.html"><span class="brand-mark" aria-hidden="true">[·]</span>$brand</a>
+    <div class="masthead-right">$language_links<a class="repo-link" href="https://github.com/bikeshed-critic/days-since-codex-pet-broken">$repository ↗</a></div>
+  </header>
+  <main>
+    <div class="edition"><span>$independent</span><span>$captured <time datetime="$captured_iso">$captured_display</time></span></div>
+    <div class="observatory">
+      <section class="clock" aria-labelledby="headline">
+        <p class="eyebrow">$eyebrow</p>
+        <h1 id="headline">$headline</h1>
+        <div class="counter"><span class="digits">$days</span><span class="counter-unit">$counter_unit</span></div>
+        <a class="anchor-link" href="$anchor_url">$counter_anchor ↗</a>
+        <p class="fine">$counter_detail</p>
+        <div class="stats"><div><strong>$issue_count</strong><span>$selected</span></div><div><strong>$open_count</strong><span>$open_at_snapshot</span></div></div>
+        <p class="satire">$satire</p>
+        <p class="fine">$scope</p>
+      </section>
+      <section class="network" aria-labelledby="network-heading">
+        <div class="panel-heading"><div><p class="section-number">$map_section</p><h2 id="network-heading">$network_title</h2></div><a href="#relationships">$ledger_link ↓</a></div>
+        <p class="network-hint">$network_hint</p>
+        <fieldset class="filters" hidden><legend>$filters_label</legend>$filters</fieldset>
+        <p class="filter-count" id="filter-count" role="status" hidden>$filter_count</p>
+        <div class="graph-scroll" tabindex="0" role="region" aria-label="$graph_title">$graph</div>
+        <p class="graph-note">$graph_scroll</p>
+      </section>
+    </div>
+    <section id="reports" class="reports" aria-labelledby="reports-heading">
+      <div class="section-heading"><div><p class="section-number">$index_section</p><h2 id="reports-heading">$index_title</h2></div><div class="refresh-controls"><button id="refresh" hidden>$refresh ↻</button></div></div>
+      <p class="section-intro">$index_intro</p>
+      <div id="live-note" class="live-note" hidden><p>$refresh_hint</p><p id="refresh-status" role="status" aria-live="polite">$snapshot_only</p></div>
+      <div class="issue-list">$issue_list</div>
+    </section>
+    <section id="relationships" class="relationships" aria-labelledby="relationships-heading">
+      <div class="section-heading"><div><p class="section-number">$evidence_section</p><h2 id="relationships-heading">$relationship_title</h2></div><p class="review-date">$reviewed <time datetime="$reviewed_iso">$reviewed_iso</time></p></div>
+      <p class="section-intro">$relationship_intro</p>
+      <div class="relationship-groups">$relationship_groups</div>
+    </section>
+    <section class="method" aria-labelledby="method-heading"><p class="section-number">$method_section</p><h2 id="method-heading">$method_title</h2><div class="method-grid"><p>$method_counter</p><p>$method_state</p><p>$method_selection</p><p>$method_privacy</p></div></section>
+    <noscript><p class="no-script">$no_script</p></noscript>
+  </main>
+  <footer><div><strong>$footer</strong><p>$unaffiliated</p></div><div class="data-links"><a href="${base}data/snapshot.json">$snapshot_download ↗</a><a href="${base}data/evidence.json">$evidence_download ↗</a></div></footer>
+</body>
+</html>
