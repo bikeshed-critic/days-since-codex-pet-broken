@@ -69,6 +69,8 @@ an explicit request. No deployment workflow is enabled by this implementation.
 - [x] Offline build, project-subpath checks, escaping, refresh failure handling,
   and local HTTP serving checked.
 
-The work is split into three local commits. Browser visual and interaction QA
+The implementation is split into three commits. Browser visual and interaction QA
 has not been performed; current UI checks exercise the event wiring with a small
-DOM test harness. GitHub Pages publication remains a separate, unperformed step.
+DOM test harness. GitHub Pages is now configured to publish `main` → `/docs`
+with HTTPS enforced, following explicit approval to publish this version.
+Subsequent pushes to `main` are deployment actions.

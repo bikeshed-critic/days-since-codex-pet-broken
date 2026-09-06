@@ -92,12 +92,16 @@ The JavaScript tests use Node 18+ built-ins and mocked responses; they cover
 request limits, timeouts, malformed responses, partial failure, safe data handling,
 and the filter/refresh event wiring. They do not perform real GitHub requests.
 
-## Future GitHub Pages publication
+## GitHub Pages
 
-Publication is not enabled by this work. When explicitly requested, the generated
-`docs/` directory can be published using GitHub Pages' **Deploy from a branch**
-source, selecting **main** and **/docs**. The `.nojekyll` file keeps the generated
-site static. No Actions workflow, secrets, server, or GitHub token is required.
+Public site: [days-since-codex-pet-broken](https://bikeshed-critic.github.io/days-since-codex-pet-broken/).
+
+GitHub Pages is configured to publish the generated `docs/` directory using
+**Deploy from a branch**, with **main** and **/docs** selected and HTTPS enforced.
+Rebuild and commit `docs/` alongside source changes before publishing an update.
+Pushing to `main` triggers publication, so a push is also a deployment action.
+The `.nojekyll` file keeps the generated site static. No repository-authored
+Actions workflow, secrets, server, or embedded GitHub token is required.
 See [GitHub's publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 See `PLAN.md` for implementation scope. Code and original editorial content use
