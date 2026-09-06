@@ -1,0 +1,96 @@
+# Maintaining the site
+
+The receipts live in `data/`. The page is generated into `docs/`.
+
+## Evidence and snapshots
+
+- `data/curated.json`: editorial selection, short summaries, and source permalinks.
+- `data/snapshot.json`: captured public issue metadata, with its capture time.
+- `scripts/fetch_snapshot.py`: Python 3.10+ standard-library snapshot collector.
+
+Refresh metadata from the public API, or explicitly use an already authenticated
+local GitHub CLI:
+
+```powershell
+py -3 scripts/fetch_snapshot.py
+# Alternatively:
+py -3 scripts/fetch_snapshot.py --via-gh
+```
+
+No GitHub token is written to the project. Issue bodies, comments, attachments,
+profiles, and diagnostic identifiers are not persisted. A failed fetch leaves the
+existing snapshot intact. Metadata refresh does not re-review editorial evidence.
+
+## Building from source
+
+The generator requires Python 3.10+ and no installed packages. It builds offline
+from the checked-in snapshot, with complete HTML, an SVG graph, and a source
+ledger. No JavaScript is needed to read the reports or follow links.
+
+```powershell
+py -3 scripts/build.py
+```
+
+Edit `site/`, `locales/`, `data/`, or `scripts/`;
+`docs/` is generated output and should be rebuilt and
+committed with its source changes. No external fonts, CDNs, or runtime framework
+are required. Files use project-relative URLs for GitHub Pages subpaths.
+
+The clock counts elapsed 24-hour periods from #34227's creation to the snapshot's
+capture time. It does not establish continuous breakage or reset on issue closure.
+
+### Optional browser enhancements
+
+Relationship buttons filter the graph without hiding the source ledger or changing
+its evidence. **Check live issue states** explicitly requests public issue metadata
+from `api.github.com`, with no authentication, cookies, or background polling.
+Only the issue index's state labels change; graph relationships, capture dates,
+the counter, and aggregate snapshot counts remain fixed. The checked labels are
+marked `live` and are discarded when the page is reloaded.
+
+Requests run at most four at a time, time out after 12 seconds each, and stop
+starting new requests after a rate-limit response. Failed issues retain their
+previous labels; the button reports partial or total failure and has a one-minute
+cooldown. GitHub may itself cache API responses. No response bodies or credentials
+are saved to browser storage.
+
+## Internationalization
+
+English is the only published locale initially. UI messages live in
+`locales/en.json`; editorial fields in `data/curated.json` are keyed by locale.
+To add a language, add `locales/<language-tag>.json` with `_meta.name`,
+`_meta.direction` (`ltr` or `rtl`), and translated message keys, then rebuild.
+Missing messages and editorial translations fall back to English. Preserve
+`{number}`, `{count}`, `{total}`, `{visible}`, and `{time}` placeholders where used.
+
+The builder discovers locale files and emits additional routes at
+`docs/<language-tag>/index.html`, plus language navigation and alternate links.
+English stays at `docs/index.html`. Original issue titles stay in their source
+language. If withdrawing a previously published locale, also remove its generated
+directory from `docs/` before committing.
+
+## Validation
+
+Run evidence, collector, and static-generation tests:
+
+```powershell
+py -3 -m unittest discover -s tests -p 'test_*.py'
+node tests/refresh.test.mjs
+```
+
+Tests cover provenance, privacy allowlisting, snapshot preservation on failure,
+counter semantics, escaping, locale fallback and right-to-left metadata,
+deterministic offline builds, and links under a project subpath.
+The JavaScript tests use Node 18+ built-ins and mocked responses; they cover
+request limits, timeouts, malformed responses, partial failure, safe data handling,
+and the filter/refresh event wiring. They do not perform real GitHub requests.
+
+## GitHub Pages
+
+GitHub Pages is configured to publish the generated `docs/` directory using
+**Deploy from a branch**, with **main** and **/docs** selected and HTTPS enforced.
+Rebuild and commit `docs/` alongside source changes before publishing an update.
+Pushing to `main` triggers publication, so a push is also a deployment action.
+The `.nojekyll` file keeps the generated site static. No repository-authored
+Actions workflow, secrets, server, or embedded GitHub token is required.
+See [GitHub's publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
