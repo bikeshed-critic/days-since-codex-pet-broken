@@ -23,8 +23,14 @@ pet remain separate accomplishments.
 
 ## Keeping the clock fed
 
-[Maintenance notes](CONTRIBUTING.md) cover updating the reports, building the page,
-adding languages, and running the checks.
+Feeding time, with Python 3.10+:
+
+```powershell
+py -3 scripts/fetch_snapshot.py
+py -3 scripts/build.py
+```
+
+Commit the updated `docs/`; pushing to `main` puts it on the site.
 
 English for now. The infrastructure is ready for more languages; the mouse has
 not expressed a preference.
