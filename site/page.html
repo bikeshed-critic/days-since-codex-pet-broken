@@ -10,6 +10,7 @@
   <title>$page_title</title>
   <link rel="stylesheet" href="${base}assets/style.css">
   $alternate_links
+  <script src="${base}assets/app.mjs" type="module"></script>
 </head>
 <body>
   <a class="skip" href="#reports">$skip</a>
@@ -54,5 +55,6 @@
     <noscript><p class="no-script">$no_script</p></noscript>
   </main>
   <footer><div><strong>$footer</strong><p>$unaffiliated</p></div><div class="data-links"><a href="${base}data/snapshot.json">$snapshot_download ↗</a><a href="${base}data/evidence.json">$evidence_download ↗</a></div></footer>
+  <script id="page-data" type="application/json">$page_data</script>
 </body>
 </html>

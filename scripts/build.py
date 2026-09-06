@@ -133,6 +133,10 @@ def render(curated, snapshot, locale, bundles):
         dates = f'{h(text["filed"])} <time datetime="{h(issue["created_at"])}">{h(issue["created_at"][:10])}</time> · {h(text["updated"])} <time datetime="{h(issue["updated_at"])}">{h(issue["updated_at"][:10])}</time>'
         issues.append(f'<article class="issue"><div class="issue-number"><a href="{issue["url"]}">#{issue["number"]} ↗</a><span class="issue-state {issue["state"]}" data-state-for="{issue["number"]}">{h(state_label)}</span></div><div class="issue-content"><h3><a href="{issue["url"]}">{h(issue["title"])}</a></h3><p>{h(localized(editorial["summary"], locale))}</p><p class="issue-dates">{dates}</p></div></article>')
     parts["issue_list"] = "".join(issues)
+    config = {"locale": locale, "issueNumbers": sorted(records), "relationshipCount": len(curated["relationships"]), "messages": {key: value for key, value in text.items() if key != "_meta"}}
+    # Inert JSON still needs escaping: an HTML parser recognizes a closing script
+    # tag before a JavaScript or JSON parser can see it.
+    parts["page_data"] = json.dumps(config, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     return Template((ROOT / "site/page.html").read_text(encoding="utf-8")).substitute(parts)
 
 
@@ -148,7 +152,7 @@ def build(output=None):
         destination.mkdir(parents=True, exist_ok=True)
         (destination / "index.html").write_text(page, encoding="utf-8")
     (output / "assets").mkdir(exist_ok=True)
-    for asset in ("style.css",):
+    for asset in ("style.css", "app.mjs", "refresh.mjs"):
         shutil.copyfile(ROOT / "site" / asset, output / "assets" / asset)
     (output / "data").mkdir(exist_ok=True)
     for name, dataset in (("snapshot", snapshot), ("evidence", curated)):

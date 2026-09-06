@@ -60,3 +60,15 @@ the two redundant local feature branches were removed after verification.
 
 Further pushes, deployment, history rewrites, and GitHub comment actions require
 an explicit request. No deployment workflow is enabled by this implementation.
+
+## Local milestones
+
+- [x] Curated evidence and snapshot collection, with privacy and provenance tests.
+- [x] Independently usable static English page and extensible locale generation.
+- [x] Optional relationship filters and unauthenticated live issue-state checks.
+- [x] Offline build, project-subpath checks, escaping, refresh failure handling,
+  and local HTTP serving checked.
+
+The work is split into three local commits. Browser visual and interaction QA
+has not been performed; current UI checks exercise the event wiring with a small
+DOM test harness. GitHub Pages publication remains a separate, unperformed step.

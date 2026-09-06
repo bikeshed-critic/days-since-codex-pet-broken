@@ -79,5 +79,5 @@
   "unaffiliated": "Independent project; not affiliated with OpenAI.",
   "snapshot_download": "Metadata snapshot",
   "evidence_download": "Evidence dataset",
-  "no_script": "The full snapshot and source ledger work without JavaScript."
+  "no_script": "The full snapshot and source ledger work without JavaScript. Relationship filters and the optional live check require JavaScript."
 }

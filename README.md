@@ -46,6 +46,21 @@ are required. Files use project-relative URLs for GitHub Pages subpaths.
 The clock counts elapsed 24-hour periods from #34227's creation to the snapshot's
 capture time. It does not establish continuous breakage or reset on issue closure.
 
+### Optional browser enhancements
+
+Relationship buttons filter the graph without hiding the source ledger or changing
+its evidence. **Check live issue states** explicitly requests public issue metadata
+from `api.github.com`, with no authentication, cookies, or background polling.
+Only the issue index's state labels change; graph relationships, capture dates,
+the counter, and aggregate snapshot counts remain fixed. The checked labels are
+marked `live` and are discarded when the page is reloaded.
+
+Requests run at most four at a time, time out after 12 seconds each, and stop
+starting new requests after a rate-limit response. Failed issues retain their
+previous labels; the button reports partial or total failure and has a one-minute
+cooldown. GitHub may itself cache API responses. No response bodies or credentials
+are saved to browser storage.
+
 ## Internationalization
 
 English is the only published locale initially. UI messages live in
@@ -67,11 +82,15 @@ Run evidence, collector, and static-generation tests:
 
 ```powershell
 py -3 -m unittest discover -s tests -p 'test_*.py'
+node tests/refresh.test.mjs
 ```
 
 Tests cover provenance, privacy allowlisting, snapshot preservation on failure,
 counter semantics, escaping, locale fallback and right-to-left metadata,
 deterministic offline builds, and links under a project subpath.
+The JavaScript tests use Node 18+ built-ins and mocked responses; they cover
+request limits, timeouts, malformed responses, partial failure, safe data handling,
+and the filter/refresh event wiring. They do not perform real GitHub requests.
 
 ## Future GitHub Pages publication
 

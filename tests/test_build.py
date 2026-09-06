@@ -80,6 +80,18 @@ class StaticBuildTests(unittest.TestCase):
             self.assertIn(self.bundles["en"]["method_privacy"], output)
             self.assertIn('<html lang="ar" dir="rtl">', self.render("ar", bundles))
 
+    def test_embedded_locale_data_cannot_escape_its_script_element(self):
+        bundles = deepcopy(self.bundles)
+        payload = '</script><script>alert("untrusted translation")</script>'
+        bundles["en"]["headline"] = payload
+        output = self.render(bundles=bundles)
+        self.assertNotIn(payload, output)
+        scripts = [attrs for tag, attrs in Page(output).tags if tag == "script"]
+        self.assertEqual(len(scripts), 2)
+        self.assertEqual(scripts[0]["src"], "./assets/app.mjs")
+        encoded = output.split('<script id="page-data" type="application/json">', 1)[1].split('</script>', 1)[0]
+        self.assertEqual(json.loads(encoded)["messages"]["headline"], payload)
+
     def test_offline_build_is_deterministic_and_project_relative(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
             with patch("socket.create_connection", side_effect=AssertionError("Build must be offline")):
