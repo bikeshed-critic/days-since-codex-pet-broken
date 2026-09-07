@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "repository": "openai/codex",
+  "reviewed_at": "2026-09-07",
+  "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
+  "searches": [
+    {
+      "query": "repo:openai/codex is:issue pet in:title",
+      "reported_total": 203,
+      "results_fetched": 203,
+      "pages": 3,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue label:pets",
+      "reported_total": 221,
+      "results_fetched": 221,
+      "pages": 3,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue hitbox",
+      "reported_total": 10,
+      "results_fetched": 10,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"click-through\"",
+      "reported_total": 130,
+      "results_fetched": 130,
+      "pages": 2,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"overlay\" \"drag\"",
+      "reported_total": 98,
+      "results_fetched": 98,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue mascot in:title",
+      "reported_total": 6,
+      "results_fetched": 6,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue avatar in:title",
+      "reported_total": 21,
+      "results_fetched": 21,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:pr pet drag",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:pr pet hit",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:pr pet click",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    }
+  ],
+  "unique_search_results": 387,
+  "reviewed_issue_numbers": [
+    21064,
+    21136,
+    21313,
+    21359,
+    21366,
+    21508,
+    25695,
+    26577,
+    27582,
+    27583,
+    28929,
+    30532,
+    30622,
+    33565,
+    33840,
+    34012,
+    34227,
+    34309,
+    34982,
+    35868,
+    36980,
+    37073,
+    37978,
+    38663,
+    38711,
+    38745,
+    38802,
+    39024,
+    40239,
+    41262,
+    41267,
+    41306,
+    41465,
+    41485,
+    41501,
+    41506,
+    41513,
+    41519,
+    41535,
+    41596,
+    41784,
+    41920,
+    41951,
+    41960,
+    41963,
+    42035,
+    42061,
+    42190,
+    42225,
+    42230,
+    42255,
+    42289,
+    42382,
+    42469,
+    42661,
+    42813,
+    42839,
+    42857,
+    42862,
+    42923,
+    42927,
+    42945,
+    42946,
+    43061,
+    43115,
+    43127,
+    43200,
+    43226,
+    43346
+  ],
+  "discussion_comments_fetched": 321,
+  "method": "Searched open and closed issues, paginated all listed search queries and fetched complete comment/timeline pages for the reviewed threads. Followed relevant body/comment links and incoming tracker references, checked duplicate direction through GitHub GraphQL, and read linked community investigations plus primary API documentation. Search hits were screened for scope; they are not all confirmed bugs or independent reproductions. Attachments and local binaries were not independently tested.",
+  "selected_issue_count": 48,
+  "relationship_counts": {
+    "reference": 195,
+    "similarity": 6,
+    "hypothesis": 4,
+    "opposite": 3,
+    "official_duplicate": 1
+  },
+  "excluded_after_review": [
+    {
+      "number": 21064,
+      "url": "https://github.com/openai/codex/issues/21064",
+      "reason": "A main-app popup/focus problem, suggested by the bot on a macOS pet thread; not evidence of Windows pet hit-region failure."
+    },
+    {
+      "number": 21136,
+      "url": "https://github.com/openai/codex/issues/21136",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 21313,
+      "url": "https://github.com/openai/codex/issues/21313",
+      "reason": "Loss of always-on-top behavior after wake/focus, not a report of failed pet pointer delivery."
+    },
+    {
+      "number": 21366,
+      "url": "https://github.com/openai/codex/issues/21366",
+      "reason": "Another always-on-top/focus report; its author redirected discussion to #21313."
+    },
+    {
+      "number": 25695,
+      "url": "https://github.com/openai/codex/issues/25695",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 26577,
+      "url": "https://github.com/openai/codex/issues/26577",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 27582,
+      "url": "https://github.com/openai/codex/issues/27582",
+      "reason": "Pet-generation/tool execution failure, not an overlay input failure."
+    },
+    {
+      "number": 27583,
+      "url": "https://github.com/openai/codex/issues/27583",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 28929,
+      "url": "https://github.com/openai/codex/issues/28929",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 30532,
+      "url": "https://github.com/openai/codex/issues/30532",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 30622,
+      "url": "https://github.com/openai/codex/issues/30622",
+      "reason": "Custom-pet creation failure, not an overlay input failure."
+    },
+    {
+      "number": 34982,
+      "url": "https://github.com/openai/codex/issues/34982",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 36980,
+      "url": "https://github.com/openai/codex/issues/36980",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 37073,
+      "url": "https://github.com/openai/codex/issues/37073",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 38663,
+      "url": "https://github.com/openai/codex/issues/38663",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 38711,
+      "url": "https://github.com/openai/codex/issues/38711",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 38745,
+      "url": "https://github.com/openai/codex/issues/38745",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 38802,
+      "url": "https://github.com/openai/codex/issues/38802",
+      "reason": "Broader Windows renderer/GPU/mouse-stutter investigation. The map retains #33565 and its confirmed duplicate as representative context; the wider performance family is not established as the click-through defect."
+    },
+    {
+      "number": 42035,
+      "url": "https://github.com/openai/codex/issues/42035",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    },
+    {
+      "number": 42857,
+      "url": "https://github.com/openai/codex/issues/42857",
+      "reason": "Linux/Wayland jitter while an active drag works; bot references do not establish equivalence with the Windows click-through reports."
+    },
+    {
+      "number": 43127,
+      "url": "https://github.com/openai/codex/issues/43127",
+      "reason": "macOS pet input, focus, display, or performance behavior. Reviewed as a boundary case; excluded from this Windows-centered input map rather than assuming a shared native implementation."
+    }
+  ],
+  "findings": [
+    {
+      "finding": "One explicit tracker duplicate connects the mouse-stall reports: #33840 is the duplicate and #33565 is canonical. Verified from the canonical and duplicate fields of the GitHub MarkedAsDuplicateEvent; the event is hosted on the canonical thread.",
+      "sources": [
+        "https://github.com/openai/codex/issues/33565#event-28128894200",
+        "https://github.com/openai/codex/issues/33840#event-28128894235"
+      ]
+    },
+    {
+      "finding": "The input failures are not uniformly explained by multiple monitors or non-100% scaling. Some scale-sensitive variants improve at 100%; other reports reproduce on a single display at 100%. One commenter explicitly retracts a DPI-only inference.",
+      "sources": [
+        "https://github.com/openai/codex/issues/37978",
+        "https://github.com/openai/codex/issues/41960",
+        "https://github.com/openai/codex/issues/42255",
+        "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+        "https://github.com/openai/codex/issues/34227#issuecomment-5560045442"
+      ]
+    },
+    {
+      "finding": "Hover response is not proof of click delivery. Electron documents forwarding of mouse-move messages while other mouse events pass to the window underneath; reports include both working-hover and no-hover variants.",
+      "sources": [
+        "https://www.electronjs.org/docs/latest/api/base-window#winsetignoremouseeventsignore-options",
+        "https://github.com/openai/codex/issues/42927",
+        "https://github.com/openai/codex/issues/43061"
+      ]
+    },
+    {
+      "finding": "The proposed missing-native-input-region diagnosis is not established by a zero region-query return alone. Microsoft distinguishes an empty region from an absent region or API error. GetWindowRgn also requires a valid destination region handle. The reports’ failed hit-test samples remain observations; the claimed native cause remains an inference.",
+      "sources": [
+        "https://github.com/openai/codex/issues/43061",
+        "https://github.com/openai/codex/issues/42661",
+        "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowrgnbox",
+        "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowrgn"
+      ]
+    },
+    {
+      "finding": "Community layered-window recoveries differ. Clearing and restoring the style helped one reproduction; another lost input again when the style was restored. A separate report describes recovery from setting layered-window alpha. These are local observations, not a universal workaround or a shipped product fix.",
+      "sources": [
+        "https://github.com/openai/codex/issues/42289#issuecomment-5522781177",
+        "https://github.com/openai/codex/issues/43200",
+        "https://github.com/openai/codex/issues/42661#issuecomment-5554236944",
+        "https://github.com/openai/codex/issues/42661#issuecomment-5559365547"
+      ]
+    },
+    {
+      "finding": "A linked external-proxy experiment moved the mascot visually but did not carry its live controls and activity surfaces with it. The linked PowerShell gist selects the first matching visible layered window by title/class, without verifying its owning process; it was read, not executed or adopted.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41465#issuecomment-5497658834",
+        "https://github.com/shan3fr33man-sudo/codex-41465-windows-overlay-repro/blob/main/RENDERER-FINDINGS.md",
+        "https://gist.github.com/philarmino/ce32a1f30bba146497cb7e9f1c1e0957"
+      ]
+    },
+    {
+      "finding": "Closed/completed is not verified fixed: #41506 has later comments describing continued failure. Conversely, #39024 contains an explicit correction withdrawing its Codex-specific diagnosis after identifying a local Windows drag-outline setting.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41506#event-30252808499",
+        "https://github.com/openai/codex/issues/41506#issuecomment-5548543342",
+        "https://github.com/openai/codex/issues/41506#issuecomment-5550199273",
+        "https://github.com/openai/codex/issues/39024"
+      ]
+    },
+    {
+      "finding": "Voice-overlay reports describe several different outcomes: an orb that focuses the app while its actions fail, a fully click-through orb, and a surface that blocks other applications. They are retained as adjacent comparisons, not diagnosed as one defect.",
+      "sources": [
+        "https://github.com/openai/codex/issues/40239",
+        "https://github.com/openai/codex/issues/43226",
+        "https://github.com/openai/codex/issues/42862",
+        "https://github.com/openai/codex/issues/43115"
+      ]
+    },
+    {
+      "finding": "No identified fixed desktop build was established by this review. The listed pull-request searches returned no matches; the public changelog did not identify a pet hit-testing fix in the inspected entries, while September 7 reports still describe failures on package 26.901.6511.0. This is not evidence about private engineering work or every release channel.",
+      "sources": [
+        "https://learn.chatgpt.com/docs/changelog",
+        "https://github.com/openai/codex/issues/34309#issuecomment-5565548756",
+        "https://github.com/openai/codex/issues/42661#issuecomment-5565612557",
+        "https://github.com/openai/codex/issues/43200#issuecomment-5565615864"
+      ]
+    }
+  ],
+  "limitations": [
+    "GitHub search indexes may lag and wording/labels can omit relevant reports; this is a reviewed selection, not an exhaustive bug census.",
+    "Cross-posted observations, bot suggestions, and AI-assisted descriptions are not independent confirmations of a shared cause.",
+    "User-reported technical tests and community workarounds were not reproduced on this machine.",
+    "The complete broader macOS focus, Linux drag, and Windows performance families were not folded into the Windows pet input map."
+  ],
+  "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository."
+}

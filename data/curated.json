@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-06",
+  "reviewed_at": "2026-09-07",
   "counter_issue": 34227,
   "issues": [
     {
       "number": 21359,
       "position": [
         95,
-        80
+        70
       ],
       "label": {
         "en": "Secondary screen"
@@ -20,8 +20,8 @@
     {
       "number": 21508,
       "position": [
-        95,
-        230
+        325,
+        70
       ],
       "label": {
         "en": "Negative coordinates"
@@ -33,21 +33,34 @@
     {
       "number": 33565,
       "position": [
-        95,
-        380
+        555,
+        70
       ],
       "label": {
         "en": "Overlay + UI stalls"
       },
       "summary": {
-        "en": "Opening the overlay reportedly coincides with task-switching stalls and unresponsive dragging. Its broader performance symptoms may have a different cause."
+        "en": "Reports task-switching stalls and unresponsive dragging when the overlay is open. GitHub marked #33840 as a duplicate of this report. This broader mouse-stall family remains distinct from a demonstrated click-through mechanism."
+      }
+    },
+    {
+      "number": 33840,
+      "position": [
+        785,
+        70
+      ],
+      "label": {
+        "en": "Periodic mouse stalls"
+      },
+      "summary": {
+        "en": "Reports periodic system-wide mouse freezes while a task runs with the pet visible. GitHub explicitly marked this report as a duplicate of #33565; this is the mouse-stall branch, not proof that click-through has the same cause."
       }
     },
     {
       "number": 34012,
       "position": [
         95,
-        530
+        180
       ],
       "label": {
         "en": "Badge corner"
@@ -60,46 +73,98 @@
       "number": 34227,
       "position": [
         325,
-        150
+        180
       ],
       "label": {
         "en": "Hit region drifts"
       },
       "summary": {
-        "en": "A July report describes the usable input area shrinking away from the visible pet over time, affecting both built-in and custom pets. This is the counter's anchor."
+        "en": "The July report describes a usable input area drifting from the visible pet. Later comments report complete click-through, including at 100% scaling. This remains the counter anchor, not a claimed master issue or single root cause."
       }
     },
     {
       "number": 34309,
       "position": [
-        325,
-        320
+        555,
+        180
       ],
       "label": {
         "en": "No drag, one screen"
       },
       "summary": {
-        "en": "A single-display regression report covers built-in and custom pets. A community comment redirects discussion to #34227; this is not an official duplicate decision."
+        "en": "A single-display regression affects built-in and custom pets. A community commenter redirects discussion to #34227; September 7 comments still report failed input on package 26.901.6511.0. The redirect is not an official duplicate decision."
       }
     },
     {
       "number": 35868,
       "position": [
-        325,
-        490
+        785,
+        180
       ],
       "label": {
         "en": "First-wake state"
       },
       "summary": {
-        "en": "The reporter ties an undersized input area to selecting a custom pet at the first wake. The reported built-in-first workaround should not be generalized to all reports."
+        "en": "The reporter ties an undersized input area to choosing a custom pet at first wake and reports a built-in-first workaround. Other reporters say that sequence fails for them, so it is not a general recovery procedure."
+      }
+    },
+    {
+      "number": 37978,
+      "position": [
+        1015,
+        180
+      ],
+      "label": {
+        "en": "Controls at 150%"
+      },
+      "summary": {
+        "en": "Reports unclickable voice and collapse controls at 150% Windows scaling, with normal operation at 100% on that machine. This is a control-specific observation, not a universal scaling diagnosis."
+      }
+    },
+    {
+      "number": 39024,
+      "position": [
+        1015,
+        70
+      ],
+      "label": {
+        "en": "Drag outline explained"
+      },
+      "summary": {
+        "en": "The reporter withdrew the Codex-specific diagnosis after reproducing the outline in another application and tracing it to the Windows window-drag visualization setting. Included as a related false lead, not an unresolved Codex defect."
+      }
+    },
+    {
+      "number": 40239,
+      "position": [
+        325,
+        950
+      ],
+      "label": {
+        "en": "Voice actions fail"
+      },
+      "summary": {
+        "en": "An adjacent voice-overlay report: clicking the orb focuses Codex and hover tooltips appear, but microphone, end-call, and speaker actions fail. This differs from the entire overlay passing clicks through."
+      }
+    },
+    {
+      "number": 41262,
+      "position": [
+        555,
+        950
+      ],
+      "label": {
+        "en": "Voice over fullscreen"
+      },
+      "summary": {
+        "en": "Reports an immovable voice orb over a streamed fullscreen game, including after unlocking the remote cursor. Voice continues working. A linked overlay comparison, not confirmation of the pet input-region mechanism."
       }
     },
     {
       "number": 41267,
       "position": [
-        560,
-        65
+        95,
+        290
       ],
       "label": {
         "en": "Update regression"
@@ -111,8 +176,8 @@
     {
       "number": 41306,
       "position": [
-        560,
-        205
+        325,
+        290
       ],
       "label": {
         "en": "One move only"
@@ -122,49 +187,36 @@
       }
     },
     {
-      "number": 41513,
-      "position": [
-        560,
-        355
-      ],
-      "label": {
-        "en": "Click-through hub"
-      },
-      "summary": {
-        "en": "Built-in and custom pets reportedly pass clicks to the window behind them. Its discussion connects several reports; this editorial hub is not an official master issue."
-      }
-    },
-    {
-      "number": 41596,
-      "position": [
-        560,
-        510
-      ],
-      "label": {
-        "en": "Invisible input wall"
-      },
-      "summary": {
-        "en": "The transparent overlay reportedly blocks clicks over a large area while the pet remains unusable. This is the opposite input-routing outcome to click-through."
-      }
-    },
-    {
       "number": 41465,
       "position": [
-        795,
-        90
+        325,
+        400
       ],
       "label": {
         "en": "Clicks pass through"
       },
       "summary": {
-        "en": "The reporter describes a visible floating pet whose clicks reach the application behind it, despite resets and switching built-in pets."
+        "en": "Reports a floating Windows pet remaining click-through. Community investigations distinguish missing physical pointer delivery from a missing drag handler; an external moving proxy does not preserve all live pet controls."
+      }
+    },
+    {
+      "number": 41485,
+      "position": [
+        785,
+        290
+      ],
+      "label": {
+        "en": "No input at 125%"
+      },
+      "summary": {
+        "en": "Reports a visible pet with neither hover nor click response at 125% Windows scaling. The scaling value describes the environment; the report does not isolate a scaling defect."
       }
     },
     {
       "number": 41501,
       "position": [
-        795,
-        250
+        555,
+        290
       ],
       "label": {
         "en": "First drag, then lost"
@@ -176,21 +228,34 @@
     {
       "number": 41506,
       "position": [
-        795,
-        415
+        1015,
+        400
       ],
       "label": {
         "en": "Hover without clicks"
       },
       "summary": {
-        "en": "Hover responses continue but clicks and dragging fail. The issue is closed/completed; the bot's suggestion of #41465 does not establish a fix or official duplicate decision."
+        "en": "The pet reacts to hover but ignores clicks, dragging, and controls. GitHub marks the report closed/completed, yet September 5 comments report continuing failures. The closure supplies no fixed-build evidence."
+      }
+    },
+    {
+      "number": 41513,
+      "position": [
+        555,
+        400
+      ],
+      "label": {
+        "en": "Click-through hub"
+      },
+      "summary": {
+        "en": "Built-in and custom pets reportedly become click-through. Later comments include 100% scaling reproductions and temporary layered-window recovery. This well-linked discussion is not an officially designated master issue."
       }
     },
     {
       "number": 41519,
       "position": [
-        1020,
-        180
+        785,
+        400
       ],
       "label": {
         "en": "Custom pet switching"
@@ -202,14 +267,365 @@
     {
       "number": 41535,
       "position": [
-        1020,
-        360
+        785,
+        510
       ],
       "label": {
         "en": "Partial click-through"
       },
       "summary": {
         "en": "This report describes partial or complete click-through at 150% display scaling and explicitly points to #34227."
+      }
+    },
+    {
+      "number": 41596,
+      "position": [
+        1015,
+        510
+      ],
+      "label": {
+        "en": "Invisible input wall"
+      },
+      "summary": {
+        "en": "The transparent overlay reportedly blocks clicks over a large area while the pet remains unusable. This is the opposite input-routing outcome to click-through."
+      }
+    },
+    {
+      "number": 41784,
+      "position": [
+        95,
+        400
+      ],
+      "label": {
+        "en": "Visible, cannot move"
+      },
+      "summary": {
+        "en": "A Windows report that the visible pet cannot be dragged. It supplies no native hit-test measurements, so the precise input failure remains unspecified."
+      }
+    },
+    {
+      "number": 41920,
+      "position": [
+        95,
+        510
+      ],
+      "label": {
+        "en": "Hover without drag"
+      },
+      "summary": {
+        "en": "A valid custom v2 pet reacts visually to the pointer but cannot be dragged. Resetting saved placement reportedly did not help; the report does not establish a defective asset."
+      }
+    },
+    {
+      "number": 41951,
+      "position": [
+        95,
+        950
+      ],
+      "label": {
+        "en": "Voice bar stuck"
+      },
+      "summary": {
+        "en": "Reports a fixed Windows voice bar whose end-call, microphone, and speaker controls do not respond. The call remains active after closing the main window. Related overlay behavior, with no confirmed cause."
+      }
+    },
+    {
+      "number": 41960,
+      "position": [
+        325,
+        510
+      ],
+      "label": {
+        "en": "Also at 100%"
+      },
+      "summary": {
+        "en": "Reports failed mouse and touchpad input with several built-in pets, including on a single monitor at 100% scaling. App reset and restarts did not help, limiting a purely multi-monitor or high-DPI explanation."
+      }
+    },
+    {
+      "number": 41963,
+      "position": [
+        95,
+        840
+      ],
+      "label": {
+        "en": "Animation, no drag"
+      },
+      "summary": {
+        "en": "Reports an animated but undraggable pet on Windows despite hide/show, app repair, a full exit, and a PC restart. No distinct mechanism is demonstrated."
+      }
+    },
+    {
+      "number": 42061,
+      "position": [
+        555,
+        510
+      ],
+      "label": {
+        "en": "Clicks reach desktop"
+      },
+      "summary": {
+        "en": "Reports clicks on the visible pet reaching the window underneath while the pet remains always on top and immovable. Restarting and hide/show reportedly did not restore input."
+      }
+    },
+    {
+      "number": 42190,
+      "position": [
+        555,
+        620
+      ],
+      "label": {
+        "en": "Move, then lose input"
+      },
+      "summary": {
+        "en": "Reports a detached input area after moving or resizing built-in and custom pets. It also describes dragging failing over the Codex main window while clicking may still work. Proposed native-input explanations remain hypotheses."
+      }
+    },
+    {
+      "number": 42225,
+      "position": [
+        325,
+        620
+      ],
+      "label": {
+        "en": "Stranded on right"
+      },
+      "summary": {
+        "en": "Explicitly references #42190 and reports a pet stranded at the far right of a secondary display. The brief reproduction does not diagnose coordinate conversion."
+      }
+    },
+    {
+      "number": 42230,
+      "position": [
+        785,
+        620
+      ],
+      "label": {
+        "en": "First release fails"
+      },
+      "summary": {
+        "en": "Reports one successful drag followed by lost physical mouse interaction with built-in and custom pets. Synthetic movement reportedly still works; that does not verify normal pointer delivery."
+      }
+    },
+    {
+      "number": 42255,
+      "position": [
+        1015,
+        290
+      ],
+      "label": {
+        "en": "Cursor/pet offset"
+      },
+      "summary": {
+        "en": "Reports freezing on button-down and a growing cursor-to-pet offset at 125% scaling, with accurate dragging at 100% on that machine. This scale-sensitive drag variant does not explain every click-through report."
+      }
+    },
+    {
+      "number": 42289,
+      "position": [
+        785,
+        730
+      ],
+      "label": {
+        "en": "Scaling, with caveat"
+      },
+      "summary": {
+        "en": "Reports zero native hit-test hits at 150% scaling. A follow-up retracts a DPI-only conclusion after 100% reproductions elsewhere; another reports recovery after temporarily clearing and restoring the layered-window style."
+      }
+    },
+    {
+      "number": 42382,
+      "position": [
+        95,
+        620
+      ],
+      "label": {
+        "en": "Status cannot move"
+      },
+      "summary": {
+        "en": "Reports that the floating task-status indicator can no longer be repositioned and obscures other applications. Included as adjacent overlay UI; the body does not establish that the pet sprite has the same defect."
+      }
+    },
+    {
+      "number": 42469,
+      "position": [
+        1015,
+        620
+      ],
+      "label": {
+        "en": "Drops after refresh"
+      },
+      "summary": {
+        "en": "On a two-display Windows setup, the pet reportedly accepts input immediately after refresh, then moves downward and becomes unselectable. The report does not provide a build number or native diagnosis."
+      }
+    },
+    {
+      "number": 42661,
+      "position": [
+        555,
+        730
+      ],
+      "label": {
+        "en": "Input island offset"
+      },
+      "summary": {
+        "en": "Reports a mapped input island near the overlay’s upper-left while the visible pet is elsewhere, even with the passthrough flag absent. September 7 follow-up reports the mismatch on package 26.901.6511.0; exact cause remains unconfirmed."
+      }
+    },
+    {
+      "number": 42813,
+      "position": [
+        785,
+        950
+      ],
+      "label": {
+        "en": "Voice blocks controls"
+      },
+      "summary": {
+        "en": "Reports an unselectable, immovable voice overlay covering messages, input, previews, and controls. Its obstruction is relevant context, but the report does not isolate native hit testing."
+      }
+    },
+    {
+      "number": 42839,
+      "position": [
+        95,
+        730
+      ],
+      "label": {
+        "en": "Pet + stale recents"
+      },
+      "summary": {
+        "en": "A mixed Windows report includes an unclickable pet alongside stale conversation entries. Only the pet symptom belongs in this map; nearby log errors and conversation failures are not established causes."
+      }
+    },
+    {
+      "number": 42862,
+      "position": [
+        1015,
+        950
+      ],
+      "label": {
+        "en": "Voice blocks desktop"
+      },
+      "summary": {
+        "en": "Reports a voice orb snapping back and refusing drag, sometimes accompanied by blocked desktop/taskbar clicks. Show desktop restores other clicks but not orb dragging; no shared cause with pet click-through is established."
+      }
+    },
+    {
+      "number": 42923,
+      "position": [
+        325,
+        730
+      ],
+      "label": {
+        "en": "Secondary, still stuck"
+      },
+      "summary": {
+        "en": "Reports a pet stranded on a secondary display after a full app exit and relaunch. It explicitly links the older secondary-monitor report and newer input-region reports; exact build and scaling were not supplied."
+      }
+    },
+    {
+      "number": 42927,
+      "position": [
+        325,
+        840
+      ],
+      "label": {
+        "en": "Hover, offset scan"
+      },
+      "summary": {
+        "en": "Built-in and custom pets still react to hover but reject clicks and dragging. A native scan finds overlay-associated points away from the visible pet; those points are not proven draggable regions."
+      }
+    },
+    {
+      "number": 42945,
+      "position": [
+        555,
+        840
+      ],
+      "label": {
+        "en": "Desktop gets clicks"
+      },
+      "summary": {
+        "en": "Reports a desktop selection rectangle and context menu appearing when interacting with built-in and custom pets on package 26.901.5003.0. Hide/wake and app restart failed; no specific window-style or DPI cause is claimed."
+      }
+    },
+    {
+      "number": 42946,
+      "position": [
+        1015,
+        730
+      ],
+      "label": {
+        "en": "One drag, offset"
+      },
+      "summary": {
+        "en": "Reports hover response and one offset drag after refresh, then renewed click-through. It also reproduces on one monitor after several local troubleshooting changes; Windows text size is not the same measurement as display scaling."
+      }
+    },
+    {
+      "number": 43061,
+      "position": [
+        785,
+        840
+      ],
+      "label": {
+        "en": "No hits, no hover"
+      },
+      "summary": {
+        "en": "Reports zero native hit-test hits and no hover despite an active renderer. Missing input shape and failed forwarding are proposed explanations. A zero window-region query result alone does not prove an empty input region."
+      }
+    },
+    {
+      "number": 43115,
+      "position": [
+        785,
+        1060
+      ],
+      "label": {
+        "en": "Opaque voice surface"
+      },
+      "summary": {
+        "en": "Reports the voice companion becoming a large black surface after restart, sometimes blocking clicks underneath. This combines visual transparency and excess input capture; it is not evidence that all pet reports share one cause."
+      }
+    },
+    {
+      "number": 43200,
+      "position": [
+        1015,
+        840
+      ],
+      "label": {
+        "en": "Layered-state A/B/A"
+      },
+      "summary": {
+        "en": "Reports that removing the layered-window style restores input and restoring it breaks input again on package 26.901.6511.0. The workaround can capture more than the visible pet; this is community diagnostic evidence, not a shipped fix."
+      }
+    },
+    {
+      "number": 43226,
+      "position": [
+        555,
+        1060
+      ],
+      "label": {
+        "en": "Voice clicks through"
+      },
+      "summary": {
+        "en": "Reports the entire voice orb and all three controls passing clicks and drags to Chrome after app restart. Unlike #40239, even the orb cannot be clicked; voice-specific routing remains undiagnosed."
+      }
+    },
+    {
+      "number": 43346,
+      "position": [
+        95,
+        1060
+      ],
+      "label": {
+        "en": "Pet + voice input"
+      },
+      "summary": {
+        "en": "Reports undraggable pets and an unclickable voice control on Windows package 26.901.5003.0. This report does not claim observed click-through, a tested restart recovery, or an established root cause."
       }
     }
   ],
@@ -568,6 +984,2624 @@
       ],
       "note": {
         "en": "Opposite observed outcomes: clicks escape the pet in one report and are swallowed by transparent space in the other. A shared mechanism remains unconfirmed."
+      }
+    },
+    {
+      "from": 33565,
+      "to": 33840,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/33565#issuecomment-5303054234",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #33840. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 33840,
+      "to": 33565,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/33840#issuecomment-5008918746",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #33565. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 34227,
+      "to": 34309,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227#issuecomment-5056938406",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #34309. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 34227,
+      "to": 35868,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227#issuecomment-5459934019",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #35868. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 34309,
+      "to": 21359,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34309",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #21359; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 34309,
+      "to": 21508,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34309#issuecomment-5459904729",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #21508. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 34309,
+      "to": 35868,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34309#issuecomment-5459904729",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #35868. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 39024,
+      "to": 35868,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/39024",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #35868; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 39024,
+      "to": 34309,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/39024",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #34309; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 40239,
+      "to": 41262,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/40239#issuecomment-5482385605",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41262. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41262,
+      "to": 21508,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41262",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #21508; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41262,
+      "to": 33565,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41262",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #33565; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41262,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41262#issuecomment-5508860821",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5463372412",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5466614100",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #34227. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5515902427",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41960. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 35868,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5515902427",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #35868. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 34309,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5515902427",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #34309. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5460221167",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41306 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41465,
+      "to": 41267,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41465#issuecomment-5460221167",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41267 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41485,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41485#issuecomment-5460905678",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41501,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41501#issuecomment-5473633357",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41501,
+      "to": 41485,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41501#issuecomment-5500453971",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41485. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5471537641",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41506. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5471537641",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41535. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41513,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41513#issuecomment-5549005152",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42661. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 41519,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41519#issuecomment-5461889210",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41519,
+      "to": 41485,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41519#issuecomment-5461889210",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41485 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41519,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41519#issuecomment-5461889210",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41519,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41519#issuecomment-5461889210",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41501 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535#issuecomment-5462728204",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535#issuecomment-5462728204",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 41519,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535#issuecomment-5462728204",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41519 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535#issuecomment-5462728204",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41535,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41535#issuecomment-5462728204",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41501 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41596,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41596",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41465; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41596,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41596",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41506; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41596,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41596",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41501; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41596,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41596",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41513; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 41784,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41784#issuecomment-5474692349",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41784,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41784#issuecomment-5474692349",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41784,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41784#issuecomment-5474692349",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41784,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41784#issuecomment-5474692349",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41596 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41784,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41784#issuecomment-5474692349",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41535 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41920,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41920#issuecomment-5485530772",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41920,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41920#issuecomment-5485530772",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41920,
+      "to": 41519,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41920#issuecomment-5485530772",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41519 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41920,
+      "to": 41784,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41920#issuecomment-5485530772",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41784 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41920,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41920#issuecomment-5485530772",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41535 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41951,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41951#issuecomment-5487018757",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41951,
+      "to": 41262,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41951#issuecomment-5487018757",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41262 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41960,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41960#issuecomment-5487916250",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41920 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41960,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41960#issuecomment-5487916250",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41506 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41960,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41960#issuecomment-5487916250",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41960,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41960#issuecomment-5487916250",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41960,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41960#issuecomment-5487916250",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41596 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41963,
+      "to": 41784,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41963#issuecomment-5488181418",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41784 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41963,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41963#issuecomment-5488181418",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41960 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 41963,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/41963#issuecomment-5488181418",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41920 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42061,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42061#issuecomment-5495527002",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41960 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42061,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42061#issuecomment-5495527002",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42061,
+      "to": 41963,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42061#issuecomment-5495527002",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41963 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42061,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42061#issuecomment-5495527002",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42061,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42061#issuecomment-5495527002",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41535 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42190,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42190#issuecomment-5503631626",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41513 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42190,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42190#issuecomment-5503631626",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42190,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42190#issuecomment-5503631626",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41306 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42190,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42190#issuecomment-5503631626",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41501 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42190,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42190#issuecomment-5503631626",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41535 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42225,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42225",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42190; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42225,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42225#issuecomment-5505867837",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42230,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42230#issuecomment-5550830447",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41501. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42230,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42230#issuecomment-5550830447",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42190. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42230,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42230#issuecomment-5506020383",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41306 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 39024,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #39024; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #34227; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 33565,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #33565; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255#issuecomment-5508067435",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41920 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 41485,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255#issuecomment-5508067435",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41485 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255#issuecomment-5508067435",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42230 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255#issuecomment-5508067435",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41306 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42255,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42255#issuecomment-5508067435",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41501 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41485,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518534849",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41485. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41920. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41960. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42061. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41519,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41519. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 42255,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42255. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41267,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41267. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42230. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41784,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41784. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41465. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41306. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41596. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41501. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41535. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42289,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5511434238",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42382,
+      "to": 41784,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42382#issuecomment-5517733584",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41784 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42382,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42382#issuecomment-5517733584",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41465 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42382,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42382#issuecomment-5517733584",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42382,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42382#issuecomment-5517733584",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41920 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42469,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42469#issuecomment-5521748275",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41306 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42469,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42469#issuecomment-5521748275",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42469,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42469#issuecomment-5521748275",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41501 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42469,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42469#issuecomment-5521748275",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42230 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #34227; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41596; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5549551886",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42230. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5559314594",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5559314594",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42190. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5561011548",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #41960. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5561011548",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "A community comment explicitly references #42289. The link does not establish a shared cause or an official consolidation."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 42469,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5534962409",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42469 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42661,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5534962409",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41535 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42813,
+      "to": 41951,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42813#issuecomment-5544493543",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41951 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42839,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42839#issuecomment-5545789702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41596 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42862,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42862",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41465; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42862,
+      "to": 41262,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42862",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41262; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42862,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42862#issuecomment-5546835219",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41596 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42862,
+      "to": 42813,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42862#issuecomment-5546835219",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42813 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42862,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42862#issuecomment-5546835219",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 41506,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41506; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 21508,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #21508; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42469,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42469; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42661; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41513; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42061; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42190; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42225,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42225; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #34227; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42927,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42927",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41960; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42927,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42927#issuecomment-5549397421",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41920 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42927,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42927#issuecomment-5549397421",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42661 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42927,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42927#issuecomment-5549397421",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42927,
+      "to": 42839,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42927#issuecomment-5549397421",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42839 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42945,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42945",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42061; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42945,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42945",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42661; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 42945,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42945#issuecomment-5550103743",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42945,
+      "to": 42927,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42945#issuecomment-5550103743",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42927 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42945,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42945#issuecomment-5550103743",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42289 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42946,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42946#issuecomment-5550164237",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42945 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42946,
+      "to": 42469,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42946#issuecomment-5550164237",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42469 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42946,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42946#issuecomment-5550164237",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42661 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42946,
+      "to": 42927,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42946#issuecomment-5550164237",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42927 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 42946,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42946#issuecomment-5550164237",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42230 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42661; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41960; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 41513,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41513; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42923,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42923; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42061; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42190; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42927,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42927; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42230,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42230; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41465; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 41596,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41596; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41535; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061#issuecomment-5553492174",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42945 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061#issuecomment-5553492174",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42289 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43115,
+      "to": 42862,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43115#issuecomment-5555247925",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42862 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42255,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42255; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5558467702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42945 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5558467702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42661 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 41960,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5558467702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #41960 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5558467702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 43061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5558467702",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43226,
+      "to": 41465,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43226",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41465; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43226,
+      "to": 42862,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43226",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42862; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43226,
+      "to": 40239,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43226",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #40239; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43226,
+      "to": 42813,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43226#issuecomment-5559618566",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42813 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 41306,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41306; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 41535,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41535; a cross-reference does not establish that the reports describe the same defect."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 43200,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346#issuecomment-5564749457",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43200 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 42061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346#issuecomment-5564749457",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42061 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 42190,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346#issuecomment-5564749457",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42190 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346#issuecomment-5564749457",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42289 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43346,
+      "to": 43226,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43346#issuecomment-5564749457",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43226 as a potential duplicate. This records a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 33840,
+      "to": 33565,
+      "type": "official_duplicate",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/33565#event-28128894200",
+          "kind": "duplicate_event"
+        }
+      ],
+      "note": {
+        "en": "GitHub’s explicit duplicate event identifies #33840 as the duplicate and #33565 as canonical. This consolidates the mouse-stall reports; it does not establish a fix or equate them with the click-through family."
+      }
+    },
+    {
+      "from": 37978,
+      "to": 42289,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/37978",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5518831190",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "Both report failed pet controls in a 150% scaling environment. One reports success at 100%; other threads reproduce input failure at 100%, so scaling alone is not a family-wide explanation."
+      }
+    },
+    {
+      "from": 34227,
+      "to": 42661,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/34227",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42661",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both describe visible pet geometry and usable input areas separating. The newer report adds a native spatial scan, but neither establishes a common implementation defect."
+      }
+    },
+    {
+      "from": 42230,
+      "to": 42946,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42230",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42946",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both report a brief recovery allowing one drag before interaction fails again. The latter also describes an offset during that drag; matching symptoms do not prove identical causes."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42289,
+      "type": "hypothesis",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42289#issuecomment-5522781177",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "Layered-window state may connect these reports, but recovery differs: a clear-and-restore cycle helped one reporter, while restoring the flag brought failure back in #43200. A common cause is unconfirmed."
+      }
+    },
+    {
+      "from": 43061,
+      "to": 34227,
+      "type": "hypothesis",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/34227#issuecomment-5040557044",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "Both discussions propose failure in the mouse-forwarding fallback. The observed lack of input is stronger evidence than the claimed missing-region diagnosis; a shared native defect has not been verified."
+      }
+    },
+    {
+      "from": 43226,
+      "to": 42862,
+      "type": "opposite",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43226",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42862",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The newer voice report says clicks reach Chrome underneath the orb; the other also reports desktop/taskbar clicks being blocked. These contrasting outcomes must not be collapsed into one confirmed cause."
+      }
+    },
+    {
+      "from": 43115,
+      "to": 43226,
+      "type": "opposite",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43115",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43226",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "One voice-overlay report includes a large opaque surface intercepting other applications’ input; the other passes input through to Chrome. Both obstruct use, with opposite pointer outcomes."
       }
     }
   ]
