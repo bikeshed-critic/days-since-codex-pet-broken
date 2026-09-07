@@ -15,21 +15,25 @@
 <body>
   <a class="skip" href="#reports">$skip</a>
   <header class="masthead">
-    <a class="brand" href="${base}index.html"><span class="brand-mark" aria-hidden="true">[·]</span>$brand</a>
+    <a class="brand" href="${base}index.html">$brand</a>
     <div class="masthead-right">$language_links<a class="repo-link" href="https://github.com/bikeshed-critic/days-since-codex-pet-broken">$repository ↗</a></div>
   </header>
   <main>
     <div class="edition"><span>$independent</span><span>$captured <time datetime="$captured_iso">$captured_display</time></span></div>
     <div class="observatory">
       <section class="clock" aria-labelledby="headline">
-        <p class="eyebrow">$eyebrow</p>
-        <h1 id="headline">$headline</h1>
-        <div class="counter"><span class="digits">$days</span><span class="counter-unit">$counter_unit</span></div>
-        <a class="anchor-link" href="$anchor_url">$counter_anchor ↗</a>
-        <p class="fine">$counter_detail</p>
-        <div class="stats"><div><strong>$issue_count</strong><span>$selected</span></div><div><strong>$open_count</strong><span>$open_at_snapshot</span></div></div>
-        <p class="satire">$satire</p>
-        <p class="fine">$scope</p>
+        <div class="clock-copy">
+          <p class="eyebrow">$eyebrow</p>
+          <h1 id="headline">$headline</h1>
+          <p class="satire">$satire</p>
+          <p class="fine">$scope</p>
+        </div>
+        <div class="clock-reading">
+          <div class="counter"><span class="digits">$days</span><span class="counter-unit">$counter_unit</span></div>
+          <a class="anchor-link" href="$anchor_url">$counter_anchor ↗</a>
+          <p class="fine">$counter_detail</p>
+          <div class="stats"><div><strong>$issue_count</strong><span>$selected</span></div><div><strong>$open_count</strong><span>$open_at_snapshot</span></div></div>
+        </div>
       </section>
       <section class="network" aria-labelledby="network-heading">
         <div class="panel-heading"><div><p class="section-number">$map_section</p><h2 id="network-heading">$network_title</h2></div><a href="#relationships">$ledger_link ↓</a></div>
