@@ -59,3 +59,17 @@ test('edge endpoints stay outside node labels and coincident endpoints stay fini
   assert.equal(edgePath({ x: 100, y: 100 }, { x: 100, y: 400 }, 'official_duplicate'), 'M 100.0 133.0 Q 100.0 250.0 100.0 367.0');
   assert.equal(edgePath({ x: 100, y: 100 }, { x: 100, y: 100 }, 'reference'), 'M 100 100');
 });
+
+test('a hovered issue gently pushes its neighbour farther away', () => {
+  const pair = [{ id: 1, x: 400, y: 200 }, { id: 2, x: 600, y: 200 }];
+  const normal = createSimulation(pair, [], 1120, 580);
+  const hovered = createSimulation(pair, [], 1120, 580);
+  normal.nodes[0].fixed = hovered.nodes[0].fixed = true;
+  hovered.nodes[0].hovered = true;
+  for (let i = 0; i < 20; i++) { normal.step(); hovered.step(); }
+  assert.ok(hovered.nodes[1].x > normal.nodes[1].x);
+  assert.equal(hovered.nodes[0].x, 400);
+  hovered.reset();
+  assert.equal(hovered.nodes[0].hovered, false);
+  assert.equal(hovered.nodes[0].fixed, false);
+});

@@ -4,7 +4,7 @@ const HALF_HEIGHT = 29;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
 export function createSimulation(records, relationships, width, height) {
-  const nodes = records.map(record => ({ ...record, vx: 0, vy: 0, fixed: false }));
+  const nodes = records.map(record => ({ ...record, vx: 0, vy: 0, fixed: false, hovered: false }));
   const byId = new Map(nodes.map(node => [node.id, node]));
   let links = [];
   let alpha = 1;
@@ -24,7 +24,7 @@ export function createSimulation(records, relationships, width, height) {
       degree.set(a, degree.get(a) + 1);
       degree.set(b, degree.get(b) + 1);
     }
-    for (const link of links) link.strength = .012 / Math.sqrt(Math.max(degree.get(link.a), degree.get(link.b)));
+    for (const link of links) link.strength = .0096 / Math.sqrt(Math.max(degree.get(link.a), degree.get(link.b)));
   }
 
   function contain(node) {
@@ -43,7 +43,8 @@ export function createSimulation(records, relationships, width, height) {
         // Deterministic separation also handles a node dropped on another node.
         const dx = b.x - a.x || .01, dy = b.y - a.y || .01;
         const distance = Math.hypot(dx, dy);
-        const force = Math.min(2, 5500 / (distance * distance)) * alpha;
+        const charge = a.hovered || b.hovered ? 1.3 : 1;
+        const force = Math.min(2, 5500 * charge / (distance * distance)) * alpha;
         a.vx -= dx / distance * force; a.vy -= dy / distance * force;
         b.vx += dx / distance * force; b.vy += dy / distance * force;
       }
@@ -85,10 +86,10 @@ export function createSimulation(records, relationships, width, height) {
   setLinks(relationships);
   return {
     nodes, setLinks, step,
-    reheat() { alpha = .8; },
+    reheat(amount = .8) { alpha = Math.max(alpha, amount); },
     move(node, x, y) { node.x = x; node.y = y; node.vx = node.vy = 0; contain(node); },
     reset() {
-      nodes.forEach((node, i) => Object.assign(node, records[i], { vx: 0, vy: 0, fixed: false }));
+      nodes.forEach((node, i) => Object.assign(node, records[i], { vx: 0, vy: 0, fixed: false, hovered: false }));
       alpha = 1;
     },
   };

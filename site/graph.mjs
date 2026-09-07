@@ -60,8 +60,8 @@ export function initGraph(svg, messages) {
     schedule();
   }
 
-  function reheat() {
-    simulation.reheat();
+  function reheat(amount = .8) {
+    simulation.reheat(amount);
     hot = true;
     schedule();
   }
@@ -108,7 +108,7 @@ export function initGraph(svg, messages) {
     if (!drag) return;
     const previous = drag;
     drag = null;
-    previous.node.fixed = false;
+    previous.node.fixed = previous.node.hovered;
     previous.element.classList.remove('dragging');
     if (previous.element.hasPointerCapture(previous.pointerId)) previous.element.releasePointerCapture(previous.pointerId);
     if (previous.moved) {
@@ -118,13 +118,27 @@ export function initGraph(svg, messages) {
   }
 
   elements.forEach((element, i) => {
+    const node = simulation.nodes[i];
+    element.addEventListener('pointerenter', event => {
+      if (event.pointerType !== 'mouse') return;
+      node.hovered = true;
+      // Keep the link under the cursor while its neighbours make room.
+      node.fixed = true;
+      node.vx = node.vy = 0;
+      reheat(.18);
+    });
+    element.addEventListener('pointerleave', () => {
+      if (!node.hovered) return;
+      node.hovered = false;
+      node.fixed = drag?.node === node;
+      reheat(.18);
+    });
     element.addEventListener('dragstart', event => event.preventDefault());
     element.addEventListener('pointerdown', event => {
       if (event.button !== 0 || !event.isPrimary || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || drag) return;
       suppressedClick = null;
       const cursor = point(event);
       if (!cursor) return;
-      const node = simulation.nodes[i];
       node.fixed = true;
       node.vx = node.vy = 0;
       drag = { element, node, pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY, dx: node.x - cursor.x, dy: node.y - cursor.y, moved: false };

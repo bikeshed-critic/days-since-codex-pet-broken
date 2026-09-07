@@ -149,3 +149,25 @@ test('motion cools to a stop and can be restarted without changing the source li
   f.ids.get('graph-motion').emit('click');
   assert.equal(f.frames.size, 1);
 });
+
+test('mouse hover keeps the link still and releases it on leave, while respecting motion preferences', () => {
+  const f = fixture(), node = f.nodes[0];
+  f.visible(true);
+  node.emit('pointerenter', { pointerType: 'mouse' });
+  for (let i = 0; i < 20; i++) f.tick();
+  assert.equal(node.getAttribute('transform'), 'translate(0.00 0.00)');
+  node.emit('pointerdown', { clientX: 110, clientY: 120 });
+  node.emit('pointerup');
+  f.tick();
+  assert.equal(node.getAttribute('transform'), 'translate(0.00 0.00)', 'releasing a click must preserve the hovered anchor');
+  node.emit('pointerleave');
+  f.tick();
+  assert.notEqual(node.getAttribute('transform'), 'translate(0.00 0.00)');
+  f.ids.get('graph-motion').emit('click');
+  node.emit('pointerenter', { pointerType: 'mouse' });
+  assert.equal(f.frames.size, 0, 'hover must respect pause');
+  const reduced = fixture(true);
+  reduced.visible(true);
+  reduced.nodes[0].emit('pointerenter', { pointerType: 'mouse' });
+  assert.equal(reduced.frames.size, 0, 'hover must respect reduced motion');
+});
