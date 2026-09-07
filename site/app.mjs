@@ -1,10 +1,12 @@
 import { interpolate, refreshStatuses, stateLabel } from './refresh.mjs';
+import { initGraph } from './graph.mjs';
 
 const config = JSON.parse(document.getElementById('page-data').textContent);
 const messages = config.messages;
 const filters = [...document.querySelectorAll('[data-filter]')];
 const edges = [...document.querySelectorAll('[data-edge-type]')];
 const count = document.getElementById('filter-count');
+const graph = initGraph(document.getElementById('issue-graph'), messages);
 
 for (const button of filters) {
   button.addEventListener('click', () => {
@@ -18,6 +20,7 @@ for (const button of filters) {
       visible: edges.filter(edge => !edge.hasAttribute('hidden')).length,
       total: config.relationshipCount,
     });
+    graph?.updateLinks();
   });
 }
 document.querySelector('.filters').hidden = false;

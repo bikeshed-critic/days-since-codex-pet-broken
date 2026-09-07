@@ -69,15 +69,15 @@ def graph(curated, records, locale, text):
         cx, cy = (sx + ex) / 2 - uy * bend, (sy + ey) / 2 + ux * bend
         arrow = f' marker-end="url(#arrow-{kind})"' if kind in {"reference", "official_duplicate"} else ""
         description = f"#{edge['from']} / #{edge['to']}: {text[kind]}. {localized(edge['note'], locale)}"
-        paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
+        paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" data-edge-from="{edge['from']}" data-edge-to="{edge['to']}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
     circles = []
     for number, issue in nodes.items():
         x, y = issue["position"]
         emphasis = " anchor-node" if number == curated["counter_issue"] else " hub-node" if number == 41513 else ""
         label = localized(issue["label"], locale)
         title = text["issue_link"].format(number=number, title=records[number]["title"])
-        circles.append(f'<a class="node{emphasis}" href="{issue_url(number)}" aria-label="{h(title)}"><title>{h(title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
+        circles.append(f'<a class="node{emphasis}" data-node-id="{number}" href="{issue_url(number)}" aria-label="{h(title)}"><title>{h(title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
+    return f'<svg id="issue-graph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 
 def render(curated, snapshot, locale, bundles):
@@ -152,7 +152,7 @@ def build(output=None):
         destination.mkdir(parents=True, exist_ok=True)
         (destination / "index.html").write_text(page, encoding="utf-8")
     (output / "assets").mkdir(exist_ok=True)
-    for asset in ("style.css", "app.mjs", "refresh.mjs"):
+    for asset in ("style.css", "app.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
         shutil.copyfile(ROOT / "site" / asset, output / "assets" / asset)
     (output / "data").mkdir(exist_ok=True)
     for name, dataset in (("snapshot", snapshot), ("evidence", curated)):

@@ -21,12 +21,18 @@
   "selected": "selected reports",
   "open_at_snapshot": "open at snapshot",
   "satire": "The mascot has a body. The mouse is still looking for it.",
-  "scope": "A curated map of public reports, not a complete bug census. The center is an editorial choice, not an official master issue.",
+  "scope": "A curated map of public reports, not a complete bug census. The highlighted report is an editorial choice, not an official master issue.",
   "network_title": "The issue network",
   "network_hint": "Follow an issue to GitHub. Arrows show which report references which; other connections are undirected.",
   "graph_title": "Network of {count} selected pet and related overlay reports",
   "graph_description": "Each labeled node links to its GitHub issue. The relationship ledger below gives a text equivalent, source links, and the meaning of every connection.",
   "graph_scroll": "Scroll the diagram horizontally on narrow screens, or use the text ledger below.",
+  "graph_controls_label": "Graph layout controls",
+  "graph_motion_pause": "Pause motion",
+  "graph_motion_resume": "Set in motion",
+  "graph_motion_reduced": "Reduced motion",
+  "graph_reset": "Reset layout",
+  "graph_interaction": "The issues, at least, are draggable. Click to open a report; drag to rearrange. Distance is layout, not evidence.",
   "ledger_link": "Read the relationship ledger",
   "filters_label": "Show relationship types",
   "filter_count": "{visible} of {total} relationships shown",
@@ -79,5 +85,5 @@
   "unaffiliated": "Independent project; not affiliated with OpenAI.",
   "snapshot_download": "Metadata snapshot",
   "evidence_download": "Evidence dataset",
-  "no_script": "The full snapshot and source ledger work without JavaScript. Relationship filters and the optional live check require JavaScript."
+  "no_script": "The full snapshot, static map, and source ledger work without JavaScript. Graph motion, relationship filters, and the optional live check require JavaScript."
 }

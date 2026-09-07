@@ -131,6 +131,13 @@ h2 { font-weight: 500; font-size: 1.75rem; letter-spacing: -.035em; line-height:
 .filter-count { color: var(--muted); padding-inline: 32px; margin-block: 12px 0; font-size: .8125rem; }
 .graph-scroll { overflow-x: auto; overscroll-behavior-inline: contain; margin-top: 10px; }
 .graph-scroll svg { display: block; width: 100%; min-width: 950px; height: auto; }
+.graph-controls { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 32px 0; }
+.graph-controls button { border: 1px solid var(--control-border); border-radius: 999px; padding: 8px 14px; background: var(--control); color: var(--ink); font-size: .8125rem; }
+.graph-controls button:hover { background: var(--hover); }
+.graph-controls button:disabled { cursor: default; color: var(--muted); border-color: var(--line); }
+.graph-interaction { margin: 12px 0 16px; padding-inline: 32px; color: var(--muted); font-size: .8125rem; }
+.force-graph .node { cursor: grab; touch-action: none; user-select: none; }
+.force-graph .node.dragging { cursor: grabbing; }
 .edge { fill: none; stroke: currentColor; stroke-width: 1.4; }
 .graph-arrow { fill: currentColor; }
 .edge.opposite { stroke-width: 2.5; opacity: .95; }
@@ -240,7 +247,7 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   .counter-unit { font-size: 1rem; }
   .network { border-radius: 12px; }
   .panel-heading { align-items: flex-start; flex-direction: column; gap: 16px; padding: 24px 16px 0; }
-  .network-hint, .filters, .filter-count, .graph-note { padding-inline: 16px; }
+  .network-hint, .filters, .filter-count, .graph-note, .graph-controls, .graph-interaction { padding-inline: 16px; }
   .issue, .edge-ledger li { grid-template-columns: 1fr; gap: 12px; }
   .issue-number { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
   .issue-state { margin: 0; }
@@ -252,7 +259,7 @@ footer p { color: var(--muted); margin: 6px 0 0; }
 @media print {
   :root { color-scheme: light; --bg: white; --panel: white; --ink: #111; --muted: #333; --line: #bbb; --accent: #111; }
   .masthead, main, footer { width: 100%; }
-  .filters, .refresh-controls, .live-note, .graph-scroll, .graph-note, .pet-overlay { display: none !important; }
+  .filters, .refresh-controls, .live-note, .graph-scroll, .graph-note, .graph-controls, .graph-interaction, .pet-overlay { display: none !important; }
   .observatory { display: block; }
   .clock { display: block; }
   .digits { font-size: 4rem; }

@@ -49,6 +49,11 @@ class StaticBuildTests(unittest.TestCase):
         self.assertEqual(len(issue_labels), len(nodes))
         self.assertEqual(len(edges), len(self.curated["relationships"]))
         self.assertEqual(len(ledger_entries), len(edges))
+        self.assertEqual({int(node["data-node-id"]) for node in nodes}, {issue["number"] for issue in self.curated["issues"]})
+        self.assertEqual(
+            [(int(edge["data-edge-from"]), int(edge["data-edge-to"]), edge["data-edge-type"]) for edge in edges],
+            [(edge["from"], edge["to"], edge["type"]) for edge in self.curated["relationships"]],
+        )
         self.assertTrue(all(attrs["href"].startswith("https://github.com/openai/codex/issues/") for attrs in nodes))
         anchor = next(issue for issue in self.snapshot["issues"] if issue["number"] == self.curated["counter_issue"])
         days = (datetime.fromisoformat(self.snapshot["fetched_at"].replace("Z", "+00:00")) - datetime.fromisoformat(anchor["created_at"].replace("Z", "+00:00"))) // timedelta(days=1)
@@ -113,6 +118,8 @@ class StaticBuildTests(unittest.TestCase):
                 build.build(Path(first))
                 build.build(Path(second))
             outputs = {p.relative_to(first): p.read_bytes() for p in Path(first).rglob("*") if p.is_file()}
+            for module in ("graph.mjs", "graph-physics.mjs"):
+                self.assertEqual(outputs[Path("assets") / module], (ROOT / "site" / module).read_bytes())
             self.assertEqual(outputs, {p.relative_to(second): p.read_bytes() for p in Path(second).rglob("*") if p.is_file()})
             page = Page((Path(first) / "index.html").read_text(encoding="utf-8"))
             ids = [attrs["id"] for _, attrs in page.tags if "id" in attrs]
