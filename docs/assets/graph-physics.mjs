@@ -4,7 +4,7 @@ const HALF_HEIGHT = 29;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
 export function createSimulation(records, relationships, width, height) {
-  const nodes = records.map(record => ({ ...record, vx: 0, vy: 0, fixed: false, hovered: false }));
+  const nodes = records.map(record => ({ ...record, vx: 0, vy: 0, fixed: false, hovered: false, hoverAmount: 0 }));
   const byId = new Map(nodes.map(node => [node.id, node]));
   let links = [];
   let alpha = 1;
@@ -34,6 +34,7 @@ export function createSimulation(records, relationships, width, height) {
 
   function step() {
     for (const node of nodes) {
+      node.hoverAmount += ((node.hovered ? 1 : 0) - node.hoverAmount) * .12;
       node.vx += (width / 2 - node.x) * .0007 * alpha;
       node.vy += (height / 2 - node.y) * .0007 * alpha;
     }
@@ -43,10 +44,20 @@ export function createSimulation(records, relationships, width, height) {
         // Deterministic separation also handles a node dropped on another node.
         const dx = b.x - a.x || .01, dy = b.y - a.y || .01;
         const distance = Math.hypot(dx, dy);
-        const charge = a.hovered || b.hovered ? 1.3 : 1;
-        const force = Math.min(2, 5500 * charge / (distance * distance)) * alpha;
+        const force = Math.min(2, 5500 / (distance * distance)) * alpha;
         a.vx -= dx / distance * force; a.vy -= dy / distance * force;
         b.vx += dx / distance * force; b.vy += dy / distance * force;
+        // A local cushion around the actual label, independent of global cooldown.
+        // Ease it in so hovering opens a visible gap without jolting the graph.
+        const hover = Math.max(a.hoverAmount, b.hoverAmount);
+        const gapX = 204 - Math.abs(dx), gapY = 102 - Math.abs(dy);
+        if (hover > .001 && gapX > 0 && gapY > 0) {
+          const axis = gapX < gapY ? 'vx' : 'vy';
+          const gap = Math.min(gapX, gapY);
+          const push = Math.min(1.4, gap * .05) * hover * Math.sign(axis === 'vx' ? dx : dy);
+          a[axis] -= push;
+          b[axis] += push;
+        }
       }
     }
     for (const { a, b, strength } of links) {
@@ -89,7 +100,7 @@ export function createSimulation(records, relationships, width, height) {
     reheat(amount = .8) { alpha = Math.max(alpha, amount); },
     move(node, x, y) { node.x = x; node.y = y; node.vx = node.vy = 0; contain(node); },
     reset() {
-      nodes.forEach((node, i) => Object.assign(node, records[i], { vx: 0, vy: 0, fixed: false, hovered: false }));
+      nodes.forEach((node, i) => Object.assign(node, records[i], { vx: 0, vy: 0, fixed: false, hovered: false, hoverAmount: 0 }));
       alpha = 1;
     },
   };

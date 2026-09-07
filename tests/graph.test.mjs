@@ -73,3 +73,32 @@ test('a hovered issue gently pushes its neighbour farther away', () => {
   assert.equal(hovered.nodes[0].hovered, false);
   assert.equal(hovered.nodes[0].fixed, false);
 });
+
+test('hover visibly opens space in the settled, crowded graph within one second', () => {
+  const simulation = simulate();
+  while (simulation.step()) {}
+  const before = simulation.nodes.map(node => ({ ...node }));
+  // This hub moved its neighbours less than one pixel with the old multiplier.
+  const hub = simulation.nodes.find(node => node.id === 41513);
+  const origin = { x: hub.x, y: hub.y };
+  hub.hovered = hub.fixed = true;
+  simulation.reheat(.18);
+  for (let frame = 0; frame < 60; frame++) simulation.step();
+  const nearbyMovement = simulation.nodes.flatMap((node, i) => {
+    const original = before[i];
+    return Math.abs(original.x - origin.x) < 204 && Math.abs(original.y - origin.y) < 102
+      ? [Math.hypot(node.x - original.x, node.y - original.y)] : [];
+  });
+  assert.ok(Math.max(...nearbyMovement) >= 12, 'hover must be perceptible after cooldown');
+  assert.deepEqual({ x: hub.x, y: hub.y }, origin, 'the link must stay under the mouse');
+  for (const node of simulation.nodes) {
+    for (const other of simulation.nodes) {
+      if (node === other) continue;
+      assert.ok(Math.abs(node.x - other.x) >= 160 || Math.abs(node.y - other.y) >= 58, `overlap: ${node.id}, ${other.id}`);
+    }
+  }
+  hub.hovered = hub.fixed = false;
+  simulation.reheat(.18);
+  while (simulation.step()) {}
+  assert.ok(hub.hoverAmount < .001, 'the cushion must fade away after leaving');
+});
