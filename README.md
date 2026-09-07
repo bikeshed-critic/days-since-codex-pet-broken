@@ -23,14 +23,16 @@ pet remain separate accomplishments.
 
 ## Keeping the clock fed
 
-Feeding time, with Python 3.10+:
+Feeding time, with Python 3.12+ and Node.js 24:
 
 ```powershell
 py -3 scripts/fetch_snapshot.py
 py -3 scripts/build.py
 ```
 
-Commit the updated `docs/`; pushing to `main` puts it on the site.
+Commit source and data changes to `main`; GitHub checks, builds, and publishes
+the site. It also gives the graph time to settle before anyone arrives.
+The generated `docs/` and layout cache stay out of git.
 
 English for now. The infrastructure is ready for more languages; the mouse has
 not expressed a preference.
