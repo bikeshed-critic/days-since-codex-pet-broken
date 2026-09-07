@@ -64,6 +64,21 @@ class StaticBuildTests(unittest.TestCase):
         self.assertIn("&lt;img", output)
         self.assertFalse(any(key.startswith("on") for _, attrs in Page(output).tags for key in attrs))
 
+    def test_expanded_graph_keeps_low_nodes_inside_its_viewport(self):
+        curated = deepcopy(self.curated)
+        curated["issues"][0]["position"][1] = 1400
+        build.validate(curated, self.snapshot)
+        page = Page(build.render(curated, self.snapshot, "en", self.bundles))
+        svg = next(attrs for tag, attrs in page.tags if tag == "svg")
+        width, height = map(float, svg["viewbox"].split()[2:])
+        self.assertEqual(float(svg["height"]), height)
+        for tag, rect in page.tags:
+            if tag == "rect":
+                self.assertGreaterEqual(float(rect["x"]), 0)
+                self.assertGreaterEqual(float(rect["y"]), 0)
+                self.assertLessEqual(float(rect["x"]) + float(rect["width"]), width)
+                self.assertLessEqual(float(rect["y"]) + float(rect["height"]), height)
+
     def test_locale_discovery_fallback_subpaths_and_rtl(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory)

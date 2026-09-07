@@ -50,6 +50,7 @@ def issue_url(number):
 
 def graph(curated, records, locale, text):
     nodes = {issue["number"]: issue for issue in curated["issues"]}
+    height = max(580, max(issue["position"][1] for issue in nodes.values()) + 50)
     definitions = []
     for kind in KINDS:
         definitions.append(f'<marker id="arrow-{kind}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="graph-arrow {kind}"/></marker>')
@@ -76,7 +77,7 @@ def graph(curated, records, locale, text):
         label = localized(issue["label"], locale)
         title = text["issue_link"].format(number=number, title=records[number]["title"])
         circles.append(f'<a class="node{emphasis}" href="{issue_url(number)}" aria-label="{h(title)}"><title>{h(title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 580" width="1120" height="580" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
+    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 
 def render(curated, snapshot, locale, bundles):

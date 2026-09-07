@@ -52,7 +52,7 @@ def validate(curated, snapshot):
         position = issue["position"]
         require(isinstance(position, list) and len(position) == 2, "Invalid graph position")
         require(all(type(value) is int for value in position), "Graph positions must be integers")
-        require(85 <= position[0] <= 1035 and 40 <= position[1] <= 550, "Graph node outside canvas")
+        require(85 <= position[0] <= 1035 and position[1] >= 40, "Graph node outside canvas")
     for issue in snapshot["issues"]:
         require(set(issue) == PUBLIC_FIELDS, "Snapshot contains unexpected fields; bodies/comments are forbidden")
         require(isinstance(issue["title"], str) and bool(issue["title"].strip()), "Missing issue title")
