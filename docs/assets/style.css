@@ -256,7 +256,11 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   .method { padding-block-start: 28px; }
   footer { align-items: flex-start; flex-direction: column; }
 }
-@media (prefers-reduced-motion: no-preference) { .filter, .node rect { transition: background-color .15s, stroke .15s; } }
+@media (prefers-reduced-motion: no-preference) {
+  .filter, .node rect { transition: background-color .15s, stroke .15s; }
+  /* Match the hover gap's quick opening and slower settling. */
+  .edge { transition: opacity 1.5s cubic-bezier(.22, 1, .36, 1); }
+}
 @media print {
   :root { color-scheme: light; --bg: white; --panel: white; --ink: #111; --muted: #333; --line: #bbb; --accent: #111; }
   .masthead, main, footer { width: 100%; }
