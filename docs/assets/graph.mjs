@@ -29,6 +29,13 @@ export function initGraph(svg, messages) {
     for (const edge of edges) edge.element.setAttribute('d', edgePath(byId.get(edge.from), byId.get(edge.to), edge.element.dataset.edgeType));
   }
 
+  function highlightConnections(nodeId = null) {
+    for (const edge of edges) {
+      const dimmed = nodeId !== null && edge.from !== nodeId && edge.to !== nodeId;
+      edge.element.classList[dimmed ? 'add' : 'remove']('edge-dimmed');
+    }
+  }
+
   function label() {
     motion.disabled = reduced.matches;
     motion.textContent = reduced.matches ? messages.graph_motion_reduced : paused || !hot ? messages.graph_motion_resume : messages.graph_motion_pause;
@@ -73,6 +80,7 @@ export function initGraph(svg, messages) {
   });
   reset.addEventListener('click', () => {
     cancelDrag();
+    highlightConnections();
     stop();
     simulation.reset();
     hot = true;
@@ -121,6 +129,7 @@ export function initGraph(svg, messages) {
     const node = simulation.nodes[i];
     element.addEventListener('pointerenter', event => {
       if (event.pointerType !== 'mouse') return;
+      highlightConnections(node.id);
       node.hovered = true;
       // Keep the link under the cursor while its neighbours make room.
       node.fixed = true;
@@ -129,6 +138,7 @@ export function initGraph(svg, messages) {
     });
     element.addEventListener('pointerleave', () => {
       if (!node.hovered) return;
+      highlightConnections();
       node.hovered = false;
       node.fixed = drag?.node === node;
       reheat(.18);
