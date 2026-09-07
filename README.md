@@ -36,4 +36,6 @@ English for now. The infrastructure is ready for more languages; the mouse has
 not expressed a preference.
 
 CC0 for the code and original writing. Issue titles belong to their linked
-sources. No affiliation with OpenAI. Just a cursor and some questions.
+sources. OpenAI Sans and [Codey](https://learn.chatgpt.com/docs/pets) are loaded
+from OpenAI's servers and belong to OpenAI. No affiliation. Just a cursor and
+some questions.

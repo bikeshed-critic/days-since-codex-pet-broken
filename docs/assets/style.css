@@ -189,6 +189,34 @@ footer { margin-block: 56px 32px; padding-block-start: 24px; border-top: 1px sol
 footer strong { font-weight: 500; }
 footer p { color: var(--muted); margin: 6px 0 0; }
 .data-links { display: flex; gap: 24px; flex-wrap: wrap; color: var(--muted); }
+/* Codey artwork and six-frame idle sequence: https://learn.chatgpt.com/docs/pets
+   The original sheet has eight columns and nine rows of 192 × 208 cells. */
+.pet-overlay {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 10;
+  width: 96px;
+  aspect-ratio: 192 / 208;
+  background-image: url("https://learn.chatgpt.com/images/codex/app/pets/codex-spritesheet.webp");
+  background-repeat: no-repeat;
+  background-size: 800% 900%;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+}
+@keyframes pet-idle {
+  0%, 100% { background-position: 0 0; }
+  25.4545% { background-position: 14.285714% 0; }
+  35.4545% { background-position: 28.571429% 0; }
+  45.4545% { background-position: 42.857143% 0; }
+  58.1818% { background-position: 57.142857% 0; }
+  70.9091% { background-position: 71.428571% 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pet-overlay { animation: pet-idle 6.6s step-end infinite; }
+}
 @media (max-width: 1050px) {
   .masthead, main, footer { width: calc(100% - 48px); }
   .clock { gap: 32px; padding-block: 56px 64px; }
@@ -202,6 +230,7 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   .method-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
+  .pet-overlay { width: 72px; }
   .masthead, main, footer { width: calc(100% - 32px); }
   .masthead { align-items: flex-start; flex-direction: column; gap: 10px; padding-block: 20px; }
   .brand { font-size: .9375rem; }
@@ -223,7 +252,7 @@ footer p { color: var(--muted); margin: 6px 0 0; }
 @media print {
   :root { color-scheme: light; --bg: white; --panel: white; --ink: #111; --muted: #333; --line: #bbb; --accent: #111; }
   .masthead, main, footer { width: 100%; }
-  .filters, .refresh-controls, .live-note, .graph-scroll, .graph-note { display: none !important; }
+  .filters, .refresh-controls, .live-note, .graph-scroll, .graph-note, .pet-overlay { display: none !important; }
   .observatory { display: block; }
   .clock { display: block; }
   .digits { font-size: 4rem; }

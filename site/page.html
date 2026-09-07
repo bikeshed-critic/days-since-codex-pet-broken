@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$description">
   <meta name="color-scheme" content="light dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' https://cdn.openai.com; img-src 'self' data:; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' https://cdn.openai.com; img-src 'self' data: https://learn.chatgpt.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <title>$page_title</title>
   <link rel="preconnect" href="https://cdn.openai.com" crossorigin>
@@ -61,6 +61,7 @@
     <noscript><p class="no-script">$no_script</p></noscript>
   </main>
   <footer><div><strong>$footer</strong><p>$unaffiliated</p></div><div class="data-links"><a href="${base}data/snapshot.json">$snapshot_download ↗</a><a href="${base}data/evidence.json">$evidence_download ↗</a></div></footer>
+  <div class="pet-overlay" aria-hidden="true"></div>
   <script id="page-data" type="application/json">$page_data</script>
 </body>
 </html>
