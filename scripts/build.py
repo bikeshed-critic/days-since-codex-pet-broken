@@ -11,7 +11,6 @@ from string import Template
 from model import KINDS, elapsed_days, require, timestamp, validate
 
 ROOT = Path(__file__).resolve().parents[1]
-COLORS = {"reference": "#c9f078", "official_duplicate": "#c9afff", "similarity": "#80c8ff", "hypothesis": "#e8c678", "opposite": "#ff9292"}
 PATTERNS = {"reference": "", "official_duplicate": "", "similarity": "9 6", "hypothesis": "2 7", "opposite": "12 4 2 4"}
 SYMBOLS = dict(zip(KINDS, ("R", "D", "S", "H", "O")))
 
@@ -53,7 +52,7 @@ def graph(curated, records, locale, text):
     nodes = {issue["number"]: issue for issue in curated["issues"]}
     definitions = []
     for kind in KINDS:
-        definitions.append(f'<marker id="arrow-{kind}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="{COLORS[kind]}"/></marker>')
+        definitions.append(f'<marker id="arrow-{kind}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="graph-arrow {kind}"/></marker>')
     paths = []
     for index, edge in enumerate(curated["relationships"]):
         kind = edge["type"]
@@ -69,7 +68,7 @@ def graph(curated, records, locale, text):
         cx, cy = (sx + ex) / 2 - uy * bend, (sy + ey) / 2 + ux * bend
         arrow = f' marker-end="url(#arrow-{kind})"' if kind in {"reference", "official_duplicate"} else ""
         description = f"#{edge['from']} / #{edge['to']}: {text[kind]}. {localized(edge['note'], locale)}"
-        paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke="{COLORS[kind]}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
+        paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
     circles = []
     for number, issue in nodes.items():
         x, y = issue["position"]
