@@ -27,6 +27,12 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '24'
+      - name: Restore graph layout cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: .cache/graph-layout.json
+          key: graph-layout-v1-${{ runner.os }}-${{ hashFiles('scripts/anneal.mjs', 'scripts/layout.py', 'site/graph-physics.mjs', 'data/curated.json') }}
+          restore-keys: graph-layout-v1-${{ runner.os }}-
       - name: Check data and generation
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Check browser logic

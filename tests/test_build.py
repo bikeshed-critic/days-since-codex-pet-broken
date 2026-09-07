@@ -2,6 +2,7 @@ from copy import deepcopy
 from datetime import datetime, timedelta
 from html.parser import HTMLParser
 import json
+import re
 from pathlib import Path
 import sys
 import tempfile
@@ -122,6 +123,14 @@ class StaticBuildTests(unittest.TestCase):
                 self.assertEqual(outputs[Path("assets") / module], (ROOT / "site" / module).read_bytes())
             self.assertEqual(outputs, {p.relative_to(second): p.read_bytes() for p in Path(second).rglob("*") if p.is_file()})
             page = Page((Path(first) / "index.html").read_text(encoding="utf-8"))
+            graph = next(attrs for tag, attrs in page.tags if tag == "svg")
+            self.assertEqual(graph["data-layout-settled"], "true")
+            layout = json.loads(outputs[Path("data/layout.json")])
+            baked = re.findall(r'data-node-id="(\d+)".*?<rect x="([^"]+)" y="([^"]+)"', (Path(first) / "index.html").read_text(encoding="utf-8"))
+            positions = {int(number): (float(x) + 80, float(y) + 29) for number, x, y in baked}
+            for node in layout["nodes"]:
+                self.assertAlmostEqual(positions[node["id"]][0], node["x"])
+                self.assertAlmostEqual(positions[node["id"]][1], node["y"])
             ids = [attrs["id"] for _, attrs in page.tags if "id" in attrs]
             self.assertEqual(len(ids), len(set(ids)))
             for _, attrs in page.tags:

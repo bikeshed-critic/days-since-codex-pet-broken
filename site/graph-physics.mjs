@@ -3,11 +3,11 @@ const HALF_WIDTH = 80;
 const HALF_HEIGHT = 29;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
-export function createSimulation(records, relationships, width, height) {
+export function createSimulation(records, relationships, width, height, { settled = false } = {}) {
   const nodes = records.map(record => ({ ...record, vx: 0, vy: 0, fixed: false, hovered: false, hoverAmount: 0 }));
   const byId = new Map(nodes.map(node => [node.id, node]));
   let links = [];
-  let alpha = 1;
+  let alpha = settled ? .006 : 1;
 
   function setLinks(edges) {
     const pairs = new Map();
@@ -32,7 +32,9 @@ export function createSimulation(records, relationships, width, height) {
     node.y = clamp(node.y, HALF_HEIGHT + 8, height - HALF_HEIGHT - 8);
   }
 
-  function step() {
+  function step({ shape = 1, temperature } = {}) {
+    // The build gradually expands circles into the browser's real rectangles.
+    if (temperature !== undefined) alpha = temperature;
     for (const node of nodes) {
       node.hoverAmount += ((node.hovered ? 1 : 0) - node.hoverAmount) * .12;
       node.vx += (width / 2 - node.x) * .0007 * alpha;
@@ -80,6 +82,28 @@ export function createSimulation(records, relationships, width, height) {
         for (let j = i + 1; j < nodes.length; j++) {
           const a = nodes[i], b = nodes[j];
           const dx = b.x - a.x, dy = b.y - a.y;
+          if (shape < 1) {
+            const radius = 70 * (1 - shape);
+            const qx = Math.max(0, Math.abs(dx) - 172 * shape);
+            const qy = Math.max(0, Math.abs(dy) - 70 * shape);
+            const distance = Math.hypot(qx, qy);
+            if (distance >= radius || (a.fixed && b.fixed)) continue;
+            const share = a.fixed || b.fixed ? 1 : .5;
+            let offsetX = 0, offsetY = 0;
+            if (distance > .001) {
+              const shift = (radius - distance) * share;
+              offsetX = qx / distance * shift * Math.sign(dx || 1);
+              offsetY = qy / distance * shift * Math.sign(dy || 1);
+            } else {
+              const overlapX = 70 + 102 * shape - Math.abs(dx);
+              const overlapY = 70 - Math.abs(dy);
+              if (overlapX < overlapY) offsetX = overlapX * share * Math.sign(dx || 1);
+              else offsetY = overlapY * share * Math.sign(dy || 1);
+            }
+            if (!a.fixed) { a.x -= offsetX; a.y -= offsetY; contain(a); }
+            if (!b.fixed) { b.x += offsetX; b.y += offsetY; contain(b); }
+            continue;
+          }
           const overlapX = 172 - Math.abs(dx), overlapY = 70 - Math.abs(dy);
           if (overlapX <= 0 || overlapY <= 0 || (a.fixed && b.fixed)) continue;
           const share = a.fixed || b.fixed ? 1 : .5;
@@ -97,11 +121,22 @@ export function createSimulation(records, relationships, width, height) {
   setLinks(relationships);
   return {
     nodes, setLinks, step,
+    energy() {
+      let total = 0;
+      for (const node of nodes) total += .00035 * ((node.x - width / 2) ** 2 + (node.y - height / 2) ** 2);
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          total += 5500 / Math.max(1, Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y));
+        }
+      }
+      for (const { a, b, strength } of links) total += .5 * strength * (Math.hypot(b.x - a.x, b.y - a.y) - 220) ** 2;
+      return total;
+    },
     reheat(amount = .8) { alpha = Math.max(alpha, amount); },
     move(node, x, y) { node.x = x; node.y = y; node.vx = node.vy = 0; contain(node); },
     reset() {
       nodes.forEach((node, i) => Object.assign(node, records[i], { vx: 0, vy: 0, fixed: false, hovered: false, hoverAmount: 0 }));
-      alpha = 1;
+      alpha = settled ? .006 : 1;
     },
   };
 }

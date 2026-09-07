@@ -16,9 +16,10 @@ export function initGraph(svg, messages) {
   });
   const edges = paths.map(element => ({ element, from: Number(element.dataset.edgeFrom), to: Number(element.dataset.edgeTo) }));
   const bounds = svg.viewBox.baseVal;
-  const simulation = createSimulation(records, edges, bounds.width, bounds.height);
+  const precomputed = svg.dataset.layoutSettled === 'true';
+  const simulation = createSimulation(records, edges, bounds.width, bounds.height, { settled: precomputed });
   const byId = new Map(simulation.nodes.map(node => [node.id, node]));
-  let paused = false, hot = true, frame = null, lastTime = null, accumulated = 0;
+  let paused = false, hot = !precomputed, frame = null, lastTime = null, accumulated = 0;
   let visible = !window.IntersectionObserver, keyboardFocus = false, drag = null, suppressedClick = null;
 
   function draw() {
@@ -83,7 +84,7 @@ export function initGraph(svg, messages) {
     highlightConnections();
     stop();
     simulation.reset();
-    hot = true;
+    hot = !precomputed;
     draw();
     schedule();
   });

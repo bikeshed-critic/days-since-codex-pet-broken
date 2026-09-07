@@ -21,3 +21,6 @@ Gemfile.lock
 __pycache__/
 *.py[cod]
 data/*.tmp
+
+# Build-time layout cache; browser assets are generated separately.
+.cache/

@@ -34,7 +34,7 @@ class Element {
   matches() { return true; }
 }
 
-function fixture(reduce = false) {
+function fixture(reduce = false, precomputed = false) {
   const document = new Element(), media = new Element();
   document.hidden = false; media.matches = reduce;
   const ids = new Map(['graph-controls', 'graph-motion', 'graph-reset', 'graph-interaction'].map(id => [id, new Element()]));
@@ -48,6 +48,7 @@ function fixture(reduce = false) {
     IntersectionObserver: class { constructor(callback) { intersection = callback; } observe() {} },
   };
   const svg = new Element();
+  svg.dataset.layoutSettled = String(precomputed);
   svg.ownerDocument = document;
   svg.viewBox = { baseVal: { width: 1120, height: 580 } };
   const nodes = [new Element({ nodeId: '1' }), new Element({ nodeId: '2' })];
@@ -170,4 +171,18 @@ test('mouse hover keeps the link still and releases it on leave, while respectin
   reduced.visible(true);
   reduced.nodes[0].emit('pointerenter', { pointerType: 'mouse' });
   assert.equal(reduced.frames.size, 0, 'hover must respect reduced motion');
+});
+
+test('a precomputed graph does no startup work and reset restores its still layout', () => {
+  const f = fixture(false, true);
+  f.visible(true);
+  assert.equal(f.frames.size, 0);
+  assert.equal(f.nodes[0].getAttribute('transform'), undefined);
+  f.nodes[0].emit('pointerenter', { pointerType: 'mouse' });
+  assert.equal(f.frames.size, 1, 'interaction should still wake the graph');
+  f.nodes[0].emit('pointerleave');
+  f.tick();
+  f.ids.get('graph-reset').emit('click');
+  assert.equal(f.frames.size, 0);
+  assert.equal(f.nodes[0].getAttribute('transform'), 'translate(0.00 0.00)');
 });

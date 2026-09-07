@@ -1,4 +1,4 @@
-"""Generate an offline, dependency-free GitHub Pages site into docs/."""
+"""Generate the static site offline with Python and Node.js into docs/."""
 
 from collections import Counter
 import html
@@ -9,6 +9,7 @@ import shutil
 from string import Template
 
 from model import KINDS, elapsed_days, require, timestamp, validate
+from layout import prepare_layout
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERNS = {"reference": "", "official_duplicate": "", "similarity": "9 6", "hypothesis": "2 7", "opposite": "12 4 2 4"}
@@ -48,17 +49,18 @@ def issue_url(number):
     return f"https://github.com/openai/codex/issues/{number}"
 
 
-def graph(curated, records, locale, text):
+def graph(curated, records, locale, text, layout=None):
     nodes = {issue["number"]: issue for issue in curated["issues"]}
-    height = max(580, max(issue["position"][1] for issue in nodes.values()) + 50)
+    positions = {node["id"]: (node["x"], node["y"]) for node in layout["nodes"]} if layout else {number: issue["position"] for number, issue in nodes.items()}
+    height = layout["height"] if layout else max(580, max(issue["position"][1] for issue in nodes.values()) + 50)
     definitions = []
     for kind in KINDS:
         definitions.append(f'<marker id="arrow-{kind}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="graph-arrow {kind}"/></marker>')
     paths = []
     for index, edge in enumerate(curated["relationships"]):
         kind = edge["type"]
-        x1, y1 = nodes[edge["from"]]["position"]
-        x2, y2 = nodes[edge["to"]]["position"]
+        x1, y1 = positions[edge["from"]]
+        x2, y2 = positions[edge["to"]]
         dx, dy = x2 - x1, y2 - y1
         distance = (dx * dx + dy * dy) ** 0.5
         ux, uy = dx / distance, dy / distance
@@ -72,15 +74,15 @@ def graph(curated, records, locale, text):
         paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" data-edge-from="{edge['from']}" data-edge-to="{edge['to']}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
     circles = []
     for number, issue in nodes.items():
-        x, y = issue["position"]
+        x, y = positions[number]
         emphasis = " anchor-node" if number == curated["counter_issue"] else " hub-node" if number == 41513 else ""
         label = localized(issue["label"], locale)
         title = text["issue_link"].format(number=number, title=records[number]["title"])
         circles.append(f'<a class="node{emphasis}" data-node-id="{number}" href="{issue_url(number)}" aria-label="{h(title)}"><title>{h(title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
-    return f'<svg id="issue-graph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
+    return f'<svg id="issue-graph" data-layout-settled="{str(layout is not None).lower()}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 
-def render(curated, snapshot, locale, bundles):
+def render(curated, snapshot, locale, bundles, layout=None):
     text = bundles[locale]
     counts = Counter(edge["type"] for edge in curated["relationships"])
     records = {issue["number"]: issue for issue in snapshot["issues"]}
@@ -98,7 +100,7 @@ def render(curated, snapshot, locale, bundles):
         "issue_count": len(records), "open_count": sum(issue["state"] == "open" for issue in records.values()),
         "graph_title": h(text["graph_title"].format(count=len(records))),
         "filter_count": h(text["filter_count"].format(visible=len(curated["relationships"]), total=len(curated["relationships"]))),
-        "graph": graph(curated, records, locale, text),
+        "graph": graph(curated, records, locale, text, layout),
     })
     alternate_links, language_links = [], []
     for tag, bundle in bundles.items():
@@ -145,8 +147,9 @@ def build(output=None):
     curated, snapshot = read_json(ROOT / "data/curated.json"), read_json(ROOT / "data/snapshot.json")
     validate(curated, snapshot)
     bundles = load_locales(ROOT / "locales")
+    layout = prepare_layout(curated)
     # Render every locale before touching generated files, so translation errors fail early.
-    pages = {locale: render(curated, snapshot, locale, bundles) for locale in bundles}
+    pages = {locale: render(curated, snapshot, locale, bundles, layout) for locale in bundles}
     for locale, page in pages.items():
         destination = output if locale == "en" else output / locale
         destination.mkdir(parents=True, exist_ok=True)
@@ -155,7 +158,7 @@ def build(output=None):
     for asset in ("style.css", "app.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
         shutil.copyfile(ROOT / "site" / asset, output / "assets" / asset)
     (output / "data").mkdir(exist_ok=True)
-    for name, dataset in (("snapshot", snapshot), ("evidence", curated)):
+    for name, dataset in (("snapshot", snapshot), ("evidence", curated), ("layout", layout)):
         (output / "data" / f"{name}.json").write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     print(f"Built {len(pages)} locale(s), {len(snapshot['issues'])} reports, {len(curated['relationships'])} relationships into {output}")
