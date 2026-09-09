@@ -232,8 +232,29 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   58.1818% { background-position: 57.142857% 0; }
   70.9091% { background-position: 71.428571% 0; }
 }
+/* Codex 26.903: hover plays row 4 three times, then resumes idle.
+   Five frames: 140 ms each, with a 280 ms hold on the final frame. */
+@keyframes pet-jump {
+  0% { background-position: 0 50%; }
+  16.6667% { background-position: 14.285714% 50%; }
+  33.3333% { background-position: 28.571429% 50%; }
+  50% { background-position: 42.857143% 50%; }
+  66.6667%, 100% { background-position: 57.142857% 50%; }
+}
+/* A separate name starts a fresh idle clock after the hover reaction. */
+@keyframes pet-idle-after-hover {
+  0%, 100% { background-position: 0 0; }
+  25.4545% { background-position: 14.285714% 0; }
+  35.4545% { background-position: 28.571429% 0; }
+  45.4545% { background-position: 42.857143% 0; }
+  58.1818% { background-position: 57.142857% 0; }
+  70.9091% { background-position: 71.428571% 0; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .pet-overlay { animation: pet-idle 6.6s step-end infinite; }
+  .pet-overlay:enabled:hover, .pet-overlay:focus-visible {
+    animation: pet-jump .84s step-end 3, pet-idle-after-hover 6.6s step-end 2.52s infinite;
+  }
 }
 @media (max-width: 1050px) {
   .masthead, main, footer { width: calc(100% - 48px); }
