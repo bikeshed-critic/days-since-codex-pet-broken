@@ -250,11 +250,25 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   58.1818% { background-position: 57.142857% 0; }
   70.9091% { background-position: 71.428571% 0; }
 }
+/* Eight locomotion frames: seven at 120 ms, the last at 220 ms. */
+@keyframes pet-run {
+  0% { background-position: 0 var(--pet-run-row); }
+  11.3208% { background-position: 14.285714% var(--pet-run-row); }
+  22.6415% { background-position: 28.571429% var(--pet-run-row); }
+  33.9623% { background-position: 42.857143% var(--pet-run-row); }
+  45.2830% { background-position: 57.142857% var(--pet-run-row); }
+  56.6038% { background-position: 71.428571% var(--pet-run-row); }
+  67.9245% { background-position: 85.714286% var(--pet-run-row); }
+  79.2453%, 100% { background-position: 100% var(--pet-run-row); }
+}
 @media (prefers-reduced-motion: no-preference) {
   .pet-overlay { animation: pet-idle 6.6s step-end infinite; }
   .pet-overlay:enabled:hover, .pet-overlay:focus-visible {
     animation: pet-jump .84s step-end 3, pet-idle-after-hover 6.6s step-end 2.52s infinite;
   }
+  .pet-overlay.dragging[data-run-direction] { animation: pet-run 1.06s step-end infinite; }
+  .pet-overlay[data-run-direction="right"] { --pet-run-row: 12.5%; }
+  .pet-overlay[data-run-direction="left"] { --pet-run-row: 25%; }
 }
 @media (max-width: 1050px) {
   .masthead, main, footer { width: calc(100% - 48px); }

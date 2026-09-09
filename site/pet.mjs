@@ -19,17 +19,27 @@ export function initPet(pet) {
   pet.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0 || drag) return;
     const rect = pet.getBoundingClientRect();
-    drag = { id: event.pointerId, x: event.clientX - rect.left, y: event.clientY - rect.top };
+    drag = { id: event.pointerId, x: event.clientX - rect.left, y: event.clientY - rect.top, lastX: event.clientX, lastY: event.clientY };
     pet.setPointerCapture(event.pointerId);
     pet.classList.add('dragging');
   });
   pet.addEventListener('pointermove', event => {
     if (event.pointerId !== drag?.id) return;
+    const dx = event.clientX - drag.lastX;
+    const dy = event.clientY - drag.lastY;
+    // Match Codex's four-pixel threshold so pointer jitter does not flip the pet.
+    if (Math.abs(dx) >= 4 || Math.abs(dy) >= 4) {
+      if (dx >= 4) pet.dataset.runDirection = 'right';
+      else if (dx <= -4) pet.dataset.runDirection = 'left';
+      drag.lastX = event.clientX;
+      drag.lastY = event.clientY;
+    }
     place(event.clientX - drag.x, event.clientY - drag.y);
   });
   function release(event) {
     if (event.pointerId !== drag?.id) return;
     drag = null;
+    delete pet.dataset.runDirection;
     pet.classList.remove('dragging');
     if (pet.hasPointerCapture(event.pointerId)) pet.releasePointerCapture(event.pointerId);
   }
