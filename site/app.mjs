@@ -1,7 +1,9 @@
 import { interpolate, refreshStatuses, stateLabel } from './refresh.mjs';
 import { initGraph } from './graph.mjs';
+import { initCounter } from './counter.mjs';
 
 const config = JSON.parse(document.getElementById('page-data').textContent);
+initCounter(document.getElementById('day-counter'), config.counterStartedAt, config.locale);
 const messages = config.messages;
 const filters = [...document.querySelectorAll('[data-filter]')];
 const edges = [...document.querySelectorAll('[data-edge-type]')];

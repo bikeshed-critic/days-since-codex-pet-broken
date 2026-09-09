@@ -18,7 +18,7 @@ There is also a report where the transparent overlay swallows clicks across a
 large area. For readers concerned that the pet was not intercepting enough input.
 
 The clock counts from [#34227](https://github.com/openai/codex/issues/34227) to the
-saved snapshot. Closing a ticket does not reset it. A closed ticket and a draggable
+present, automatically. Closing a ticket does not reset it. A closed ticket and a draggable
 pet remain separate accomplishments.
 
 ## Keeping the clock fed

@@ -15,7 +15,7 @@
   "headline": "Still looking for the hitbox.",
   "counter_unit": "days since this report was filed",
   "counter_anchor": "Counting from #{number}",
-  "counter_detail": "Completed 24-hour periods between the report's creation and this snapshot. Not a measure of uninterrupted breakage.",
+  "counter_detail": "Completed 24-hour periods since the report was filed. The clock keeps counting. Not a measure of uninterrupted breakage.",
   "captured": "Snapshot captured",
   "reviewed": "Relationships reviewed",
   "selected": "selected reports",
@@ -50,7 +50,7 @@
   "index_intro": "Original titles are kept for traceability. The short descriptions are editorial summaries. Closed does not, by itself, mean fixed.",
   "refresh": "Check live issue states",
   "refreshing": "Checking GitHub…",
-  "refresh_hint": "Optional, unauthenticated requests to GitHub. Updates issue-state labels below only; the snapshot, graph, counter, and reviewed relationships stay unchanged.",
+  "refresh_hint": "Optional, unauthenticated requests to GitHub. Updates issue-state labels below only; the snapshot, graph, and reviewed relationships stay unchanged. The clock runs on its own.",
   "refresh_success": "Checked {count} of {total} issue states at {time}.",
   "refresh_partial": "Checked {count} of {total} issue states at {time}. Unavailable issues retain their previous labels.",
   "refresh_failed": "GitHub is unavailable or rate-limited. Previous labels and the static snapshot are preserved.",
@@ -85,5 +85,5 @@
   "unaffiliated": "Independent project; not affiliated with OpenAI.",
   "snapshot_download": "Metadata snapshot",
   "evidence_download": "Evidence dataset",
-  "no_script": "The full snapshot, static map, and source ledger work without JavaScript. Graph motion, relationship filters, and the optional live check require JavaScript."
+  "no_script": "The full snapshot, static map, and source ledger work without JavaScript. The counter shows its value at the last site build. Automatic counting, graph motion, relationship filters, and the optional live check require JavaScript."
 }

@@ -1,5 +1,5 @@
 from copy import deepcopy
-from datetime import datetime, timedelta
+from datetime import timedelta
 from html.parser import HTMLParser
 import json
 import re
@@ -56,9 +56,15 @@ class StaticBuildTests(unittest.TestCase):
             [(edge["from"], edge["to"], edge["type"]) for edge in self.curated["relationships"]],
         )
         self.assertTrue(all(attrs["href"].startswith("https://github.com/openai/codex/issues/") for attrs in nodes))
+
+    def test_counter_uses_current_time_and_exposes_original_anchor(self):
         anchor = next(issue for issue in self.snapshot["issues"] if issue["number"] == self.curated["counter_issue"])
-        days = (datetime.fromisoformat(self.snapshot["fetched_at"].replace("Z", "+00:00")) - datetime.fromisoformat(anchor["created_at"].replace("Z", "+00:00"))) // timedelta(days=1)
-        self.assertIn(f'class="digits">{days}<', self.render())
+        now = build.timestamp(self.snapshot["fetched_at"]) + timedelta(days=3)
+        output = build.render(self.curated, self.snapshot, "en", self.bundles, now=now)
+        days = (now - build.timestamp(anchor["created_at"])) // timedelta(days=1)
+        self.assertIn(f'id="day-counter" class="digits">{days}<', output)
+        encoded = output.split('<script id="page-data" type="application/json">', 1)[1].split('</script>', 1)[0]
+        self.assertEqual(json.loads(encoded)["counterStartedAt"], anchor["created_at"])
 
     def test_escapes_issue_and_editorial_text(self):
         snapshot, curated = deepcopy(self.snapshot), deepcopy(self.curated)
@@ -115,11 +121,12 @@ class StaticBuildTests(unittest.TestCase):
 
     def test_offline_build_is_deterministic_and_project_relative(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
-            with patch("socket.create_connection", side_effect=AssertionError("Build must be offline")):
+            with patch("socket.create_connection", side_effect=AssertionError("Build must be offline")), patch("build.datetime") as clock:
+                clock.now.return_value = build.timestamp(self.snapshot["fetched_at"]) + timedelta(days=3)
                 build.build(Path(first))
                 build.build(Path(second))
             outputs = {p.relative_to(first): p.read_bytes() for p in Path(first).rglob("*") if p.is_file()}
-            for module in ("graph.mjs", "graph-physics.mjs"):
+            for module in ("counter.mjs", "graph.mjs", "graph-physics.mjs"):
                 self.assertEqual(outputs[Path("assets") / module], (ROOT / "site" / module).read_bytes())
             self.assertEqual(outputs, {p.relative_to(second): p.read_bytes() for p in Path(second).rglob("*") if p.is_file()})
             page = Page((Path(first) / "index.html").read_text(encoding="utf-8"))

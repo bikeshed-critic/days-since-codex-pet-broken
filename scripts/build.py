@@ -1,6 +1,7 @@
 """Generate the static site offline with Python and Node.js into docs/."""
 
 from collections import Counter
+from datetime import datetime, timezone
 import html
 import json
 from pathlib import Path
@@ -82,7 +83,7 @@ def graph(curated, records, locale, text, layout=None):
     return f'<svg id="issue-graph" data-layout-settled="{str(layout is not None).lower()}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 
-def render(curated, snapshot, locale, bundles, layout=None):
+def render(curated, snapshot, locale, bundles, layout=None, now=None):
     text = bundles[locale]
     counts = Counter(edge["type"] for edge in curated["relationships"])
     records = {issue["number"]: issue for issue in snapshot["issues"]}
@@ -94,7 +95,7 @@ def render(curated, snapshot, locale, bundles, layout=None):
         "captured_iso": h(snapshot["fetched_at"]),
         "captured_display": h(timestamp(snapshot["fetched_at"]).strftime("%Y-%m-%d %H:%M UTC")),
         "reviewed_iso": h(curated["reviewed_at"]),
-        "days": elapsed_days(anchor["created_at"], snapshot["fetched_at"]),
+        "days": elapsed_days(anchor["created_at"], (now or datetime.now(timezone.utc)).isoformat()),
         "anchor_url": anchor["url"],
         "counter_anchor": h(text["counter_anchor"].format(number=anchor["number"])),
         "issue_count": len(records), "open_count": sum(issue["state"] == "open" for issue in records.values()),
@@ -135,7 +136,7 @@ def render(curated, snapshot, locale, bundles, layout=None):
         dates = f'{h(text["filed"])} <time datetime="{h(issue["created_at"])}">{h(issue["created_at"][:10])}</time> · {h(text["updated"])} <time datetime="{h(issue["updated_at"])}">{h(issue["updated_at"][:10])}</time>'
         issues.append(f'<article class="issue"><div class="issue-number"><a href="{issue["url"]}">#{issue["number"]} ↗</a><span class="issue-state {issue["state"]}" data-state-for="{issue["number"]}">{h(state_label)}</span></div><div class="issue-content"><h3><a href="{issue["url"]}">{h(issue["title"])}</a></h3><p>{h(localized(editorial["summary"], locale))}</p><p class="issue-dates">{dates}</p></div></article>')
     parts["issue_list"] = "".join(issues)
-    config = {"locale": locale, "issueNumbers": sorted(records), "relationshipCount": len(curated["relationships"]), "messages": {key: value for key, value in text.items() if key != "_meta"}}
+    config = {"locale": locale, "counterStartedAt": anchor["created_at"], "issueNumbers": sorted(records), "relationshipCount": len(curated["relationships"]), "messages": {key: value for key, value in text.items() if key != "_meta"}}
     # Inert JSON still needs escaping: an HTML parser recognizes a closing script
     # tag before a JavaScript or JSON parser can see it.
     parts["page_data"] = json.dumps(config, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
@@ -149,13 +150,14 @@ def build(output=None):
     bundles = load_locales(ROOT / "locales")
     layout = prepare_layout(curated)
     # Render every locale before touching generated files, so translation errors fail early.
-    pages = {locale: render(curated, snapshot, locale, bundles, layout) for locale in bundles}
+    now = datetime.now(timezone.utc)
+    pages = {locale: render(curated, snapshot, locale, bundles, layout, now) for locale in bundles}
     for locale, page in pages.items():
         destination = output if locale == "en" else output / locale
         destination.mkdir(parents=True, exist_ok=True)
         (destination / "index.html").write_text(page, encoding="utf-8")
     (output / "assets").mkdir(exist_ok=True)
-    for asset in ("style.css", "app.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
+    for asset in ("style.css", "app.mjs", "counter.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
         shutil.copyfile(ROOT / "site" / asset, output / "assets" / asset)
     (output / "data").mkdir(exist_ok=True)
     for name, dataset in (("snapshot", snapshot), ("evidence", curated), ("layout", layout)):
