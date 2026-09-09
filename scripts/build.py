@@ -161,7 +161,7 @@ def build(output=None):
         destination.mkdir(parents=True, exist_ok=True)
         (destination / "index.html").write_text(page, encoding="utf-8")
     (output / "assets").mkdir(exist_ok=True)
-    for asset in ("style.css", "app.mjs", "counter.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
+    for asset in ("style.css", "app.mjs", "counter.mjs", "pet.mjs", "refresh.mjs", "graph.mjs", "graph-physics.mjs"):
         shutil.copyfile(ROOT / "site" / asset, output / "assets" / asset)
     (output / "data").mkdir(exist_ok=True)
     for name, dataset in (("snapshot", snapshot), ("evidence", curated), ("layout", layout)):

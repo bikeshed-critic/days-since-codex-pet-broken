@@ -4,6 +4,7 @@
   "description": "An independent observatory of Codex desktop-pet input failures, reported recoveries, and remaining cases. Follow the reports and their sources.",
   "skip": "Skip to issue index",
   "brand": "Days since Codex pet broken",
+  "pet_controls": "Codey. Drag to move, or use the arrow keys. Home resets its position.",
   "independent": "Independent issue observatory",
   "map_section": "01 / Map",
   "index_section": "02 / Index",

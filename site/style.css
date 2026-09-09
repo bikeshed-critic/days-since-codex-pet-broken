@@ -210,6 +210,10 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   z-index: 10;
   width: 96px;
   aspect-ratio: 192 / 208;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
   background-image: url("https://learn.chatgpt.com/images/codex/app/pets/codex-spritesheet.webp");
   background-repeat: no-repeat;
   background-size: 800% 900%;
@@ -218,6 +222,8 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   pointer-events: none;
   user-select: none;
 }
+.pet-overlay:enabled { pointer-events: auto; touch-action: none; cursor: grab; }
+.pet-overlay.dragging { cursor: grabbing; }
 @keyframes pet-idle {
   0%, 100% { background-position: 0 0; }
   25.4545% { background-position: 14.285714% 0; }

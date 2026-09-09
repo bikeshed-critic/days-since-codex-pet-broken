@@ -1,9 +1,11 @@
 import { interpolate, refreshStatuses, stateLabel } from './refresh.mjs';
 import { initGraph } from './graph.mjs';
 import { initCounter } from './counter.mjs';
+import { initPet } from './pet.mjs';
 
 const config = JSON.parse(document.getElementById('page-data').textContent);
 initCounter(document.getElementById('day-counter'), config.counterStartedAt, config.locale);
+initPet(document.getElementById('pet-overlay'));
 const messages = config.messages;
 const filters = [...document.querySelectorAll('[data-filter]')];
 const edges = [...document.querySelectorAll('[data-edge-type]')];
