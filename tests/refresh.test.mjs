@@ -106,6 +106,14 @@ test('page wiring makes no background requests; filters and live labels change o
   const controls = [new Element({ filter: 'reference' }), new Element({ filter: 'hypothesis' })];
   const edges = [new Element({ edgeType: 'reference' }), new Element({ edgeType: 'hypothesis' })];
   const labels = new Map([[41513, new Element()], [41501, new Element()]]);
+  const nodes = new Map([41513, 41501].map(number => {
+    const node = new Element({ nodeState: 'open' });
+    node.setAttribute('data-issue-label', `Issue #${number}`);
+    const title = new Element();
+    title.textContent = `Issue #${number} — Open · snapshot`;
+    node.querySelector = selector => { assert.equal(selector, 'title'); return title; };
+    return [number, node];
+  }));
   labels.get(41513).textContent = labels.get(41501).textContent = 'Open · snapshot';
   const fieldset = new Element();
   const previous = { document: globalThis.document, fetch: globalThis.fetch, setTimeout: globalThis.setTimeout };
@@ -118,6 +126,8 @@ test('page wiring makes no background requests; filters and live labels change o
       querySelectorAll: selector => {
         if (selector === '[data-filter]') return controls;
         if (selector === '[data-edge-type]') return edges;
+        const nodeMatch = selector.match(/^\[data-node-id="(\d+)"\]$/);
+        if (nodeMatch) return [nodes.get(Number(nodeMatch[1]))];
         const match = selector.match(/^\[data-state-for="(\d+)"\]$/);
         return match ? [labels.get(Number(match[1]))] : [];
       },
@@ -142,6 +152,11 @@ test('page wiring makes no background requests; filters and live labels change o
     assert.equal(requests, 2);
     assert.equal(labels.get(41513).textContent, 'Closed / completed · live');
     assert.equal(labels.get(41501).textContent, 'Open · snapshot');
+    assert.equal(nodes.get(41513).dataset.nodeState, 'closed');
+    assert.equal(nodes.get(41513).getAttribute('aria-label'), 'Issue #41513 — Closed / completed · live');
+    assert.equal(nodes.get(41513).querySelector('title').textContent, 'Issue #41513 — Closed / completed · live');
+    assert.equal(nodes.get(41501).dataset.nodeState, 'open');
+    assert.equal(nodes.get(41501).querySelector('title').textContent, 'Issue #41501 — Open · snapshot');
     assert.match(byId.get('refresh-status').textContent, /Checked 1 of 2/);
     assert.equal(byId.get('refresh').disabled, true);
     delayed[0]();

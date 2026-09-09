@@ -56,6 +56,12 @@ class StaticBuildTests(unittest.TestCase):
             [(edge["from"], edge["to"], edge["type"]) for edge in self.curated["relationships"]],
         )
         self.assertTrue(all(attrs["href"].startswith("https://github.com/openai/codex/issues/") for attrs in nodes))
+        records = {issue["number"]: issue for issue in self.snapshot["issues"]}
+        for node in nodes:
+            state = records[int(node["data-node-id"])]["state"]
+            self.assertEqual(node["data-node-state"], state)
+            self.assertIn(self.bundles["en"][state], node["aria-label"])
+            self.assertIn("snapshot", node["aria-label"])
 
     def test_counter_uses_current_time_and_exposes_original_anchor(self):
         anchor = next(issue for issue in self.snapshot["issues"] if issue["number"] == self.curated["counter_issue"])

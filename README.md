@@ -2,11 +2,15 @@
 
 [Visit the live site](https://bikeshed-critic.github.io/days-since-codex-pet-broken/).
 
-The pet is right there. The mouse has a different opinion.
+Some pets have found the mouse. Others are still networking.
 
 A collection of reports about clicking, dragging, and the increasingly academic
 relationship between the two. The reports now have a relationship graph.
-The pet and the cursor are still working on theirs.
+Some of the pets have repaired theirs.
+
+September 9 brought [reports of working input after an update](https://github.com/openai/codex/issues/34227#issuecomment-5604504387)
+to Windows package `26.903.8094.0`. There are also [remaining failure reports](https://github.com/openai/codex/issues/44031)
+on other builds and setups. The receipts now include the good news.
 
 ## We brought receipts
 
@@ -18,8 +22,9 @@ There is also a report where the transparent overlay swallows clicks across a
 large area. For readers concerned that the pet was not intercepting enough input.
 
 The clock counts from [#34227](https://github.com/openai/codex/issues/34227) to the
-present, automatically. Closing a ticket does not reset it. A closed ticket and a draggable
-pet remain separate accomplishments.
+present, automatically. Its reporter now confirms working input; the number is
+the report's age, not a running total of broken days. Graph borders track open and
+closed tickets. The notes track what happened to the actual pets.
 
 ## Keeping the clock fed
 

@@ -79,7 +79,11 @@ def graph(curated, records, locale, text, layout=None):
         emphasis = " anchor-node" if number == curated["counter_issue"] else " hub-node" if number == 41513 else ""
         label = localized(issue["label"], locale)
         title = text["issue_link"].format(number=number, title=records[number]["title"])
-        circles.append(f'<a class="node{emphasis}" data-node-id="{number}" href="{issue_url(number)}" aria-label="{h(title)}"><title>{h(title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
+        state = records[number]["state"]
+        reason = " / " + text.get(records[number]["state_reason"], text["unknown_reason"]) if state == "closed" else ""
+        status = f'{text[state]}{reason} · {text["snapshot"]}'
+        accessible_title = f"{title} — {status}"
+        circles.append(f'<a class="node{emphasis}" data-node-id="{number}" data-node-state="{state}" data-issue-label="{h(title)}" href="{issue_url(number)}" aria-label="{h(accessible_title)}"><title>{h(accessible_title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
     return f'<svg id="issue-graph" data-layout-settled="{str(layout is not None).lower()}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 

@@ -44,6 +44,12 @@ refresh.addEventListener('click', async () => {
         label.classList.remove('open', 'closed');
         label.classList.add(live.state, 'live');
       }
+      for (const node of document.querySelectorAll(`[data-node-id="${number}"]`)) {
+        node.dataset.nodeState = live.state;
+        const title = `${node.getAttribute('data-issue-label')} — ${stateLabel(live, messages)}`;
+        node.setAttribute('aria-label', title);
+        node.querySelector('title').textContent = title;
+      }
     }
     const key = !result.states.size ? 'refresh_failed' : result.failures.size ? 'refresh_partial' : 'refresh_success';
     const time = new Intl.DateTimeFormat(config.locale, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date());
