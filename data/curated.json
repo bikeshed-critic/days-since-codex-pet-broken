@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-07",
+  "reviewed_at": "2026-09-09",
   "counter_issue": 34227,
   "issues": [
     {
@@ -79,7 +79,7 @@
         "en": "Hit region drifts"
       },
       "summary": {
-        "en": "The July report describes a usable input area drifting from the visible pet. Later comments report complete click-through, including at 100% scaling. This remains the counter anchor, not a claimed master issue or single root cause."
+        "en": "The July report describes the usable input area drifting from the visible pet. A September 9 follow-up confirms hover, clicks, and repeated dragging working after updating to package 26.903.8094.0, without a workaround. This remains the report-age anchor, not a claim of uninterrupted failure."
       }
     },
     {
@@ -92,7 +92,7 @@
         "en": "No drag, one screen"
       },
       "summary": {
-        "en": "A single-display regression affects built-in and custom pets. A community commenter redirects discussion to #34227; September 7 comments still report failed input on package 26.901.6511.0. The redirect is not an official duplicate decision."
+        "en": "An earlier no-drag report including the default pet. September 9 commenters report recovery after updating to package 26.903.8094.0 or app version 26.903.61454; one also reports working floating voice controls. These are affected-user confirmations, not a universal regression test."
       }
     },
     {
@@ -248,7 +248,7 @@
         "en": "Click-through hub"
       },
       "summary": {
-        "en": "Built-in and custom pets reportedly become click-through. Later comments include 100% scaling reproductions and temporary layered-window recovery. This well-linked discussion is not an officially designated master issue."
+        "en": "Built-in and custom pets were reported click-through. September 9 commenters, including the original reporter, report recovery on package 26.903.8094.0 or app version 26.903.61454. The issue is now closed/completed; neither closure nor these local recoveries establishes that every related failure is fixed."
       }
     },
     {
@@ -274,7 +274,7 @@
         "en": "Partial click-through"
       },
       "summary": {
-        "en": "This report describes partial or complete click-through at 150% display scaling and explicitly points to #34227."
+        "en": "Reports a visible Windows pet passing clicks through and refusing to drag. A September 9 comment says it is solved for that user, without naming a build or test scope."
       }
     },
     {
@@ -378,7 +378,7 @@
         "en": "Move, then lose input"
       },
       "summary": {
-        "en": "Reports a detached input area after moving or resizing built-in and custom pets. It also describes dragging failing over the Codex main window while clicking may still work. Proposed native-input explanations remain hypotheses."
+        "en": "Reports interaction breaking after moving or resizing. Follow-ups describe both temporary resize-based recovery and failures on app version 26.905.11957. The helper author later corrected the recovery sequence and warned that native region scans can miss a working overlay."
       }
     },
     {
@@ -404,7 +404,7 @@
         "en": "First release fails"
       },
       "summary": {
-        "en": "Reports one successful drag followed by lost physical mouse interaction with built-in and custom pets. Synthetic movement reportedly still works; that does not verify normal pointer delivery."
+        "en": "Reports one successful drag followed by input failure. A community experiment on package 26.901.5280.0 reproduced an initial-size-limited input area in the same Owl runtime; disabling the input-shape branch alone was insufficient. This is reported experimental evidence, not a confirmed source-level cause."
       }
     },
     {
@@ -469,7 +469,7 @@
         "en": "Input island offset"
       },
       "summary": {
-        "en": "Reports a mapped input island near the overlay’s upper-left while the visible pet is elsewhere, even with the passthrough flag absent. September 7 follow-up reports the mismatch on package 26.901.6511.0; exact cause remains unconfirmed."
+        "en": "Reports a displaced usable input area and later failures on package 26.901.6511.0. A September 7 follow-up confirms an alpha-based recovery was lost after reboot; another helper moves the overlay externally without repairing its own mouse interaction."
       }
     },
     {
@@ -508,7 +508,7 @@
         "en": "Voice blocks desktop"
       },
       "summary": {
-        "en": "Reports a voice orb snapping back and refusing drag, sometimes accompanied by blocked desktop/taskbar clicks. Show desktop restores other clicks but not orb dragging; no shared cause with pet click-through is established."
+        "en": "Reports floating voice controls and desktop interaction being obstructed. A September 8 follow-up describes partial input after moving the orb: one side and the microphone respond while the other side and two controls do not. A shared cause with pet failures remains unconfirmed."
       }
     },
     {
@@ -626,6 +626,97 @@
       },
       "summary": {
         "en": "Reports undraggable pets and an unclickable voice control on Windows package 26.901.5003.0. This report does not claim observed click-through, a tested restart recovery, or an established root cause."
+      }
+    },
+    {
+      "number": 33224,
+      "position": [
+        95,
+        1170
+      ],
+      "label": {
+        "en": "After final resize"
+      },
+      "summary": {
+        "en": "Originally about physical-cursor gaze, with working hover and drag. A September 7 follow-up reports both built-in and custom pets losing pointer delivery after the final resize, even with the input-shape branch disabled in a local app copy. The proposed passthrough-cache cause is unconfirmed."
+      }
+    },
+    {
+      "number": 43493,
+      "position": [
+        325,
+        1170
+      ],
+      "label": {
+        "en": "Pet and voice button"
+      },
+      "summary": {
+        "en": "Reports the pet and its voice button ignoring clicks on package 26.901.6511.0, with desktop selection appearing underneath during drag attempts. Restarting and updating did not resolve this reproduction."
+      }
+    },
+    {
+      "number": 43713,
+      "position": [
+        555,
+        1170
+      ],
+      "label": {
+        "en": "First-hover trace"
+      },
+      "summary": {
+        "en": "Reports mouse events stopping after the first hover while animation timers and painting continue on package 26.901.5003.0. The locally recorded trace is described but not attached; it does not establish the initiating native defect or a built-in-pet reproduction."
+      }
+    },
+    {
+      "number": 43717,
+      "position": [
+        785,
+        1170
+      ],
+      "label": {
+        "en": "Hover without buttons"
+      },
+      "summary": {
+        "en": "Reports failed drag and right-click with built-in and custom pets on package 26.901.6511.0, despite occasional hover animation. Repair, reset, and tests at both 200% and 100% scaling did not help."
+      }
+    },
+    {
+      "number": 43723,
+      "position": [
+        1015,
+        1170
+      ],
+      "label": {
+        "en": "Windows 10 voice"
+      },
+      "summary": {
+        "en": "Reports all three floating voice controls ignoring clicks and the orb refusing to drag on Windows 10, package 26.901.6511.0. Voice continues working; app and computer restarts did not help. Pointer pass-through is user-observed, not instrumented."
+      }
+    },
+    {
+      "number": 43789,
+      "position": [
+        95,
+        1280
+      ],
+      "label": {
+        "en": "Built-in click-through"
+      },
+      "summary": {
+        "en": "Reports clicks and drags on the visible built-in pet reaching desktop content underneath, including after restarting. The exact app and Windows versions are not supplied."
+      }
+    },
+    {
+      "number": 44031,
+      "position": [
+        325,
+        1280
+      ],
+      "label": {
+        "en": "Windows 10 hover only"
+      },
+      "summary": {
+        "en": "Reports working hover but failed clicks and dragging on Windows 10 build 19045 with app version 26.905.11957. Restarting and switching to the built-in pet did not help. This remains a failure report alongside recoveries reported on other builds and systems."
       }
     }
   ],
@@ -3602,6 +3693,544 @@
       ],
       "note": {
         "en": "One voice-overlay report includes a large opaque surface intercepting other applications’ input; the other passes input through to Chrome. Both obstruct use, with opposite pointer outcomes."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 41501,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923#issuecomment-5577846051",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #41501. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42255,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923#issuecomment-5577846051",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42255. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 42923,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/42923#issuecomment-5577846051",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42289. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42469,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5586906841",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42469. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43200,
+      "to": 42923,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5586906841",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42923. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 42289,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493#issuecomment-5572708776",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42289 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493#issuecomment-5572708776",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42661 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 43061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493#issuecomment-5572708776",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43061 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 43200,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493#issuecomment-5572708776",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43200 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 43346,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493#issuecomment-5572708776",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43346 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43713,
+      "to": 34227,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43713",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #34227. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43713,
+      "to": 41920,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43713",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41920. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43713,
+      "to": 42255,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43713",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #42255. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43713,
+      "to": 43061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43713#issuecomment-5579942544",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43061 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43713,
+      "to": 43200,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43713#issuecomment-5579942544",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43200 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 43200,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717#issuecomment-5580849102",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #43200. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717#issuecomment-5580137870",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42661 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 42927,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717#issuecomment-5580137870",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42927 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717#issuecomment-5580137870",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42945 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 43493,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717#issuecomment-5580137870",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43493 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43723,
+      "to": 41262,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43723",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "The issue body explicitly references #41262. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43723,
+      "to": 43226,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43723#issuecomment-5580223524",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43226 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 42661,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5590597894",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42661. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5590597894",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #42945. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 43061,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5590597894",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #43061. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 43200,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5590597894",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #43200. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 43717,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5590597894",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "The community comment explicitly references #43717. The link does not establish a shared cause or official consolidation."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 42927,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031#issuecomment-5595305133",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42927 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 42945,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031#issuecomment-5595305133",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42945 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 42946,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031#issuecomment-5595305133",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #42946 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 43717,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031#issuecomment-5595305133",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43717 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 43789,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031#issuecomment-5595305133",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #43789 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 43493,
+      "to": 42945,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43493",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42945",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both report visible pets passing input to the desktop. The newer report also names the pet voice button; matching symptoms do not establish a common defect."
+      }
+    },
+    {
+      "from": 43717,
+      "to": 42927,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43717",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42927",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both report hover responses while mouse-button interaction fails. Hover alone is not proof of working click or drag delivery."
+      }
+    },
+    {
+      "from": 43789,
+      "to": 41513,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/43789",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/41513",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both include a built-in pet passing clicks and drags through. The newer report omits a build number, so it cannot establish failure on the build later reported working in #41513."
+      }
+    },
+    {
+      "from": 44031,
+      "to": 42927,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/44031",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42927",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both describe working hover with failed clicks and dragging. The newer Windows 10 report names app version 26.905.11957; it is not a controlled comparison with the reported working package."
+      }
+    },
+    {
+      "from": 33224,
+      "to": 42230,
+      "type": "hypothesis",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/33224#issuecomment-5572252675",
+          "kind": "community_comment"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42230#issuecomment-5550830447",
+          "kind": "community_comment"
+        }
+      ],
+      "note": {
+        "en": "Both community experiments report resize-related input failure persisting with the input-shape branch disabled. Window lifecycle and passthrough transitions are candidates, not a verified shared cause."
       }
     }
   ]

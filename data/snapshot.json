@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "fetched_at": "2026-09-07T06:50:13Z",
+  "fetched_at": "2026-09-09T16:26:58Z",
   "issues": [
     {
       "number": 21359,
@@ -27,6 +27,22 @@
       "created_at": "2026-05-07T08:04:48Z",
       "updated_at": "2026-06-06T14:18:01Z",
       "closed_at": "2026-06-06T14:18:01Z",
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 33224,
+      "title": "Codex Desktop v2 pet look directions ignore the physical mouse and only follow the Computer Use cursor on Windows",
+      "url": "https://github.com/openai/codex/issues/33224",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-07-15T03:37:51Z",
+      "updated_at": "2026-09-07T14:40:17Z",
+      "closed_at": null,
       "labels": [
         "app",
         "bug",
@@ -90,7 +106,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-07-19T20:41:57Z",
-      "updated_at": "2026-09-06T16:22:29Z",
+      "updated_at": "2026-09-09T15:35:13Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -106,7 +122,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-07-20T09:34:31Z",
-      "updated_at": "2026-09-07T05:32:57Z",
+      "updated_at": "2026-09-09T14:24:47Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -232,7 +248,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-29T04:01:57Z",
-      "updated_at": "2026-09-06T23:08:04Z",
+      "updated_at": "2026-09-08T15:14:54Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -264,7 +280,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-29T08:40:26Z",
-      "updated_at": "2026-09-06T18:17:16Z",
+      "updated_at": "2026-09-09T14:46:11Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -293,11 +309,11 @@
       "number": 41513,
       "title": "[Windows][Pets] Built-in and custom floating pets become click-through and cannot be dragged",
       "url": "https://github.com/openai/codex/issues/41513",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "created_at": "2026-08-29T10:09:49Z",
-      "updated_at": "2026-09-06T22:32:26Z",
-      "closed_at": null,
+      "updated_at": "2026-09-09T16:24:10Z",
+      "closed_at": "2026-09-09T15:03:31Z",
       "labels": [
         "app",
         "bug",
@@ -328,7 +344,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-29T13:37:13Z",
-      "updated_at": "2026-09-04T03:48:35Z",
+      "updated_at": "2026-09-09T10:46:51Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -344,7 +360,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-30T02:41:45Z",
-      "updated_at": "2026-09-05T03:19:10Z",
+      "updated_at": "2026-09-07T07:31:56Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -360,7 +376,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-31T06:36:31Z",
-      "updated_at": "2026-09-01T16:00:19Z",
+      "updated_at": "2026-09-08T22:11:38Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -407,7 +423,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-01T02:28:20Z",
-      "updated_at": "2026-09-07T02:46:12Z",
+      "updated_at": "2026-09-09T02:52:12Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -455,7 +471,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-02T02:54:39Z",
-      "updated_at": "2026-09-06T20:04:22Z",
+      "updated_at": "2026-09-08T13:33:32Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -566,7 +582,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-04T02:48:34Z",
-      "updated_at": "2026-09-07T05:40:57Z",
+      "updated_at": "2026-09-08T02:50:42Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -582,7 +598,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-04T17:58:02Z",
-      "updated_at": "2026-09-05T14:45:26Z",
+      "updated_at": "2026-09-07T12:55:18Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -614,7 +630,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-04T21:47:38Z",
-      "updated_at": "2026-09-04T21:49:04Z",
+      "updated_at": "2026-09-08T19:11:08Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -629,7 +645,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-05T03:46:16Z",
-      "updated_at": "2026-09-05T03:48:20Z",
+      "updated_at": "2026-09-08T01:46:30Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -724,7 +740,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-06T09:55:47Z",
-      "updated_at": "2026-09-07T05:41:22Z",
+      "updated_at": "2026-09-08T18:03:46Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -756,6 +772,101 @@
       "state_reason": null,
       "created_at": "2026-09-07T03:46:41Z",
       "updated_at": "2026-09-07T03:47:56Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 43493,
+      "title": "Mascot and voice button do not respond to clicks on Windows",
+      "url": "https://github.com/openai/codex/issues/43493",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-07T15:18:28Z",
+      "updated_at": "2026-09-07T15:19:39Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 43713,
+      "title": "[Windows][26.901.5003.0] Pet stops responding after first hover while animation timers continue",
+      "url": "https://github.com/openai/codex/issues/43713",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-08T05:46:54Z",
+      "updated_at": "2026-09-08T05:48:06Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 43717,
+      "title": "Desktop pets cannot be dragged or right-clicked on Windows",
+      "url": "https://github.com/openai/codex/issues/43717",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-08T06:07:29Z",
+      "updated_at": "2026-09-08T07:11:14Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 43723,
+      "title": "Windows 10: floating Voice overlay ignores all control clicks and cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/43723",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-08T06:16:06Z",
+      "updated_at": "2026-09-08T06:17:19Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 43789,
+      "title": "[Windows] Official Codex pet is click-through and cannot be dragged",
+      "url": "https://github.com/openai/codex/issues/43789",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-08T10:13:43Z",
+      "updated_at": "2026-09-08T19:24:36Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 44031,
+      "title": "On Windows, the pet is displayed, but I can't click or drag it with the mouse. The pet reacts when I hover the mouse over it, but I can't actually click or drag it.",
+      "url": "https://github.com/openai/codex/issues/44031",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-09T03:24:42Z",
+      "updated_at": "2026-09-09T03:25:52Z",
       "closed_at": null,
       "labels": [
         "app",
