@@ -201,8 +201,8 @@ footer { margin-block: 56px 32px; padding-block-start: 24px; border-top: 1px sol
 footer strong { font-weight: 500; }
 footer p { color: var(--muted); margin: 6px 0 0; }
 .data-links { display: flex; gap: 24px; flex-wrap: wrap; color: var(--muted); }
-/* Codey artwork and six-frame idle sequence: https://learn.chatgpt.com/docs/pets
-   The original sheet has eight columns and nine rows of 192 × 208 cells. */
+/* Codey v6 from Codex Windows package 26.903.8094.0.
+   Eight columns and eleven rows of 192 × 208 cells; artwork belongs to OpenAI. */
 .pet-overlay {
   position: fixed;
   right: max(16px, env(safe-area-inset-right));
@@ -214,9 +214,9 @@ footer p { color: var(--muted); margin: 6px 0 0; }
   padding: 0;
   background-color: transparent;
   appearance: none;
-  background-image: url("https://learn.chatgpt.com/images/codex/app/pets/codex-spritesheet.webp");
+  background-image: url("./codex-spritesheet-v6-51045ae208c0.webp");
   background-repeat: no-repeat;
-  background-size: 800% 900%;
+  background-size: 800% 1100%;
   background-position: 0 0;
   image-rendering: pixelated;
   pointer-events: none;
@@ -235,11 +235,11 @@ footer p { color: var(--muted); margin: 6px 0 0; }
 /* Codex 26.903: hover plays row 4 three times, then resumes idle.
    Five frames: 140 ms each, with a 280 ms hold on the final frame. */
 @keyframes pet-jump {
-  0% { background-position: 0 50%; }
-  16.6667% { background-position: 14.285714% 50%; }
-  33.3333% { background-position: 28.571429% 50%; }
-  50% { background-position: 42.857143% 50%; }
-  66.6667%, 100% { background-position: 57.142857% 50%; }
+  0% { background-position: 0 40%; }
+  16.6667% { background-position: 14.285714% 40%; }
+  33.3333% { background-position: 28.571429% 40%; }
+  50% { background-position: 42.857143% 40%; }
+  66.6667%, 100% { background-position: 57.142857% 40%; }
 }
 /* A separate name starts a fresh idle clock after the hover reaction. */
 @keyframes pet-idle-after-hover {
@@ -267,8 +267,8 @@ footer p { color: var(--muted); margin: 6px 0 0; }
     animation: pet-jump .84s step-end 3, pet-idle-after-hover 6.6s step-end 2.52s infinite;
   }
   .pet-overlay.dragging[data-run-direction] { animation: pet-run 1.06s step-end infinite; }
-  .pet-overlay[data-run-direction="right"] { --pet-run-row: 12.5%; }
-  .pet-overlay[data-run-direction="left"] { --pet-run-row: 25%; }
+  .pet-overlay[data-run-direction="right"] { --pet-run-row: 10%; }
+  .pet-overlay[data-run-direction="left"] { --pet-run-row: 20%; }
 }
 @media (max-width: 1050px) {
   .masthead, main, footer { width: calc(100% - 48px); }

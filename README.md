@@ -43,6 +43,7 @@ English for now. The infrastructure is ready for more languages; the mouse has
 not expressed a preference.
 
 CC0 for the code and original writing. Issue titles belong to their linked
-sources. OpenAI Sans and [Codey](https://learn.chatgpt.com/docs/pets) are loaded
-from OpenAI's servers and belong to OpenAI. No affiliation. Just a cursor and
-some questions.
+sources. OpenAI Sans is loaded from OpenAI's servers. [Codey](https://learn.chatgpt.com/docs/pets)
+uses the bundled v6 sprite sheet from Codex Windows package `26.903.8094.0`.
+Both belong to OpenAI and are outside this project's CC0 dedication.
+No affiliation. Just a cursor and some questions.
