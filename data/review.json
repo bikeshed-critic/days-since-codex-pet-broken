@@ -1,53 +1,53 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-09",
+  "reviewed_at": "2026-09-10",
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
-      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-07",
-      "reported_total": 33,
-      "results_fetched": 33,
+      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-09",
+      "reported_total": 18,
+      "results_fetched": 18,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-07",
-      "reported_total": 36,
-      "results_fetched": 36,
+      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-09",
+      "reported_total": 18,
+      "results_fetched": 18,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-07",
-      "reported_total": 2,
-      "results_fetched": 2,
+      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-09",
+      "reported_total": 1,
+      "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-07",
-      "reported_total": 34,
-      "results_fetched": 34,
+      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-09",
+      "reported_total": 18,
+      "results_fetched": 18,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-07",
-      "reported_total": 25,
-      "results_fetched": 25,
+      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-09",
+      "reported_total": 16,
+      "results_fetched": 16,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-07",
-      "reported_total": 2,
-      "results_fetched": 2,
+      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-09",
+      "reported_total": 1,
+      "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-07",
+      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-09",
       "reported_total": 0,
       "results_fetched": 0,
       "pages": 1,
@@ -75,27 +75,32 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 57,
+  "unique_search_results": 27,
   "reviewed_issue_numbers": [
+    20214,
     21064,
     21136,
     21313,
     21359,
     21366,
     21508,
+    25178,
     25695,
     26577,
     27582,
     27583,
+    27874,
     28929,
     30532,
     30622,
+    33192,
     33224,
     33565,
     33840,
     34012,
     34227,
     34309,
+    34349,
     34982,
     35868,
     36980,
@@ -108,6 +113,7 @@
     39024,
     39178,
     40239,
+    40352,
     41262,
     41267,
     41306,
@@ -135,6 +141,7 @@
     42382,
     42469,
     42661,
+    42766,
     42813,
     42839,
     42857,
@@ -146,8 +153,10 @@
     43061,
     43115,
     43127,
+    43137,
     43200,
     43226,
+    43311,
     43323,
     43346,
     43404,
@@ -159,10 +168,12 @@
     43723,
     43737,
     43789,
-    44031
+    44031,
+    44140,
+    44370
   ],
-  "discussion_comments_fetched": 347,
-  "method": "Incremental review since the September 7 snapshot: paginated the listed updated-issue searches and current pull-request searches; screened all search hits and fetched complete bodies, comments, and timelines for every selected report plus relevant boundary cases. Previously reviewed exclusions remain historical context unless listed as refreshed. Read new or edited comments and closure events, followed relevant references, and checked the public changelog. Counts describe this refresh; previous-review totals are retained separately. Community experiments and attachments were not reproduced locally.",
+  "discussion_comments_fetched": 7,
+  "method": "Incremental review since the September 9 metadata snapshot (2026-09-09T16:26:58Z): refreshed metadata for all 55 selected reports; paginated comments created or edited since that timestamp on every selected report (7 returned); checked timelines on the 8 reports with changed metadata. Paginated the listed searches and screened their 27 unique hits, including the bodies of 15 unselected boundary cases. No new in-scope report was selected. Historical exclusions and findings remain unless amended below. The public changelog was checked; community experiments were not reproduced. Counts describe this refresh, not a reread of every historical discussion.",
   "selected_issue_count": 55,
   "relationship_counts": {
     "reference": 227,
@@ -311,6 +322,61 @@
       "number": 43737,
       "url": "https://github.com/openai/codex/issues/43737",
       "reason": "Global Alt+P shortcut crash during Computer Use, not pet pointer delivery."
+    },
+    {
+      "number": 20214,
+      "url": "https://github.com/openai/codex/issues/20214",
+      "reason": "General Windows app freezes and UI lag; no established pet-input failure in the issue body."
+    },
+    {
+      "number": 25178,
+      "url": "https://github.com/openai/codex/issues/25178",
+      "reason": "Windows Computer Use screenshot API compatibility failure, not pet pointer delivery."
+    },
+    {
+      "number": 27874,
+      "url": "https://github.com/openai/codex/issues/27874",
+      "reason": "Computer Use window enumeration for a third-party application, not pet input."
+    },
+    {
+      "number": 33192,
+      "url": "https://github.com/openai/codex/issues/33192",
+      "reason": "Broader DWM composition-handle growth and window-movement lag; not established as the selected pet click-through defect."
+    },
+    {
+      "number": 34349,
+      "url": "https://github.com/openai/codex/issues/34349",
+      "reason": "Feature request to disable or hide pets, not a pet input failure."
+    },
+    {
+      "number": 40352,
+      "url": "https://github.com/openai/codex/issues/40352",
+      "reason": "Browser-control tab claiming and connection failures, not pet pointer delivery."
+    },
+    {
+      "number": 42766,
+      "url": "https://github.com/openai/codex/issues/42766",
+      "reason": "Computer Use mapping of Chrome windows to browser tabs, not pet input."
+    },
+    {
+      "number": 43137,
+      "url": "https://github.com/openai/codex/issues/43137",
+      "reason": "Terminal hyperlink presentation in tmux, unrelated to the desktop pet."
+    },
+    {
+      "number": 43311,
+      "url": "https://github.com/openai/codex/issues/43311",
+      "reason": "macOS global shortcut conflicts with input-source switching; outside the Windows pet input scope."
+    },
+    {
+      "number": 44140,
+      "url": "https://github.com/openai/codex/issues/44140",
+      "reason": "External browser-control policy initialization failure after an update, not pet pointer delivery."
+    },
+    {
+      "number": 44370,
+      "url": "https://github.com/openai/codex/issues/44370",
+      "reason": "macOS MCP App side-panel visibility and animation timing, not pet input."
     }
   ],
   "findings": [
@@ -427,6 +493,38 @@
         "https://github.com/openai/codex/issues/42661#issuecomment-5570714532",
         "https://github.com/openai/codex/issues/42190#issuecomment-5572163350"
       ]
+    },
+    {
+      "finding": "September 9–10 follow-ups add recovery reports on #41465, #41501, #41960, and #42661. Three name version 26.903.8094.0; #41465 says latest update without a version. #42661 specifically reports working clicks and dragging after a full Windows reboot without the alpha workaround or repair helper. #41960 also verifies position persistence after restarting the app. These are affected-user observations, not a universal fix claim.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41465#issuecomment-5610812645",
+        "https://github.com/openai/codex/issues/41501#issuecomment-5610169891",
+        "https://github.com/openai/codex/issues/41960#issuecomment-5613112020",
+        "https://github.com/openai/codex/issues/42661#issuecomment-5612858483"
+      ]
+    },
+    {
+      "finding": "#41960 was closed/completed on September 10 after its recovery report. #41465, #41501, and #42661 remain open in this snapshot despite recovery language in their comments; comment intent does not override tracker state.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41960#event-30876086895",
+        "https://github.com/openai/codex/issues/41465#issuecomment-5610812645",
+        "https://github.com/openai/codex/issues/41501#issuecomment-5610169891",
+        "https://github.com/openai/codex/issues/42661#issuecomment-5612858483"
+      ]
+    },
+    {
+      "finding": "The same September 10 follow-up appears on #42945 and #43789: version 26.903.8094.0 accepts clicks and drags immediately after spawning, but the circular control below the pet reportedly becomes clipped. Count this as one cross-posted observation. The expected general cursor-following and reported hover animation are not treated as a verified animation defect; the comment does not establish that ordinary mouse tracking is intended. It also does not demonstrate renewed loss of input after release on this build.",
+      "sources": [
+        "https://github.com/openai/codex/issues/42945#issuecomment-5610494165",
+        "https://github.com/openai/codex/issues/43789#issuecomment-5610488885"
+      ]
+    },
+    {
+      "finding": "A September 9 comment on #43200 reports that a layered-style toggle retained working input after restoring the original style across four displays, with the invisible blocking region absent during the test. This differs from the original report where restoring the style restored failure. It adds a workaround observation, without identifying a tested app version or establishing a product fix.",
+      "sources": [
+        "https://github.com/openai/codex/issues/43200#issuecomment-5606137344",
+        "https://github.com/openai/codex/issues/43200"
+      ]
     }
   ],
   "limitations": [
@@ -437,25 +535,36 @@
   ],
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
-    "reviewed_at": "2026-09-07",
-    "unique_search_results": 387,
-    "reviewed_issue_count": 69,
-    "discussion_comments_fetched": 321
+    "reviewed_at": "2026-09-09",
+    "unique_search_results": 57,
+    "discussion_comments_fetched": 347,
+    "reviewed_issue_count": 83,
+    "previous_review": {
+      "reviewed_at": "2026-09-07",
+      "unique_search_results": 387,
+      "reviewed_issue_count": 69,
+      "discussion_comments_fetched": 321
+    }
   },
   "refreshed_issue_numbers": [
+    20214,
     21359,
     21508,
+    25178,
+    27874,
+    33192,
     33224,
     33565,
     33840,
     34012,
     34227,
     34309,
+    34349,
     35868,
     37978,
     39024,
-    39178,
     40239,
+    40352,
     41262,
     41267,
     41306,
@@ -482,6 +591,7 @@
     42382,
     42469,
     42661,
+    42766,
     42813,
     42839,
     42862,
@@ -491,19 +601,21 @@
     42946,
     43061,
     43115,
+    43127,
+    43137,
     43200,
     43226,
+    43311,
     43323,
     43346,
     43404,
     43493,
-    43557,
-    43654,
     43713,
     43717,
     43723,
-    43737,
     43789,
-    44031
+    44031,
+    44140,
+    44370
   ]
 }

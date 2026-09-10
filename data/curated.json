@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-09",
+  "reviewed_at": "2026-09-10",
   "counter_issue": 34227,
   "issues": [
     {
@@ -196,7 +196,7 @@
         "en": "Clicks pass through"
       },
       "summary": {
-        "en": "Reports a floating Windows pet remaining click-through. Community investigations distinguish missing physical pointer delivery from a missing drag handler; an external moving proxy does not preserve all live pet controls."
+        "en": "Reports a floating Windows pet remaining click-through; an external moving proxy did not preserve all live controls. A September 10 follow-up reports normal operation after the latest update, without identifying a version. The ticket remains open at this snapshot."
       }
     },
     {
@@ -222,7 +222,7 @@
         "en": "First drag, then lost"
       },
       "summary": {
-        "en": "This report isolates input loss after the first drag while animation continues, across built-in and custom pets in a multi-monitor setup."
+        "en": "Originally isolates input loss after the first drag across built-in and custom pets in a multi-monitor setup. A September 9 follow-up reports repeated dragging and clickable icons/tooltips on version 26.903.8094.0. The ticket remains open at this snapshot."
       }
     },
     {
@@ -339,7 +339,7 @@
         "en": "Also at 100%"
       },
       "summary": {
-        "en": "Reports failed mouse and touchpad input with several built-in pets, including on a single monitor at 100% scaling. App reset and restarts did not help, limiting a purely multi-monitor or high-DPI explanation."
+        "en": "Originally reports failed mouse and touchpad input even on a single monitor at 100% scaling. On September 10, the reporter confirms dragging, click-to-focus, and position persistence after restarting on version 26.903.8094.0, then closes the ticket as completed."
       }
     },
     {
@@ -469,7 +469,7 @@
         "en": "Input island offset"
       },
       "summary": {
-        "en": "Reports a displaced usable input area and later failures on package 26.901.6511.0. A September 7 follow-up confirms an alpha-based recovery was lost after reboot; another helper moves the overlay externally without repairing its own mouse interaction."
+        "en": "Originally reports a displaced input area and an alpha-based workaround that did not survive reboot. A September 10 follow-up reports normal clicks and dragging on package 26.903.8094.0 after a full Windows reboot without the workaround or repair helper. The comment calls it resolved; GitHub still shows the ticket open at this snapshot."
       }
     },
     {
@@ -547,7 +547,7 @@
         "en": "Desktop gets clicks"
       },
       "summary": {
-        "en": "Reports a desktop selection rectangle and context menu appearing when interacting with built-in and custom pets on package 26.901.5003.0. Hide/wake and app restart failed; no specific window-style or DPI cause is claimed."
+        "en": "Originally reports clicks reaching the desktop instead of built-in and custom pets. A September 10 follow-up on version 26.903.8094.0 confirms initial clicking and dragging, but reports the circular control below the pet becoming clipped. The same update appears on #43789; its expectation of general cursor-following is not an established behavior contract."
       }
     },
     {
@@ -599,7 +599,7 @@
         "en": "Layered-state A/B/A"
       },
       "summary": {
-        "en": "Reports that removing the layered-window style restores input and restoring it breaks input again on package 26.901.6511.0. The workaround can capture more than the visible pet; this is community diagnostic evidence, not a shipped fix."
+        "en": "The original layered-style experiment restored input only while the style was removed. A September 9 commenter instead reports that input stayed working after restoring the style across four displays, with the invisible blocking area gone during the test. Recovery differs between reports; this remains a workaround observation, not a shipped-fix confirmation."
       }
     },
     {
@@ -703,7 +703,7 @@
         "en": "Built-in click-through"
       },
       "summary": {
-        "en": "Reports clicks and drags on the visible built-in pet reaching desktop content underneath, including after restarting. The exact app and Windows versions are not supplied."
+        "en": "Originally reports a built-in pet passing clicks and drags through to the desktop. The September 10 update names version 26.903.8094.0 and confirms initial input recovery while reporting a clipped control below the pet. It repeats the update on #42945, not an independent confirmation; the cursor-following expectation is unverified."
       }
     },
     {
@@ -2611,10 +2611,14 @@
         {
           "url": "https://github.com/openai/codex/issues/42661#issuecomment-5559314594",
           "kind": "community_comment"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42661#issuecomment-5612858483",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "A community comment explicitly references #41513. The link does not establish a shared cause or an official consolidation."
+        "en": "Community comments explicitly reference #41513, including a September 10 report of recovery after reboot without the workaround. This is a recovery cross-reference, not an official duplicate decision."
       }
     },
     {
@@ -3635,10 +3639,14 @@
         {
           "url": "https://github.com/openai/codex/issues/42289#issuecomment-5522781177",
           "kind": "community_comment"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43200#issuecomment-5606137344",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "Layered-window state may connect these reports, but recovery differs: a clear-and-restore cycle helped one reporter, while restoring the flag brought failure back in #43200. A common cause is unconfirmed."
+        "en": "Layered-window state may connect these reports, but recovery differs. Restoring the style reintroduced failure for the original #43200 reporter, while another commenter and the #42289 experiment retained input after a clear-and-restore cycle. A common cause remains unconfirmed."
       }
     },
     {
@@ -4191,10 +4199,14 @@
         {
           "url": "https://github.com/openai/codex/issues/41513",
           "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5610488885",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "Both include a built-in pet passing clicks and drags through. The newer report omits a build number, so it cannot establish failure on the build later reported working in #41513."
+        "en": "Both originally describe built-in pets passing input through. The September 10 follow-up on #43789 identifies version 26.903.8094.0 and reports initial input recovery plus a clipped control, not unchanged click-through on that build."
       }
     },
     {
