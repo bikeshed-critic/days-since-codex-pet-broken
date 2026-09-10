@@ -196,7 +196,7 @@
         "en": "Clicks pass through"
       },
       "summary": {
-        "en": "Reports a floating Windows pet remaining click-through; an external moving proxy did not preserve all live controls. A September 10 follow-up reports normal operation after the latest update, without identifying a version. The ticket remains open at this snapshot."
+        "en": "Originally reports a floating Windows pet remaining click-through. An earlier September 10 follow-up reports recovery after an unspecified latest update. A later commenter still reports click-through on package 26.831.2377.0, says the Store offers no newer update, and gets only temporary relief from refreshing the pet. This does not demonstrate regression of the reported working package."
       }
     },
     {
@@ -274,7 +274,7 @@
         "en": "Partial click-through"
       },
       "summary": {
-        "en": "Reports a visible Windows pet passing clicks through and refusing to drag. A September 9 comment says it is solved for that user, without naming a build or test scope."
+        "en": "Reports a visible Windows pet passing clicks through and refusing to drag. After a September 9 recovery comment without a build number, a September 10 follow-up reports it solved on Windows app version 26.903.61454, without detailed test scope. The ticket remains open at this snapshot."
       }
     },
     {
@@ -300,7 +300,7 @@
         "en": "Visible, cannot move"
       },
       "summary": {
-        "en": "A Windows report that the visible pet cannot be dragged. It supplies no native hit-test measurements, so the precise input failure remains unspecified."
+        "en": "Originally reports a visible Windows pet that cannot be dragged. A September 10 commenter reports continued failure with built-in and custom pets despite fully restarting the app. The comment identifies CLI component 0.153.4, not a comparable desktop package version, so it does not establish failure on the package reported working elsewhere."
       }
     },
     {
@@ -534,7 +534,7 @@
         "en": "Hover, offset scan"
       },
       "summary": {
-        "en": "Built-in and custom pets still react to hover but reject clicks and dragging. A native scan finds overlay-associated points away from the visible pet; those points are not proven draggable regions."
+        "en": "Originally reports working hover but failed clicks and dragging, with an offset native scan that did not prove draggable regions. Closed/completed on September 10, without a new recovery comment or a working build identified in this thread. Closure alone is not a verified fix."
       }
     },
     {

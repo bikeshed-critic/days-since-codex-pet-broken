@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "fetched_at": "2026-09-10T05:07:48Z",
+  "fetched_at": "2026-09-10T12:07:58Z",
   "issues": [
     {
       "number": 21359,
@@ -248,7 +248,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-29T04:01:57Z",
-      "updated_at": "2026-09-10T00:35:02Z",
+      "updated_at": "2026-09-10T12:03:54Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -344,7 +344,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-29T13:37:13Z",
-      "updated_at": "2026-09-09T10:46:51Z",
+      "updated_at": "2026-09-10T06:45:42Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -376,7 +376,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-08-31T06:36:31Z",
-      "updated_at": "2026-09-08T22:11:38Z",
+      "updated_at": "2026-09-10T07:41:20Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -658,11 +658,11 @@
       "number": 42927,
       "title": "[Windows][26.901.4073.0] Pet responds to hover but cannot be clicked or dragged, including built-in pets",
       "url": "https://github.com/openai/codex/issues/42927",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "created_at": "2026-09-05T04:39:08Z",
-      "updated_at": "2026-09-05T04:40:18Z",
-      "closed_at": null,
+      "updated_at": "2026-09-10T06:26:44Z",
+      "closed_at": "2026-09-10T06:26:43Z",
       "labels": [
         "app",
         "bug",
