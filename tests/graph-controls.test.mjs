@@ -1,9 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { initGraph } from '../site/graph.mjs';
+import { edgeIsMuted, initGraph } from '../site/graph.mjs';
 
 const messages = JSON.parse(await readFile(new URL('../locales/en.json', import.meta.url), 'utf8'));
+
+test('default dimming respects reference direction and recovery evidence', () => {
+  const open = { nodeState: 'open' }, closed = { nodeState: 'closed' };
+  const recovery = { nodeState: 'open', nodeRecovery: 'uncontradicted' };
+  const mixed = { nodeState: 'open', nodeRecovery: 'mixed' };
+  for (const kind of ['reference', 'official_duplicate']) {
+    assert.equal(edgeIsMuted(closed, open, kind), true);
+    assert.equal(edgeIsMuted(closed, closed, kind), true);
+    assert.equal(edgeIsMuted(recovery, closed, kind), true);
+    assert.equal(edgeIsMuted(open, closed, kind), false);
+    assert.equal(edgeIsMuted(mixed, closed, kind), false);
+    assert.equal(edgeIsMuted(recovery, open, kind), false);
+  }
+  for (const kind of ['similarity', 'hypothesis', 'opposite']) {
+    assert.equal(edgeIsMuted(open, closed, kind), true);
+    assert.equal(edgeIsMuted(closed, open, kind), true);
+    assert.equal(edgeIsMuted(open, recovery, kind), false);
+  }
+});
 
 class Element {
   constructor(dataset = {}, attributes = {}) {
@@ -89,6 +108,32 @@ test('offscreen and hidden-page suspension, pause/resume, and reset preserve a u
   f.visible(true); assert.equal(f.frames.size, 1);
   f.document.hidden = true; f.document.emit('visibilitychange');
   assert.equal(f.frames.size, 0);
+});
+
+test('hover overrides default dimming and status refresh restores it without waking physics', () => {
+  const f = fixture(false, true);
+  f.visible(true);
+  f.nodes[0].dataset.nodeState = 'closed';
+  f.nodes[1].dataset.nodeState = 'open';
+  f.graph.updateStates();
+  assert.equal(f.path.classes.has('edge-muted'), true);
+  assert.equal(f.frames.size, 0);
+  f.nodes[1].emit('pointerenter', { pointerType: 'mouse' });
+  assert.equal(f.path.classes.has('edge-highlighted'), true);
+  f.graph.updateStates();
+  assert.equal(f.path.classes.has('edge-highlighted'), true, 'live refresh preserves the current hover');
+  f.nodes[1].emit('pointerleave');
+  assert.equal(f.path.classes.has('edge-highlighted'), false);
+  assert.equal(f.path.classes.has('edge-muted'), true);
+  f.nodes[0].dataset.nodeState = 'open';
+  f.graph.updateStates();
+  assert.equal(f.path.classes.has('edge-muted'), false);
+  f.nodes[1].dataset.nodeState = 'closed';
+  f.graph.updateStates();
+  assert.equal(f.path.classes.has('edge-muted'), false, 'ordinary open-to-closed references stay bright');
+  f.nodes[0].dataset.nodeRecovery = 'uncontradicted';
+  f.graph.updateStates();
+  assert.equal(f.path.classes.has('edge-muted'), true);
 });
 
 test('reduced motion applies at startup and reacts to preference changes and filters', () => {

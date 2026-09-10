@@ -28,7 +28,7 @@
   "remaining_evidence": "Remaining reports",
   "scope": "A curated map of public reports, not a complete bug census. The highlighted report is an editorial choice, not an official master issue.",
   "network_title": "The issue network",
-  "network_hint": "Follow an issue to GitHub. Arrows show which report references which; other connections are undirected.",
+  "network_hint": "Follow an issue to GitHub. Arrows show which report references which; other connections are undirected. Links from closed reports, and from purple-dashed reports to closed ones, fade until you hover the line or either issue.",
   "recovery_reported": "Recovery reported",
   "graph_status_note": "Borders follow GitHub status. A purple dash marks an open report with recovery comments and no later contradiction in our review. A closed ticket alone is not a verified fix.",
   "graph_title": "Network of {count} selected pet and related overlay reports",

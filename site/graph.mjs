@@ -1,5 +1,12 @@
 import { createSimulation, edgePath } from './graph-physics.mjs';
 
+export function edgeIsMuted(from, to, kind) {
+  const directed = (source, target) => source.nodeState === 'closed' ||
+    (source.nodeState === 'open' && source.nodeRecovery === 'uncontradicted' && target.nodeState === 'closed');
+  // Editorial comparisons have no direction; either endpoint can be the source.
+  return directed(from, to) || (!['reference', 'official_duplicate'].includes(kind) && directed(to, from));
+}
+
 export function initGraph(svg, messages) {
   if (!svg) return null;
   const document = svg.ownerDocument;
@@ -19,6 +26,8 @@ export function initGraph(svg, messages) {
   const precomputed = svg.dataset.layoutSettled === 'true';
   const simulation = createSimulation(records, edges, bounds.width, bounds.height, { settled: precomputed });
   const byId = new Map(simulation.nodes.map(node => [node.id, node]));
+  const nodeElements = new Map(elements.map(element => [Number(element.dataset.nodeId), element]));
+  let highlightedNode = null;
   let paused = false, hot = !precomputed, frame = null, lastTime = null, accumulated = 0;
   let visible = !window.IntersectionObserver, keyboardFocus = false, drag = null, suppressedClick = null;
 
@@ -31,10 +40,20 @@ export function initGraph(svg, messages) {
   }
 
   function highlightConnections(nodeId = null) {
+    highlightedNode = nodeId;
     for (const edge of edges) {
       const dimmed = nodeId !== null && edge.from !== nodeId && edge.to !== nodeId;
       edge.element.classList[dimmed ? 'add' : 'remove']('edge-dimmed');
+      edge.element.classList[nodeId !== null && !dimmed ? 'add' : 'remove']('edge-highlighted');
     }
+  }
+
+  function updateStates() {
+    for (const edge of edges) {
+      const muted = edgeIsMuted(nodeElements.get(edge.from).dataset, nodeElements.get(edge.to).dataset, edge.element.dataset.edgeType);
+      edge.element.classList[muted ? 'add' : 'remove']('edge-muted');
+    }
+    highlightConnections(highlightedNode);
   }
 
   function label() {
@@ -185,8 +204,10 @@ export function initGraph(svg, messages) {
   controls.hidden = false;
   document.getElementById('graph-interaction').hidden = false;
   svg.classList.add('force-graph');
+  updateStates();
   schedule();
   return {
+    updateStates,
     updateLinks() {
       simulation.setLinks(edges.filter(edge => !edge.element.hasAttribute('hidden')));
       reheat();

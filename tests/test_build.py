@@ -72,6 +72,30 @@ class StaticBuildTests(unittest.TestCase):
         encoded = output.split('<script id="page-data" type="application/json">', 1)[1].split('</script>', 1)[0]
         self.assertEqual(json.loads(encoded)["counterStartedAt"], anchor["created_at"])
 
+    def test_static_edge_dimming_matches_status_direction_and_recovery(self):
+        curated, snapshot = deepcopy(self.curated), deepcopy(self.snapshot)
+        source, target = curated["issues"][:2]
+        edge = deepcopy(curated["relationships"][0])
+        edge.update({"from": source["number"], "to": target["number"]})
+        curated["relationships"] = [edge]
+        records = {issue["number"]: issue for issue in snapshot["issues"]}
+        for kind, from_state, to_state, recovery, expected in (
+            ("reference", "closed", "open", None, True),
+            ("reference", "open", "closed", None, False),
+            ("reference", "open", "closed", "uncontradicted", True),
+            ("reference", "open", "closed", "mixed", False),
+            ("reference", "open", "open", "uncontradicted", False),
+            ("similarity", "open", "closed", None, True),
+        ):
+            with self.subTest(kind=kind, source=from_state, target=to_state, recovery=recovery):
+                edge["type"] = kind
+                records[source["number"]]["state"] = from_state
+                records[target["number"]]["state"] = to_state
+                source["recovery"] = {"status": recovery}
+                page = Page(build.render(curated, snapshot, "en", self.bundles))
+                path = next(attrs for _, attrs in page.tags if "data-edge-type" in attrs)
+                self.assertEqual("edge-muted" in path["class"].split(), expected)
+
     def test_recovery_markers_keep_tracker_state_separate_from_reviewed_comments(self):
         output = self.render()
         nodes = {int(attrs["data-node-id"]): attrs for tag, attrs in Page(output).tags if "data-node-id" in attrs}

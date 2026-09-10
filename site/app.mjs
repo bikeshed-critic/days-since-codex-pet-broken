@@ -53,6 +53,7 @@ refresh.addEventListener('click', async () => {
         node.querySelector('title').textContent = title;
       }
     }
+    graph?.updateStates();
     const key = !result.states.size ? 'refresh_failed' : result.failures.size ? 'refresh_partial' : 'refresh_success';
     const time = new Intl.DateTimeFormat(config.locale, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date());
     status.textContent = `${interpolate(messages[key], { count: result.states.size, total: config.issueNumbers.length, time })} ${messages.refresh_cooldown}`;

@@ -50,6 +50,19 @@ def issue_url(number):
     return f"https://github.com/openai/codex/issues/{number}"
 
 
+def edge_is_muted(edge, nodes, records):
+    def directed(source, target):
+        return records[source]["state"] == "closed" or (
+            records[source]["state"] == "open"
+            and nodes[source].get("recovery", {}).get("status") == "uncontradicted"
+            and records[target]["state"] == "closed"
+        )
+    return directed(edge["from"], edge["to"]) or (
+        edge["type"] not in {"reference", "official_duplicate"}
+        and directed(edge["to"], edge["from"])
+    )
+
+
 def graph(curated, records, locale, text, layout=None):
     nodes = {issue["number"]: issue for issue in curated["issues"]}
     positions = {node["id"]: (node["x"], node["y"]) for node in layout["nodes"]} if layout else {number: issue["position"] for number, issue in nodes.items()}
@@ -72,7 +85,8 @@ def graph(curated, records, locale, text, layout=None):
         cx, cy = (sx + ex) / 2 - uy * bend, (sy + ey) / 2 + ux * bend
         arrow = f' marker-end="url(#arrow-{kind})"' if kind in {"reference", "official_duplicate"} else ""
         description = f"#{edge['from']} / #{edge['to']}: {text[kind]}. {localized(edge['note'], locale)}"
-        paths.append(f'<path class="edge {kind}" data-edge-type="{kind}" data-edge-from="{edge['from']}" data-edge-to="{edge['to']}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
+        muted = " edge-muted" if edge_is_muted(edge, nodes, records) else ""
+        paths.append(f'<path class="edge {kind}{muted}" data-edge-type="{kind}" data-edge-from="{edge['from']}" data-edge-to="{edge['to']}" d="M {sx:.1f} {sy:.1f} Q {cx:.1f} {cy:.1f} {ex:.1f} {ey:.1f}" stroke-dasharray="{PATTERNS[kind]}"{arrow}><title>{h(description)}</title></path>')
     circles = []
     for number, issue in nodes.items():
         x, y = positions[number]
