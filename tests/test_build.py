@@ -72,6 +72,18 @@ class StaticBuildTests(unittest.TestCase):
         encoded = output.split('<script id="page-data" type="application/json">', 1)[1].split('</script>', 1)[0]
         self.assertEqual(json.loads(encoded)["counterStartedAt"], anchor["created_at"])
 
+    def test_recovery_markers_keep_tracker_state_separate_from_reviewed_comments(self):
+        output = self.render()
+        nodes = {int(attrs["data-node-id"]): attrs for tag, attrs in Page(output).tags if "data-node-id" in attrs}
+        marked = {n for n, attrs in nodes.items() if attrs["data-node-state"] == "open" and attrs["data-node-recovery"] == "uncontradicted"}
+        self.assertEqual(marked, {34227, 34309, 41501, 41535, 42661})
+        self.assertEqual(nodes[41465]["data-node-recovery"], "mixed")
+        self.assertEqual(nodes[41513]["data-node-state"], "closed")
+        for number, attrs in nodes.items():
+            self.assertEqual("Recovery reported" in attrs["aria-label"], number in marked)
+            node_html = re.search(rf'<a class="node[^>]*data-node-id="{number}".*?</a>', output).group()
+            self.assertEqual('class="recovery-mark"' in node_html, attrs["data-node-recovery"] == "uncontradicted")
+
     def test_escapes_issue_and_editorial_text(self):
         snapshot, curated = deepcopy(self.snapshot), deepcopy(self.curated)
         payload = '<img src=x onerror="alert(1)">'

@@ -82,8 +82,12 @@ def graph(curated, records, locale, text, layout=None):
         state = records[number]["state"]
         reason = " / " + text.get(records[number]["state_reason"], text["unknown_reason"]) if state == "closed" else ""
         status = f'{text[state]}{reason} · {text["snapshot"]}'
+        recovery = issue.get("recovery", {}).get("status", "none")
+        if state == "open" and recovery == "uncontradicted":
+            status += f' · {text["recovery_reported"]}'
+        recovery_mark = f'<path class="recovery-mark" d="M {x + 46} {y - 29} h 18" aria-hidden="true"/>' if recovery == "uncontradicted" else ""
         accessible_title = f"{title} — {status}"
-        circles.append(f'<a class="node{emphasis}" data-node-id="{number}" data-node-state="{state}" data-issue-label="{h(title)}" href="{issue_url(number)}" aria-label="{h(accessible_title)}"><title>{h(accessible_title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/><text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
+        circles.append(f'<a class="node{emphasis}" data-node-id="{number}" data-node-state="{state}" data-node-recovery="{recovery}" data-issue-label="{h(title)}" href="{issue_url(number)}" aria-label="{h(accessible_title)}"><title>{h(accessible_title)}</title><rect x="{x - 80}" y="{y - 29}" width="160" height="58" rx="6"/>{recovery_mark}<text class="node-id" x="{x}" y="{y - 5}" text-anchor="middle">#{number}</text><text class="node-label" x="{x}" y="{y + 16}" text-anchor="middle">{h(label)}</text></a>')
     return f'<svg id="issue-graph" data-layout-settled="{str(layout is not None).lower()}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 {height}" width="1120" height="{height}" role="group" aria-labelledby="graph-title graph-description"><title id="graph-title">{h(text["graph_title"].format(count=len(nodes)))}</title><desc id="graph-description">{h(text["graph_description"])}</desc><defs>{"".join(definitions)}</defs><g class="edges">{"".join(paths)}</g><g class="nodes">{"".join(circles)}</g></svg>'
 
 

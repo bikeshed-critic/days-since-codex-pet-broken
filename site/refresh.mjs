@@ -51,3 +51,8 @@ export function stateLabel(status, messages, source = 'live') {
   const reason = status.state === 'closed' ? ` / ${messages[status.stateReason] ?? messages.unknown_reason}` : '';
   return `${messages[status.state]}${reason} · ${messages[source]}`;
 }
+
+export function graphStateLabel(status, messages, recovery, source = 'live') {
+  const suffix = status.state === 'open' && recovery === 'uncontradicted' ? ` · ${messages.recovery_reported}` : '';
+  return stateLabel(status, messages, source) + suffix;
+}

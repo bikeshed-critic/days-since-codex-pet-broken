@@ -1,4 +1,4 @@
-import { interpolate, refreshStatuses, stateLabel } from './refresh.mjs';
+import { graphStateLabel, interpolate, refreshStatuses, stateLabel } from './refresh.mjs';
 import { initGraph } from './graph.mjs';
 import { initCounter } from './counter.mjs';
 import { initPet } from './pet.mjs';
@@ -48,7 +48,7 @@ refresh.addEventListener('click', async () => {
       }
       for (const node of document.querySelectorAll(`[data-node-id="${number}"]`)) {
         node.dataset.nodeState = live.state;
-        const title = `${node.getAttribute('data-issue-label')} — ${stateLabel(live, messages)}`;
+        const title = `${node.getAttribute('data-issue-label')} — ${graphStateLabel(live, messages, node.dataset.nodeRecovery)}`;
         node.setAttribute('aria-label', title);
         node.querySelector('title').textContent = title;
       }

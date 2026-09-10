@@ -1,12 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { normalizeStatus, refreshStatuses, stateLabel, interpolate } from '../site/refresh.mjs';
+import { graphStateLabel, normalizeStatus, refreshStatuses, stateLabel, interpolate } from '../site/refresh.mjs';
 
 const messages = JSON.parse(await readFile(new URL('../locales/en.json', import.meta.url), 'utf8'));
 const raw = (number, state = 'open') => ({ number, state, state_reason: state === 'closed' ? 'completed' : null,
   html_url: `https://github.com/openai/codex/issues/${number}`, body: 'Not for storage or display', user: { login: 'not-needed' } });
 const response = (number, state) => ({ ok: true, status: 200, json: async () => raw(number, state) });
+
+test('live graph labels retain reviewed recovery only while the report is open', () => {
+  const open = { state: 'open', stateReason: null };
+  const closed = { state: 'closed', stateReason: 'completed' };
+  assert.equal(graphStateLabel(open, messages, 'uncontradicted'), 'Open · live · Recovery reported');
+  assert.equal(graphStateLabel(closed, messages, 'uncontradicted'), 'Closed / completed · live');
+  assert.equal(graphStateLabel(open, messages, 'mixed'), 'Open · live');
+  assert.equal(graphStateLabel(open, messages, undefined), 'Open · live');
+});
 
 test('fresh responses expose only issue number and state, without credentials', async () => {
   const result = await refreshStatuses([41513], { fetchImpl: async (url, options) => {

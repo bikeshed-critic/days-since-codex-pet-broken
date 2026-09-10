@@ -25,7 +25,8 @@ large area. For readers concerned that the pet was not intercepting enough input
 The clock counts from [#34227](https://github.com/openai/codex/issues/34227) to the
 present, automatically. Its reporter now confirms working input; the number is
 the report's age, not a running total of broken days. Graph borders track open and
-closed tickets. The notes track what happened to the actual pets.
+closed tickets. A purple dash marks an open report with recovery comments and no
+later contradiction in our review. The notes track what happened to the actual pets.
 
 ## Keeping the clock fed
 
@@ -35,6 +36,12 @@ Feeding time, with Python 3.12+ and Node.js 24:
 py -3 scripts/fetch_snapshot.py
 py -3 scripts/build.py
 ```
+
+Review comments before updating an issue's optional `recovery` record in
+`data/curated.json`: keep the source comment links, use `uncontradicted` for
+reported recovery without later contrary evidence, and `mixed` when later reports
+qualify it. Temporary workarounds and partial recoveries do not earn a dash.
+The metadata fetch and the site's live status check do not review comments.
 
 Commit source and data changes to `main`; GitHub checks, builds, and publishes
 the site. It also gives the graph time to settle before anyone arrives.
