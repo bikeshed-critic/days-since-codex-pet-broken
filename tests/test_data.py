@@ -22,6 +22,17 @@ class EvidenceTests(unittest.TestCase):
     def test_checked_in_evidence_is_consistent(self):
         validate(self.curated, self.snapshot)
 
+    def test_recovery_requires_a_reviewed_status_and_same_issue_comment_sources(self):
+        for recovery in ({"status": "uncontradicted", "sources": []},
+                         {"status": "fixed", "sources": ["https://github.com/openai/codex/issues/21359#issuecomment-1"]},
+                         {"status": "uncontradicted", "sources": ["https://github.com/openai/codex/issues/34227#issuecomment-1"]},
+                         {"status": "uncontradicted", "sources": ["https://github.com/openai/codex/issues/21359"]}):
+            with self.subTest(recovery=recovery):
+                curated = deepcopy(self.curated)
+                curated["issues"][0]["recovery"] = recovery
+                with self.assertRaises(ValueError):
+                    validate(curated, self.snapshot)
+
     def test_counter_counts_elapsed_days_not_calendar_boundaries(self):
         self.assertEqual(elapsed_days("2026-09-01T23:59:00Z", "2026-09-02T00:01:00Z"), 0)
         self.assertEqual(elapsed_days("2026-09-01T08:00:00+08:00", "2026-09-03T00:00:00Z"), 2)

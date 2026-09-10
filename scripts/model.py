@@ -46,7 +46,13 @@ def validate(curated, snapshot):
     captured_ids = [issue["number"] for issue in snapshot["issues"]]
     require(len(captured_ids) == len(set(captured_ids)) and set(ids) == set(captured_ids), "Snapshot coverage mismatch")
     for issue in curated["issues"]:
-        require(set(issue) == {"number", "position", "label", "summary"}, "Unknown editorial issue field")
+        require(set(issue) - {"recovery"} == {"number", "position", "label", "summary"}, "Unknown editorial issue field")
+        if "recovery" in issue:
+            recovery = issue["recovery"]
+            require(isinstance(recovery, dict) and set(recovery) == {"status", "sources"}, "Invalid recovery record")
+            require(recovery["status"] in {"uncontradicted", "mixed"}, "Invalid recovery status")
+            require(isinstance(recovery["sources"], list) and recovery["sources"], "Recovery needs source comments")
+            require(all(isinstance(url, str) and re.fullmatch(rf"https://github\.com/openai/codex/issues/{issue['number']}#issuecomment-\d+", url) for url in recovery["sources"]), "Recovery sources must be comments on the same issue")
         localized(issue["label"])
         localized(issue["summary"])
         position = issue["position"]

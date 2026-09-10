@@ -80,6 +80,12 @@
       },
       "summary": {
         "en": "The July report describes the usable input area drifting from the visible pet. A September 9 follow-up confirms hover, clicks, and repeated dragging working after updating to package 26.903.8094.0, without a workaround. This remains the report-age anchor, not a claim of uninterrupted failure."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/34227#issuecomment-5604504387"
+        ]
       }
     },
     {
@@ -93,6 +99,13 @@
       },
       "summary": {
         "en": "An earlier no-drag report including the default pet. September 9 commenters report recovery after updating to package 26.903.8094.0 or app version 26.903.61454; one also reports working floating voice controls. These are affected-user confirmations, not a universal regression test."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/34309#issuecomment-5602006852",
+          "https://github.com/openai/codex/issues/34309#issuecomment-5603485397"
+        ]
       }
     },
     {
@@ -197,6 +210,13 @@
       },
       "summary": {
         "en": "Originally reports a floating Windows pet remaining click-through. An earlier September 10 follow-up reports recovery after an unspecified latest update. A later commenter still reports click-through on package 26.831.2377.0, says the Store offers no newer update, and gets only temporary relief from refreshing the pet. This does not demonstrate regression of the reported working package."
+      },
+      "recovery": {
+        "status": "mixed",
+        "sources": [
+          "https://github.com/openai/codex/issues/41465#issuecomment-5610812645",
+          "https://github.com/openai/codex/issues/41465#issuecomment-5618377213"
+        ]
       }
     },
     {
@@ -223,6 +243,12 @@
       },
       "summary": {
         "en": "Originally isolates input loss after the first drag across built-in and custom pets in a multi-monitor setup. A September 9 follow-up reports repeated dragging and clickable icons/tooltips on version 26.903.8094.0. The ticket remains open at this snapshot."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/41501#issuecomment-5610169891"
+        ]
       }
     },
     {
@@ -249,6 +275,13 @@
       },
       "summary": {
         "en": "Built-in and custom pets were reported click-through. September 9 commenters, including the original reporter, report recovery on package 26.903.8094.0 or app version 26.903.61454. The issue is now closed/completed; neither closure nor these local recoveries establishes that every related failure is fixed."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/41513#issuecomment-5601576855",
+          "https://github.com/openai/codex/issues/41513#issuecomment-5604038838"
+        ]
       }
     },
     {
@@ -275,6 +308,12 @@
       },
       "summary": {
         "en": "Reports a visible Windows pet passing clicks through and refusing to drag. After a September 9 recovery comment without a build number, a September 10 follow-up reports it solved on Windows app version 26.903.61454, without detailed test scope. The ticket remains open at this snapshot."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/41535#issuecomment-5614342945"
+        ]
       }
     },
     {
@@ -340,6 +379,12 @@
       },
       "summary": {
         "en": "Originally reports failed mouse and touchpad input even on a single monitor at 100% scaling. On September 10, the reporter confirms dragging, click-to-focus, and position persistence after restarting on version 26.903.8094.0, then closes the ticket as completed."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/41960#issuecomment-5613112020"
+        ]
       }
     },
     {
@@ -470,6 +515,12 @@
       },
       "summary": {
         "en": "Originally reports a displaced input area and an alpha-based workaround that did not survive reboot. A September 10 follow-up reports normal clicks and dragging on package 26.903.8094.0 after a full Windows reboot without the workaround or repair helper. The comment calls it resolved; GitHub still shows the ticket open at this snapshot."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/42661#issuecomment-5612858483"
+        ]
       }
     },
     {
