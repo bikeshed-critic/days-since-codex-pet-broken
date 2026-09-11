@@ -8,10 +8,11 @@ A collection of reports about clicking, dragging, and the increasingly academic
 relationship between the two. The reports now have a relationship graph.
 Some of the pets have repaired theirs.
 
-September 10 brought [more working input, even after a reboot without the helper](https://github.com/openai/codex/issues/42661#issuecomment-5612858483),
-on Windows package `26.903.8094.0`. [One circular control is having a horizontal phase](https://github.com/openai/codex/issues/42945#issuecomment-5610494165).
-There are also [remaining input-failure reports](https://github.com/openai/codex/issues/44031)
-on other builds and setups. The receipts include the good news and the geometry.
+The September 11 review adds [working input on Windows package `26.903.9818.0`](https://github.com/openai/codex/issues/41535#issuecomment-5625133108)
+and [another pet that can be dragged again](https://github.com/openai/codex/issues/43789#issuecomment-5622038946).
+Package `26.908.3777.0` has [a separate report where the pet window crashes](https://github.com/openai/codex/issues/44739).
+The mouse is making progress; the window has other plans.
+That crash gets its own receipt, outside the input-failure graph.
 
 ## We brought receipts
 
