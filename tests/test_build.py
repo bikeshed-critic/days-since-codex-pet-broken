@@ -100,7 +100,7 @@ class StaticBuildTests(unittest.TestCase):
         output = self.render()
         nodes = {int(attrs["data-node-id"]): attrs for tag, attrs in Page(output).tags if "data-node-id" in attrs}
         marked = {n for n, attrs in nodes.items() if attrs["data-node-state"] == "open" and attrs["data-node-recovery"] == "uncontradicted"}
-        self.assertEqual(marked, {34227, 34309, 41501, 41535, 42661})
+        self.assertEqual(marked, {34227, 34309, 41501, 41535, 42661, 43789})
         self.assertEqual(nodes[41465]["data-node-recovery"], "mixed")
         self.assertEqual(nodes[41513]["data-node-state"], "closed")
         for number, attrs in nodes.items():

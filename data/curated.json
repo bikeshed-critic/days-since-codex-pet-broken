@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-10",
+  "reviewed_at": "2026-09-11",
   "counter_issue": 34227,
   "issues": [
     {
@@ -307,12 +307,13 @@
         "en": "Partial click-through"
       },
       "summary": {
-        "en": "Reports a visible Windows pet passing clicks through and refusing to drag. After a September 9 recovery comment without a build number, a September 10 follow-up reports it solved on Windows app version 26.903.61454, without detailed test scope. The ticket remains open at this snapshot."
+        "en": "Originally reports click-through and failed dragging. Follow-ups report recovery on app version 26.903.61454 and, later on September 10, package 26.903.9818.0 / internal app 26.903.71938 after updating and restarting on the same dual-monitor setup. A reported passthrough-policy code change is consistent with recovery, but the exact implementing fix and first working build are unconfirmed."
       },
       "recovery": {
         "status": "uncontradicted",
         "sources": [
-          "https://github.com/openai/codex/issues/41535#issuecomment-5614342945"
+          "https://github.com/openai/codex/issues/41535#issuecomment-5614342945",
+          "https://github.com/openai/codex/issues/41535#issuecomment-5625133108"
         ]
       }
     },
@@ -754,7 +755,13 @@
         "en": "Built-in click-through"
       },
       "summary": {
-        "en": "Originally reports a built-in pet passing clicks and drags through to the desktop. The September 10 update names version 26.903.8094.0 and confirms initial input recovery while reporting a clipped control below the pet. It repeats the update on #42945, not an independent confirmation; the cursor-following expectation is unverified."
+        "en": "Originally reports built-in pets passing input through. An early September 10 update reports initial input recovery plus a clipped control on version 26.903.8094.0, repeating #42945. A later comment explicitly confirms dragging fixed, with no subsequent contradiction at this review. It gives no version and does not establish whether the separate clipped control also recovered."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/43789#issuecomment-5622038946"
+        ]
       }
     },
     {
@@ -4254,10 +4261,14 @@
         {
           "url": "https://github.com/openai/codex/issues/43789#issuecomment-5610488885",
           "kind": "community_comment"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43789#issuecomment-5622038946",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "Both originally describe built-in pets passing input through. The September 10 follow-up on #43789 identifies version 26.903.8094.0 and reports initial input recovery plus a clipped control, not unchanged click-through on that build."
+        "en": "Both originally describe built-in pets passing input through and now contain recovery reports. The early #43789 update describes a clipped control; its later confirmation says dragging is fixed without identifying a version or resolving that separate rendering observation."
       }
     },
     {

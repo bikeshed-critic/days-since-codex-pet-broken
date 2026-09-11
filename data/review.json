@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-10",
+  "reviewed_at": "2026-09-11",
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
       "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-10",
-      "reported_total": 8,
-      "results_fetched": 8,
+      "reported_total": 18,
+      "results_fetched": 18,
       "pages": 1,
       "incomplete_results": false
     },
     {
       "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-10",
-      "reported_total": 8,
-      "results_fetched": 8,
+      "reported_total": 22,
+      "results_fetched": 22,
       "pages": 1,
       "incomplete_results": false
     },
@@ -27,8 +27,8 @@
     },
     {
       "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-10",
-      "reported_total": 9,
-      "results_fetched": 9,
+      "reported_total": 15,
+      "results_fetched": 15,
       "pages": 1,
       "incomplete_results": false
     },
@@ -41,15 +41,15 @@
     },
     {
       "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-10",
-      "reported_total": 0,
-      "results_fetched": 0,
+      "reported_total": 1,
+      "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
     {
       "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-10",
-      "reported_total": 0,
-      "results_fetched": 0,
+      "reported_total": 1,
+      "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
@@ -75,7 +75,7 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 12,
+  "unique_search_results": 33,
   "reviewed_issue_numbers": [
     20214,
     21064,
@@ -93,6 +93,7 @@
     28929,
     30532,
     30622,
+    32069,
     33192,
     33224,
     33565,
@@ -116,8 +117,10 @@
     39178,
     40239,
     40352,
+    40778,
     41262,
     41267,
+    41304,
     41306,
     41465,
     41485,
@@ -136,6 +139,7 @@
     42061,
     42190,
     42225,
+    42229,
     42230,
     42243,
     42255,
@@ -170,12 +174,23 @@
     43723,
     43737,
     43789,
+    43817,
     44031,
     44140,
-    44370
+    44370,
+    44546,
+    44720,
+    44738,
+    44739,
+    44765,
+    44775,
+    44809,
+    44830,
+    44858,
+    44860
   ],
-  "discussion_comments_fetched": 4,
-  "method": "Incremental review since the preceding September 10 snapshot (2026-09-10T05:07:48Z): refreshed metadata for all 55 selected reports; paginated comments created or edited since that timestamp on every selected report (3 returned); checked timelines on the 4 reports with changed metadata. Read the full body and complete one-comment discussion of newly closed #42927, giving 4 discussion comments fetched in this refresh. Paginated the listed searches and screened 12 unique hits, including introductory body excerpts for 4 unselected boundary cases. No new in-scope report was selected. Historical exclusions and findings remain unless amended below. Community experiments were not reproduced, and the public changelog was not rechecked in this incremental pass. Counts describe this refresh, not a reread of every historical discussion.",
+  "discussion_comments_fetched": 6,
+  "method": "Incremental review since 2026-09-10T12:07:58Z: refreshed metadata for all 55 selected reports; paginated new or edited comments on every selected report (2 returned) and checked timelines on the 2 reports with changed metadata. Screened 33 unique search hits, including introductory body excerpts for 25 unselected boundary cases; read the full Windows pet-renderer crash report #44739 and its complete 4-comment discussion. No new input-failure report was selected. Rechecked existing recovery classifications against later comments. An external digest cross-reference adds no primary reproduction evidence. The public changelog was checked, but the reported desktop code change and workarounds were not independently reproduced. Counts describe this refresh; historical findings and exclusions remain unless qualified below. Review dates and snapshot timestamps use UTC.",
   "selected_issue_count": 55,
   "relationship_counts": {
     "reference": 227,
@@ -389,6 +404,81 @@
       "number": 37403,
       "url": "https://github.com/openai/codex/issues/37403",
       "reason": "macOS Remote Control and CLI thread writer ownership, not desktop pet input."
+    },
+    {
+      "number": 32069,
+      "url": "https://github.com/openai/codex/issues/32069",
+      "reason": "Feature requests to hide the pet menu and polish prompts, not a pet pointer-delivery failure."
+    },
+    {
+      "number": 40778,
+      "url": "https://github.com/openai/codex/issues/40778",
+      "reason": "Native image-save exception, not desktop pet input."
+    },
+    {
+      "number": 41304,
+      "url": "https://github.com/openai/codex/issues/41304",
+      "reason": "Voice startup fails because conversation state is unavailable; not pointer delivery to a visible overlay."
+    },
+    {
+      "number": 42229,
+      "url": "https://github.com/openai/codex/issues/42229",
+      "reason": "macOS audio visualizer and dictation interference, outside the Windows pet-input scope."
+    },
+    {
+      "number": 43817,
+      "url": "https://github.com/openai/codex/issues/43817",
+      "reason": "macOS Computer Use and browser-control reliability, not pet pointer delivery."
+    },
+    {
+      "number": 44546,
+      "url": "https://github.com/openai/codex/issues/44546",
+      "reason": "Request to remove the pet feature and its entry points, not a new input-failure reproduction."
+    },
+    {
+      "number": 44720,
+      "url": "https://github.com/openai/codex/issues/44720",
+      "reason": "macOS frontend initialization and pet-window crash investigation; retained as crash-family context, not established as Windows click-through."
+    },
+    {
+      "number": 44738,
+      "url": "https://github.com/openai/codex/issues/44738",
+      "reason": "macOS startup and bundled-marketplace failure, not Windows pet pointer delivery."
+    },
+    {
+      "number": 44739,
+      "url": "https://github.com/openai/codex/issues/44739",
+      "reason": "Windows pet renderer crashes on package 26.908.3777.0. Tracked as a separate finding and linked from the site update; excluded from the input-failure graph because the evidence describes an error page, not a surviving pet with failed pointer delivery."
+    },
+    {
+      "number": 44765,
+      "url": "https://github.com/openai/codex/issues/44765",
+      "reason": "macOS PiP unexpectedly wakes the pet; activation preference, not Windows pet input."
+    },
+    {
+      "number": 44775,
+      "url": "https://github.com/openai/codex/issues/44775",
+      "reason": "macOS custom shortcut does not invoke the pet overlay, outside the Windows pointer-delivery scope."
+    },
+    {
+      "number": 44809,
+      "url": "https://github.com/openai/codex/issues/44809",
+      "reason": "macOS pet-related frontend crash, separate from the Windows input-failure graph."
+    },
+    {
+      "number": 44830,
+      "url": "https://github.com/openai/codex/issues/44830",
+      "reason": "Animated CLI pet rendering in Windows terminals, not the desktop overlay."
+    },
+    {
+      "number": 44858,
+      "url": "https://github.com/openai/codex/issues/44858",
+      "reason": "macOS mascot renderer crash and update-check mismatch, separate from Windows pet input."
+    },
+    {
+      "number": 44860,
+      "url": "https://github.com/openai/codex/issues/44860",
+      "reason": "General split-panel window management and click-through request, without an established pet-overlay connection."
     }
   ],
   "findings": [
@@ -563,6 +653,28 @@
         "https://github.com/openai/codex/issues/42927",
         "https://github.com/openai/codex/issues/42927#issuecomment-5549397421"
       ]
+    },
+    {
+      "finding": "A later September 10 recovery report on #41535 identifies Windows package 26.903.9818.0, internal app 26.903.71938, and normal built-in-pet dragging after update/restart on the same dual-monitor setup. The commenter reports a change in the Windows hidden-overlay passthrough policy compared with 26.901.6511.0; this is a plausible implementation clue, not an independently reproduced causal diagnosis or an identified first fixed build.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41535#issuecomment-5625133108"
+      ]
+    },
+    {
+      "finding": "A later September 10 comment on #43789 explicitly confirms dragging fixed. No subsequent contradiction was found in this review, so the still-open input report now receives a recovery dash. The comment supplies no version and does not establish that the separately reported clipped control recovered. The earlier duplicate post on #42945 remains partial recovery and does not inherit this comment.",
+      "sources": [
+        "https://github.com/openai/codex/issues/43789#issuecomment-5622038946",
+        "https://github.com/openai/codex/issues/43789#issuecomment-5610488885",
+        "https://github.com/openai/codex/issues/42945#issuecomment-5610494165"
+      ]
+    },
+    {
+      "finding": "A separate Windows report #44739 describes the pet briefly appearing then entering an AppRoutes error page with r is not a function on package 26.908.3777.0, while the main chat remains usable. A commenter reports the same avatar-overlay exception on macOS 26.908.31748. Bot suggestions and community comparisons do not establish a shared cause with other startup reports or the earlier click-through defect. This crash is linked separately from the input graph; recovery of input does not imply every later pet build is usable.",
+      "sources": [
+        "https://github.com/openai/codex/issues/44739",
+        "https://github.com/openai/codex/issues/44739#issuecomment-5630427569",
+        "https://github.com/openai/codex/issues/44739#issuecomment-5636011270"
+      ]
     }
   ],
   "limitations": [
@@ -574,20 +686,27 @@
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
     "reviewed_at": "2026-09-10",
-    "unique_search_results": 27,
-    "discussion_comments_fetched": 7,
-    "snapshot_fetched_at": "2026-09-10T05:07:48Z",
-    "reviewed_issue_count": 94,
+    "unique_search_results": 12,
+    "discussion_comments_fetched": 4,
+    "snapshot_fetched_at": "2026-09-10T12:07:58Z",
+    "reviewed_issue_count": 96,
     "previous_review": {
-      "reviewed_at": "2026-09-09",
-      "unique_search_results": 57,
-      "discussion_comments_fetched": 347,
-      "reviewed_issue_count": 83,
+      "reviewed_at": "2026-09-10",
+      "unique_search_results": 27,
+      "discussion_comments_fetched": 7,
+      "snapshot_fetched_at": "2026-09-10T05:07:48Z",
+      "reviewed_issue_count": 94,
       "previous_review": {
-        "reviewed_at": "2026-09-07",
-        "unique_search_results": 387,
-        "reviewed_issue_count": 69,
-        "discussion_comments_fetched": 321
+        "reviewed_at": "2026-09-09",
+        "unique_search_results": 57,
+        "discussion_comments_fetched": 347,
+        "reviewed_issue_count": 83,
+        "previous_review": {
+          "reviewed_at": "2026-09-07",
+          "unique_search_results": 387,
+          "reviewed_issue_count": 69,
+          "discussion_comments_fetched": 321
+        }
       }
     }
   },
@@ -595,20 +714,25 @@
     21359,
     21508,
     25178,
+    32069,
     33224,
     33565,
     33840,
     34012,
     34227,
     34309,
+    34349,
     35868,
     36222,
     37403,
     37978,
     39024,
     40239,
+    40352,
+    40778,
     41262,
     41267,
+    41304,
     41306,
     41465,
     41485,
@@ -626,12 +750,15 @@
     42061,
     42190,
     42225,
+    42229,
     42230,
+    42243,
     42255,
     42289,
     42382,
     42469,
     42661,
+    42766,
     42813,
     42839,
     42862,
@@ -641,6 +768,7 @@
     42946,
     43061,
     43115,
+    43127,
     43200,
     43226,
     43346,
@@ -649,7 +777,19 @@
     43717,
     43723,
     43789,
+    43817,
     44031,
-    44370
+    44140,
+    44370,
+    44546,
+    44720,
+    44738,
+    44739,
+    44765,
+    44775,
+    44809,
+    44830,
+    44858,
+    44860
   ]
 }
