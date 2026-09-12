@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-11",
+  "reviewed_at": "2026-09-12",
   "counter_issue": 34227,
   "issues": [
     {
@@ -131,7 +131,7 @@
         "en": "Controls at 150%"
       },
       "summary": {
-        "en": "Reports unclickable voice and collapse controls at 150% Windows scaling, with normal operation at 100% on that machine. This is a control-specific observation, not a universal scaling diagnosis."
+        "en": "Reports pet controls failing at 150% Windows scaling while working at 100%, for both built-in and custom pets. Closed/completed on September 12 without a new recovery comment or identified fixed build. The original scaling-dependent behavior remains evidence; closure alone does not confirm a shipped fix."
       }
     },
     {

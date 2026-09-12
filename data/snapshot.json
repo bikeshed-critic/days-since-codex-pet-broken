@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "fetched_at": "2026-09-11T18:17:15Z",
+  "fetched_at": "2026-09-12T06:40:11Z",
   "issues": [
     {
       "number": 21359,
@@ -151,11 +151,11 @@
       "number": 37978,
       "title": "Codex desktop pet buttons are not clickable at 150% Windows display scaling",
       "url": "https://github.com/openai/codex/issues/37978",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "created_at": "2026-08-11T10:14:31Z",
-      "updated_at": "2026-08-28T08:15:24Z",
-      "closed_at": null,
+      "updated_at": "2026-09-12T05:26:07Z",
+      "closed_at": "2026-09-12T05:26:07Z",
       "labels": [
         "app",
         "bug",
