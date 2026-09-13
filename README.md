@@ -8,10 +8,11 @@ A collection of reports about clicking, dragging, and the increasingly academic
 relationship between the two. The reports now have a relationship graph.
 Some of the pets have repaired theirs.
 
-The September 11 review adds [working input on Windows package `26.903.9818.0`](https://github.com/openai/codex/issues/41535#issuecomment-5625133108)
+The September 13 review keeps the reports of [working input on Windows package `26.903.9818.0`](https://github.com/openai/codex/issues/41535#issuecomment-5625133108)
 and [another pet that can be dragged again](https://github.com/openai/codex/issues/43789#issuecomment-5622038946).
-Package `26.908.3777.0` has [a separate report where the pet window crashes](https://github.com/openai/codex/issues/44739).
-The mouse is making progress; the window has other plans.
+The separate pet-window crash persisted on package `26.908.4561.0`, but now has
+[a recovery report on `26.908.4834.0`](https://github.com/openai/codex/issues/44739#issuecomment-5647371751).
+The window is trying to stay for the conversation.
 That crash gets its own receipt, outside the input-failure graph.
 
 ## We brought receipts
