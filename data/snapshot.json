@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "fetched_at": "2026-09-13T03:51:33Z",
+  "fetched_at": "2026-09-16T08:31:37Z",
   "issues": [
     {
       "number": 21359,
@@ -563,11 +563,11 @@
       "number": 42469,
       "title": "Pet becomes unselectable after moving downward shortly after refresh on dual-monitor Windows",
       "url": "https://github.com/openai/codex/issues/42469",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "created_at": "2026-09-03T06:48:48Z",
-      "updated_at": "2026-09-03T07:39:28Z",
-      "closed_at": null,
+      "updated_at": "2026-09-15T05:53:58Z",
+      "closed_at": "2026-09-15T05:53:58Z",
       "labels": [
         "app",
         "bug",
@@ -803,7 +803,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-09-08T05:46:54Z",
-      "updated_at": "2026-09-08T05:48:06Z",
+      "updated_at": "2026-09-13T07:02:18Z",
       "closed_at": null,
       "labels": [
         "app",
@@ -832,11 +832,11 @@
       "number": 43723,
       "title": "Windows 10: floating Voice overlay ignores all control clicks and cannot be dragged",
       "url": "https://github.com/openai/codex/issues/43723",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "created_at": "2026-09-08T06:16:06Z",
-      "updated_at": "2026-09-08T06:17:19Z",
-      "closed_at": null,
+      "updated_at": "2026-09-15T07:09:26Z",
+      "closed_at": "2026-09-15T07:09:26Z",
       "labels": [
         "app",
         "bug",
@@ -867,6 +867,38 @@
       "state_reason": null,
       "created_at": "2026-09-09T03:24:42Z",
       "updated_at": "2026-09-09T03:25:52Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 45253,
+      "title": "[Windows][Pets] Avatar overlay ignores monitor work area in mixed-resolution multi-monitor layout",
+      "url": "https://github.com/openai/codex/issues/45253",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-13T16:07:16Z",
+      "updated_at": "2026-09-13T16:07:50Z",
+      "closed_at": null,
+      "labels": [
+        "app",
+        "bug",
+        "pets",
+        "windows-os"
+      ]
+    },
+    {
+      "number": 45575,
+      "title": "Windows pet overlay clicks pass through; initial drag sometimes jumps away from cursor",
+      "url": "https://github.com/openai/codex/issues/45575",
+      "state": "open",
+      "state_reason": null,
+      "created_at": "2026-09-15T02:16:55Z",
+      "updated_at": "2026-09-15T02:18:02Z",
       "closed_at": null,
       "labels": [
         "app",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-13",
+  "reviewed_at": "2026-09-16",
   "counter_issue": 34227,
   "issues": [
     {
@@ -502,7 +502,7 @@
         "en": "Drops after refresh"
       },
       "summary": {
-        "en": "On a two-display Windows setup, the pet reportedly accepts input immediately after refresh, then moves downward and becomes unselectable. The report does not provide a build number or native diagnosis."
+        "en": "On a two-display Windows setup, the pet reportedly accepts input immediately after refresh, then moves downward and becomes unselectable. The report does not provide a build number or native diagnosis. Closed/completed on September 15 without a new recovery statement or identified fixed build."
       }
     },
     {
@@ -716,7 +716,7 @@
         "en": "First-hover trace"
       },
       "summary": {
-        "en": "Reports mouse events stopping after the first hover while animation timers and painting continue on package 26.901.5003.0. The locally recorded trace is described but not attached; it does not establish the initiating native defect or a built-in-pet reproduction."
+        "en": "Reports mouse events stopping after the first hover while animation timers and painting continue on package 26.901.5003.0. The locally recorded trace is described but not attached; it does not establish the initiating native defect or a built-in-pet reproduction. A September 13 follow-up distinguishes the initial successful hover from later input loss and explicitly leaves a shared cause with #43061 and #43200 unproven."
       }
     },
     {
@@ -742,7 +742,13 @@
         "en": "Windows 10 voice"
       },
       "summary": {
-        "en": "Reports all three floating voice controls ignoring clicks and the orb refusing to drag on Windows 10, package 26.901.6511.0. Voice continues working; app and computer restarts did not help. Pointer pass-through is user-observed, not instrumented."
+        "en": "Originally reports unclickable, undraggable floating voice controls on Windows 10, package 26.901.6511.0. The reporter confirms on September 15 that clicks and dragging work after updating to 26.908.4834.0 on the same machine, and closes the issue as resolved. This is recovery of the voice-overlay comparison case, not a universal pet-input fix."
+      },
+      "recovery": {
+        "status": "uncontradicted",
+        "sources": [
+          "https://github.com/openai/codex/issues/43723#issuecomment-5676236062"
+        ]
       }
     },
     {
@@ -775,6 +781,32 @@
       },
       "summary": {
         "en": "Reports working hover but failed clicks and dragging on Windows 10 build 19045 with app version 26.905.11957. Restarting and switching to the built-in pet did not help. This remains a failure report alongside recoveries reported on other builds and systems."
+      }
+    },
+    {
+      "number": 45253,
+      "position": [
+        555,
+        1280
+      ],
+      "label": {
+        "en": "Behind the taskbar"
+      },
+      "summary": {
+        "en": "Reports a click-through, undraggable pet partly hidden behind the taskbar on a mixed-resolution three-monitor Windows setup. The reporter describes saved display geometry repeating the primary screen across monitors. No comparable app/package version is supplied; the placement observation does not establish the cause of failed pointer delivery."
+      }
+    },
+    {
+      "number": 45575,
+      "position": [
+        785,
+        1280
+      ],
+      "label": {
+        "en": "Click-through, drag jump"
+      },
+      "summary": {
+        "en": "Reports clicks passing through and an initial drag sometimes jumping away on older Windows package 26.901.6511.0 at 100% scaling on one display. Native hit testing reportedly selects an underlying window even without WS_EX_TRANSPARENT. Restarting and switching pets did not help; the Store updater reportedly offered no update. This does not establish regression in a newer package or an exact root cause."
       }
     }
   ],
@@ -3951,10 +3983,14 @@
         {
           "url": "https://github.com/openai/codex/issues/43713#issuecomment-5579942544",
           "kind": "bot_suggestion"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43713#issuecomment-5651826432",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "An automated comment suggests #43061 as a potential duplicate. This is a reference, not a duplicate decision."
+        "en": "An automated comment suggests #43061 as a potential duplicate. The reporter later compares the reports but distinguishes first-hover success followed by input loss, leaving a shared cause unproven. This is a reference, not an official duplicate decision."
       }
     },
     {
@@ -3965,10 +4001,14 @@
         {
           "url": "https://github.com/openai/codex/issues/43713#issuecomment-5579942544",
           "kind": "bot_suggestion"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43713#issuecomment-5651826432",
+          "kind": "community_comment"
         }
       ],
       "note": {
-        "en": "An automated comment suggests #43200 as a potential duplicate. This is a reference, not a duplicate decision."
+        "en": "An automated comment suggests #43200 as a potential duplicate. The reporter later compares the reports but distinguishes first-hover success followed by input loss, leaving a shared cause unproven. This is a reference, not an official duplicate decision."
       }
     },
     {
@@ -4305,6 +4345,56 @@
       ],
       "note": {
         "en": "Both community experiments report resize-related input failure persisting with the input-shape branch disabled. Window lifecycle and passthrough transitions are candidates, not a verified shared cause."
+      }
+    },
+    {
+      "from": 45575,
+      "to": 45253,
+      "type": "reference",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/45575#issuecomment-5673662694",
+          "kind": "bot_suggestion"
+        }
+      ],
+      "note": {
+        "en": "An automated comment suggests #45253 as a potential duplicate. This is a reference, not a duplicate decision."
+      }
+    },
+    {
+      "from": 45253,
+      "to": 42469,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/45253",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/42469",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both describe Windows pet placement trouble alongside failed dragging on multiple displays. Taskbar/work-area placement and post-refresh downward movement are distinct observations; a shared cause is unverified."
+      }
+    },
+    {
+      "from": 45575,
+      "to": 43061,
+      "type": "similarity",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/issues/45575",
+          "kind": "issue_body"
+        },
+        {
+          "url": "https://github.com/openai/codex/issues/43061",
+          "kind": "issue_body"
+        }
+      ],
+      "note": {
+        "en": "Both report native hit testing missing a visible pet. The newer report uses older package 26.901.6511.0 and also describes an initial drag jump; neither proves the exact input-region or forwarding defect."
       }
     }
   ]

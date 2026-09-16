@@ -1,55 +1,55 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-13",
+  "reviewed_at": "2026-09-16",
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
-      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-12",
-      "reported_total": 11,
-      "results_fetched": 11,
+      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-13",
+      "reported_total": 19,
+      "results_fetched": 19,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-12",
-      "reported_total": 13,
-      "results_fetched": 13,
+      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-13",
+      "reported_total": 21,
+      "results_fetched": 21,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-12",
+      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-13",
       "reported_total": 0,
       "results_fetched": 0,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-12",
-      "reported_total": 3,
-      "results_fetched": 3,
+      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-13",
+      "reported_total": 18,
+      "results_fetched": 18,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-12",
+      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-13",
+      "reported_total": 14,
+      "results_fetched": 14,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-13",
       "reported_total": 0,
       "results_fetched": 0,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-12",
-      "reported_total": 0,
-      "results_fetched": 0,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-12",
-      "reported_total": 0,
-      "results_fetched": 0,
+      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-13",
+      "reported_total": 1,
+      "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
@@ -75,30 +75,37 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 15,
+  "unique_search_results": 41,
   "reviewed_issue_numbers": [
     20214,
     20730,
+    20778,
     21064,
     21136,
+    21211,
     21313,
     21359,
     21366,
     21508,
+    21713,
     25178,
     25695,
     26577,
     27582,
     27583,
     27874,
+    28361,
     28929,
     30532,
     30622,
     32069,
+    32454,
     33192,
     33224,
+    33471,
     33565,
     33840,
+    33996,
     34012,
     34092,
     34170,
@@ -106,12 +113,15 @@
     34309,
     34349,
     34982,
+    35349,
     35868,
     36222,
+    36700,
     36980,
     37073,
     37403,
     37978,
+    38271,
     38663,
     38711,
     38745,
@@ -148,6 +158,7 @@
     42255,
     42289,
     42382,
+    42433,
     42469,
     42661,
     42766,
@@ -159,6 +170,7 @@
     42927,
     42945,
     42946,
+    42958,
     43061,
     43115,
     43127,
@@ -193,14 +205,27 @@
     44860,
     44985,
     45098,
-    45111
+    45111,
+    45197,
+    45253,
+    45299,
+    45397,
+    45451,
+    45460,
+    45514,
+    45575,
+    45583,
+    45623,
+    45652,
+    45754,
+    45859
   ],
-  "discussion_comments_fetched": 7,
-  "method": "Incremental review since 2026-09-12T06:40:11Z: refreshed metadata for all 55 selected reports (no issue-record changes); paginated new or edited comments on every selected report (none returned). Screened 15 unique search hits, including introductory body excerpts for 14 unselected boundary cases. Read the full bodies of #45098 and #44720, the one-comment discussion on #45098, and new or edited comments on #44720 (two) and #44739 (four). Separately rechecked #44739 metadata: still open, with a later recovery report on a newer Windows package. No new Windows input-failure report was selected; existing recovery classifications remain unchanged. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked in this incremental pass. Review dates and snapshot timestamps use UTC.",
-  "selected_issue_count": 55,
+  "discussion_comments_fetched": 8,
+  "method": "Incremental review since 2026-09-13T03:51:33Z: refreshed metadata for all 55 previously selected reports and paginated their new or edited comments (two returned). Screened 41 unique search hits, including introductory body excerpts for 38 unselected cases, with follow-up full-body reads for relevant Windows reports and boundary cases. Read complete discussions for #45253 (zero comments), #45575 (one), and #42469 (three), plus new or edited comments on #44739 (one) and #38663 (one). Added #45253 and #45575, bringing the selection to 57 reports; fetched their metadata and retained only the public allowlist. Reviewed #43723 recovery, #42469 closure without new recovery evidence, and #43713 diagnostic qualification. Separately rechecked the closed crash report #44739 and the broader mouse-stutter report #38663. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked in this incremental pass. Review dates and snapshot timestamps use UTC.",
+  "selected_issue_count": 57,
   "relationship_counts": {
-    "reference": 227,
-    "similarity": 10,
+    "reference": 228,
+    "similarity": 12,
     "hypothesis": 5,
     "opposite": 3,
     "official_duplicate": 1
@@ -515,6 +540,121 @@
       "number": 45111,
       "url": "https://github.com/openai/codex/issues/45111",
       "reason": "Windows pet size and slider-state mismatch after switching pets, not pointer delivery."
+    },
+    {
+      "number": 20778,
+      "url": "https://github.com/openai/codex/issues/20778",
+      "reason": "Pet creation or skill installation/discovery, not pointer delivery to a visible pet."
+    },
+    {
+      "number": 45652,
+      "url": "https://github.com/openai/codex/issues/45652",
+      "reason": "Pet creation or skill installation/discovery, not pointer delivery to a visible pet."
+    },
+    {
+      "number": 21211,
+      "url": "https://github.com/openai/codex/issues/21211",
+      "reason": "Broader application performance or process-lifecycle report, not established as the pet pointer-delivery defect."
+    },
+    {
+      "number": 28361,
+      "url": "https://github.com/openai/codex/issues/28361",
+      "reason": "Broader application performance or process-lifecycle report, not established as the pet pointer-delivery defect."
+    },
+    {
+      "number": 33996,
+      "url": "https://github.com/openai/codex/issues/33996",
+      "reason": "Broader application performance or process-lifecycle report, not established as the pet pointer-delivery defect."
+    },
+    {
+      "number": 45197,
+      "url": "https://github.com/openai/codex/issues/45197",
+      "reason": "Broader application performance or process-lifecycle report, not established as the pet pointer-delivery defect."
+    },
+    {
+      "number": 21713,
+      "url": "https://github.com/openai/codex/issues/21713",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 32454,
+      "url": "https://github.com/openai/codex/issues/32454",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 33471,
+      "url": "https://github.com/openai/codex/issues/33471",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 38271,
+      "url": "https://github.com/openai/codex/issues/38271",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 42958,
+      "url": "https://github.com/openai/codex/issues/42958",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 45754,
+      "url": "https://github.com/openai/codex/issues/45754",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 45859,
+      "url": "https://github.com/openai/codex/issues/45859",
+      "reason": "Computer Use, browser-control, or sandbox failure outside desktop-pet input scope."
+    },
+    {
+      "number": 35349,
+      "url": "https://github.com/openai/codex/issues/35349",
+      "reason": "Windows setup failure, not desktop-pet pointer delivery."
+    },
+    {
+      "number": 36700,
+      "url": "https://github.com/openai/codex/issues/36700",
+      "reason": "Pet artwork, notification, shortcut configuration, or companion feature request, not Windows pet pointer delivery."
+    },
+    {
+      "number": 42433,
+      "url": "https://github.com/openai/codex/issues/42433",
+      "reason": "Pet artwork, notification, shortcut configuration, or companion feature request, not Windows pet pointer delivery."
+    },
+    {
+      "number": 45299,
+      "url": "https://github.com/openai/codex/issues/45299",
+      "reason": "Pet artwork, notification, shortcut configuration, or companion feature request, not Windows pet pointer delivery."
+    },
+    {
+      "number": 45451,
+      "url": "https://github.com/openai/codex/issues/45451",
+      "reason": "Pet artwork, notification, shortcut configuration, or companion feature request, not Windows pet pointer delivery."
+    },
+    {
+      "number": 45397,
+      "url": "https://github.com/openai/codex/issues/45397",
+      "reason": "macOS pet input/visibility failure; outside the Windows selection and not evidence of a Windows regression."
+    },
+    {
+      "number": 45623,
+      "url": "https://github.com/openai/codex/issues/45623",
+      "reason": "macOS pet input/visibility failure; outside the Windows selection and not evidence of a Windows regression."
+    },
+    {
+      "number": 45460,
+      "url": "https://github.com/openai/codex/issues/45460",
+      "reason": "Linux/Wayland voice-overlay geometry and input interception; outside the Windows comparison scope."
+    },
+    {
+      "number": 45514,
+      "url": "https://github.com/openai/codex/issues/45514",
+      "reason": "Linux/Wayland voice-overlay geometry and input interception; outside the Windows comparison scope."
+    },
+    {
+      "number": 45583,
+      "url": "https://github.com/openai/codex/issues/45583",
+      "reason": "macOS conversation-reference drag-and-drop, not pet dragging."
     }
   ],
   "findings": [
@@ -743,6 +883,36 @@
         "https://github.com/openai/codex/issues/44739#issuecomment-5647328178",
         "https://github.com/openai/codex/issues/44739#issuecomment-5647371751"
       ]
+    },
+    {
+      "finding": "#43723 closed/completed after the reporter confirmed working voice-overlay clicks and dragging on the same Windows 10 machine following an update from package 26.901.6511.0 to 26.908.4834.0. The recovery record is retained, but the closed node receives no open-report dash. #42469 also closed/completed on September 15; its three older comments add no recovery or fixed-build confirmation. The six open-report recovery dashes remain unchanged.",
+      "sources": [
+        "https://github.com/openai/codex/issues/43723#issuecomment-5676236062",
+        "https://github.com/openai/codex/issues/42469"
+      ]
+    },
+    {
+      "finding": "Two new selected Windows reports describe remaining pet input trouble. #45253 combines mixed-monitor work-area placement with click-through and failed dragging but supplies no comparable version. #45575 documents click-through and an initial drag jump on older package 26.901.6511.0, with user-reported lack of an offered Store update. Neither establishes a regression in the newer package associated with recovery. Its automated link to #45253 is recorded as a reference; its suggested macOS match #45397 remains outside the graph.",
+      "sources": [
+        "https://github.com/openai/codex/issues/45253",
+        "https://github.com/openai/codex/issues/45575",
+        "https://github.com/openai/codex/issues/45575#issuecomment-5673662694",
+        "https://github.com/openai/codex/issues/45397"
+      ]
+    },
+    {
+      "finding": "A September 13 #43713 follow-up compares #43061 and #43200 but distinguishes successful initial hover followed by loss of input events while animation scheduling continues. The trace remains local and unreviewed here. The reporter explicitly leaves a shared stale-input/passthrough mechanism unproven; existing reference edges now include this community qualification.",
+      "sources": [
+        "https://github.com/openai/codex/issues/43713#issuecomment-5651826432"
+      ]
+    },
+    {
+      "finding": "The separate avatar-overlay crash #44739 is now closed, with another explicit Windows recovery confirmation on package 26.908.4834.0. Meanwhile #38663 has a September 14 report of brief startup mouse stuttering with Pet visible on that package, relieved by hiding Pet. Crash recovery and this broader performance symptom are recorded separately; neither establishes a new failure of pet click/drag delivery.",
+      "sources": [
+        "https://github.com/openai/codex/issues/44739#issuecomment-5651700289",
+        "https://github.com/openai/codex/issues/44739",
+        "https://github.com/openai/codex/issues/38663#issuecomment-5662258628"
+      ]
     }
   ],
   "limitations": [
@@ -753,39 +923,46 @@
   ],
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
-    "reviewed_at": "2026-09-12",
-    "unique_search_results": 20,
-    "discussion_comments_fetched": 1,
-    "snapshot_fetched_at": "2026-09-12T06:40:11Z",
-    "reviewed_issue_count": 113,
+    "reviewed_at": "2026-09-13",
+    "unique_search_results": 15,
+    "discussion_comments_fetched": 7,
+    "snapshot_fetched_at": "2026-09-13T03:51:33Z",
+    "reviewed_issue_count": 117,
     "previous_review": {
-      "reviewed_at": "2026-09-11",
-      "unique_search_results": 33,
-      "discussion_comments_fetched": 6,
-      "snapshot_fetched_at": "2026-09-11T18:17:15Z",
-      "reviewed_issue_count": 111,
+      "reviewed_at": "2026-09-12",
+      "unique_search_results": 20,
+      "discussion_comments_fetched": 1,
+      "snapshot_fetched_at": "2026-09-12T06:40:11Z",
+      "reviewed_issue_count": 113,
       "previous_review": {
-        "reviewed_at": "2026-09-10",
-        "unique_search_results": 12,
-        "discussion_comments_fetched": 4,
-        "snapshot_fetched_at": "2026-09-10T12:07:58Z",
-        "reviewed_issue_count": 96,
+        "reviewed_at": "2026-09-11",
+        "unique_search_results": 33,
+        "discussion_comments_fetched": 6,
+        "snapshot_fetched_at": "2026-09-11T18:17:15Z",
+        "reviewed_issue_count": 111,
         "previous_review": {
           "reviewed_at": "2026-09-10",
-          "unique_search_results": 27,
-          "discussion_comments_fetched": 7,
-          "snapshot_fetched_at": "2026-09-10T05:07:48Z",
-          "reviewed_issue_count": 94,
+          "unique_search_results": 12,
+          "discussion_comments_fetched": 4,
+          "snapshot_fetched_at": "2026-09-10T12:07:58Z",
+          "reviewed_issue_count": 96,
           "previous_review": {
-            "reviewed_at": "2026-09-09",
-            "unique_search_results": 57,
-            "discussion_comments_fetched": 347,
-            "reviewed_issue_count": 83,
+            "reviewed_at": "2026-09-10",
+            "unique_search_results": 27,
+            "discussion_comments_fetched": 7,
+            "snapshot_fetched_at": "2026-09-10T05:07:48Z",
+            "reviewed_issue_count": 94,
             "previous_review": {
-              "reviewed_at": "2026-09-07",
-              "unique_search_results": 387,
-              "reviewed_issue_count": 69,
-              "discussion_comments_fetched": 321
+              "reviewed_at": "2026-09-09",
+              "unique_search_results": 57,
+              "discussion_comments_fetched": 347,
+              "reviewed_issue_count": 83,
+              "previous_review": {
+                "reviewed_at": "2026-09-07",
+                "unique_search_results": 387,
+                "reviewed_issue_count": 69,
+                "discussion_comments_fetched": 321
+              }
             }
           }
         }
@@ -793,21 +970,29 @@
     }
   },
   "refreshed_issue_numbers": [
-    20730,
+    20778,
+    21211,
     21359,
     21508,
+    21713,
+    25178,
+    28361,
+    32454,
     33224,
+    33471,
     33565,
     33840,
+    33996,
     34012,
-    34092,
-    34170,
     34227,
     34309,
     34349,
+    35349,
     35868,
-    37403,
+    36700,
     37978,
+    38271,
+    38663,
     39024,
     40239,
     41262,
@@ -830,10 +1015,10 @@
     42190,
     42225,
     42230,
-    42243,
     42255,
     42289,
     42382,
+    42433,
     42469,
     42661,
     42813,
@@ -843,24 +1028,40 @@
     42927,
     42945,
     42946,
+    42958,
     43061,
     43115,
-    43137,
+    43127,
     43200,
     43226,
     43346,
     43493,
+    43654,
     43713,
     43717,
     43723,
+    43737,
     43789,
+    43817,
     44031,
-    44546,
+    44140,
     44720,
     44738,
     44739,
-    44985,
+    44809,
     45098,
-    45111
+    45197,
+    45253,
+    45299,
+    45397,
+    45451,
+    45460,
+    45514,
+    45575,
+    45583,
+    45623,
+    45652,
+    45754,
+    45859
   ]
 }
