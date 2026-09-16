@@ -5,51 +5,51 @@
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
-      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-13",
-      "reported_total": 19,
-      "results_fetched": 19,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-13",
-      "reported_total": 21,
-      "results_fetched": 21,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-13",
-      "reported_total": 0,
-      "results_fetched": 0,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-13",
-      "reported_total": 18,
-      "results_fetched": 18,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-13",
-      "reported_total": 14,
-      "results_fetched": 14,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-13",
-      "reported_total": 0,
-      "results_fetched": 0,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-13",
+      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-16",
       "reported_total": 1,
       "results_fetched": 1,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-16",
+      "reported_total": 2,
+      "results_fetched": 2,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-16",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-16",
+      "reported_total": 3,
+      "results_fetched": 3,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-16",
+      "reported_total": 1,
+      "results_fetched": 1,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-16",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-16",
+      "reported_total": 0,
+      "results_fetched": 0,
       "pages": 1,
       "incomplete_results": false
     },
@@ -75,7 +75,7 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 41,
+  "unique_search_results": 5,
   "reviewed_issue_numbers": [
     20214,
     20730,
@@ -116,6 +116,7 @@
     35349,
     35868,
     36222,
+    36498,
     36700,
     36980,
     37073,
@@ -220,8 +221,8 @@
     45754,
     45859
   ],
-  "discussion_comments_fetched": 8,
-  "method": "Incremental review since 2026-09-13T03:51:33Z: refreshed metadata for all 55 previously selected reports and paginated their new or edited comments (two returned). Screened 41 unique search hits, including introductory body excerpts for 38 unselected cases, with follow-up full-body reads for relevant Windows reports and boundary cases. Read complete discussions for #45253 (zero comments), #45575 (one), and #42469 (three), plus new or edited comments on #44739 (one) and #38663 (one). Added #45253 and #45575, bringing the selection to 57 reports; fetched their metadata and retained only the public allowlist. Reviewed #43723 recovery, #42469 closure without new recovery evidence, and #43713 diagnostic qualification. Separately rechecked the closed crash report #44739 and the broader mouse-stutter report #38663. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked in this incremental pass. Review dates and snapshot timestamps use UTC.",
+  "discussion_comments_fetched": 0,
+  "method": "Incremental review since 2026-09-16T08:31:37Z, captured at 2026-09-16T16:29:31Z (September 17 in Asia/Shanghai): refreshed metadata for all 57 selected reports (no issue-record changes); paginated new or edited comments on every selected report (none returned). Screened five unique search hits using introductory body excerpts; none added a Windows pet-input report. Separately rechecked metadata and paginated new or edited comments on #44720, #44739, and #38663 (none returned). Read the full current body of #44720 after its metadata showed an update; its module-cycle account does not change the existing crash-family assessment. The selection remains 57 reports, 47 open and ten closed, with 249 relationships and six open-report recovery dashes. Existing summaries, recovery classifications, and site copy remain accurate and unchanged. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked in this incremental pass. Review dates and snapshot timestamps use UTC.",
   "selected_issue_count": 57,
   "relationship_counts": {
     "reference": 228,
@@ -655,6 +656,11 @@
       "number": 45583,
       "url": "https://github.com/openai/codex/issues/45583",
       "reason": "macOS conversation-reference drag-and-drop, not pet dragging."
+    },
+    {
+      "number": 36498,
+      "url": "https://github.com/openai/codex/issues/36498",
+      "reason": "Pet companion behaviors and event-driven reactions feature proposal, not a report of failed Windows pointer delivery."
     }
   ],
   "findings": [
@@ -923,45 +929,52 @@
   ],
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
-    "reviewed_at": "2026-09-13",
-    "unique_search_results": 15,
-    "discussion_comments_fetched": 7,
-    "snapshot_fetched_at": "2026-09-13T03:51:33Z",
-    "reviewed_issue_count": 117,
+    "reviewed_at": "2026-09-16",
+    "unique_search_results": 41,
+    "discussion_comments_fetched": 8,
+    "snapshot_fetched_at": "2026-09-16T08:31:37Z",
+    "reviewed_issue_count": 142,
     "previous_review": {
-      "reviewed_at": "2026-09-12",
-      "unique_search_results": 20,
-      "discussion_comments_fetched": 1,
-      "snapshot_fetched_at": "2026-09-12T06:40:11Z",
-      "reviewed_issue_count": 113,
+      "reviewed_at": "2026-09-13",
+      "unique_search_results": 15,
+      "discussion_comments_fetched": 7,
+      "snapshot_fetched_at": "2026-09-13T03:51:33Z",
+      "reviewed_issue_count": 117,
       "previous_review": {
-        "reviewed_at": "2026-09-11",
-        "unique_search_results": 33,
-        "discussion_comments_fetched": 6,
-        "snapshot_fetched_at": "2026-09-11T18:17:15Z",
-        "reviewed_issue_count": 111,
+        "reviewed_at": "2026-09-12",
+        "unique_search_results": 20,
+        "discussion_comments_fetched": 1,
+        "snapshot_fetched_at": "2026-09-12T06:40:11Z",
+        "reviewed_issue_count": 113,
         "previous_review": {
-          "reviewed_at": "2026-09-10",
-          "unique_search_results": 12,
-          "discussion_comments_fetched": 4,
-          "snapshot_fetched_at": "2026-09-10T12:07:58Z",
-          "reviewed_issue_count": 96,
+          "reviewed_at": "2026-09-11",
+          "unique_search_results": 33,
+          "discussion_comments_fetched": 6,
+          "snapshot_fetched_at": "2026-09-11T18:17:15Z",
+          "reviewed_issue_count": 111,
           "previous_review": {
             "reviewed_at": "2026-09-10",
-            "unique_search_results": 27,
-            "discussion_comments_fetched": 7,
-            "snapshot_fetched_at": "2026-09-10T05:07:48Z",
-            "reviewed_issue_count": 94,
+            "unique_search_results": 12,
+            "discussion_comments_fetched": 4,
+            "snapshot_fetched_at": "2026-09-10T12:07:58Z",
+            "reviewed_issue_count": 96,
             "previous_review": {
-              "reviewed_at": "2026-09-09",
-              "unique_search_results": 57,
-              "discussion_comments_fetched": 347,
-              "reviewed_issue_count": 83,
+              "reviewed_at": "2026-09-10",
+              "unique_search_results": 27,
+              "discussion_comments_fetched": 7,
+              "snapshot_fetched_at": "2026-09-10T05:07:48Z",
+              "reviewed_issue_count": 94,
               "previous_review": {
-                "reviewed_at": "2026-09-07",
-                "unique_search_results": 387,
-                "reviewed_issue_count": 69,
-                "discussion_comments_fetched": 321
+                "reviewed_at": "2026-09-09",
+                "unique_search_results": 57,
+                "discussion_comments_fetched": 347,
+                "reviewed_issue_count": 83,
+                "previous_review": {
+                  "reviewed_at": "2026-09-07",
+                  "unique_search_results": 387,
+                  "reviewed_issue_count": 69,
+                  "discussion_comments_fetched": 321
+                }
               }
             }
           }
@@ -970,28 +983,19 @@
     }
   },
   "refreshed_issue_numbers": [
-    20778,
-    21211,
     21359,
     21508,
-    21713,
     25178,
-    28361,
     32454,
     33224,
-    33471,
     33565,
     33840,
-    33996,
     34012,
     34227,
     34309,
-    34349,
-    35349,
     35868,
-    36700,
+    36498,
     37978,
-    38271,
     38663,
     39024,
     40239,
@@ -1018,7 +1022,6 @@
     42255,
     42289,
     42382,
-    42433,
     42469,
     42661,
     42813,
@@ -1028,40 +1031,21 @@
     42927,
     42945,
     42946,
-    42958,
     43061,
     43115,
-    43127,
     43200,
     43226,
     43346,
     43493,
-    43654,
     43713,
     43717,
     43723,
-    43737,
     43789,
-    43817,
     44031,
-    44140,
     44720,
-    44738,
     44739,
-    44809,
-    45098,
-    45197,
     45253,
-    45299,
-    45397,
-    45451,
-    45460,
-    45514,
     45575,
-    45583,
-    45623,
-    45652,
-    45754,
     45859
   ]
 }
