@@ -22,7 +22,7 @@
   "selected": "selected reports",
   "open_at_snapshot": "open at snapshot",
   "satire": "Some pets have found the mouse. Others are still networking.",
-  "recovery_update": "September 13 review: input recovery reports are unchanged. The separate pet-window crash now has a recovery report on Windows package 26.908.4834.0. The window is trying to stay for the conversation.",
+  "recovery_update": "September 16 review: voice-overlay controls also have a recovery report on Windows package 26.908.4834.0. Two more pet-input reports join the map. The paperwork remains responsive.",
   "recovery_evidence": "Recovery reports",
   "crash_evidence": "Crash recovery report",
   "remaining_evidence": "Remaining reports",

@@ -8,12 +8,14 @@ A collection of reports about clicking, dragging, and the increasingly academic
 relationship between the two. The reports now have a relationship graph.
 Some of the pets have repaired theirs.
 
-The September 13 review keeps the reports of [working input on Windows package `26.903.9818.0`](https://github.com/openai/codex/issues/41535#issuecomment-5625133108)
-and [another pet that can be dragged again](https://github.com/openai/codex/issues/43789#issuecomment-5622038946).
-The separate pet-window crash persisted on package `26.908.4561.0`, but now has
-[a recovery report on `26.908.4834.0`](https://github.com/openai/codex/issues/44739#issuecomment-5647371751).
-The window is trying to stay for the conversation.
-That crash gets its own receipt, outside the input-failure graph.
+The September 16 review adds [voice controls that click and drag again on Windows package `26.908.4834.0`](https://github.com/openai/codex/issues/43723#issuecomment-5676236062).
+The separate pet-window crash also has [another recovery confirmation on that package](https://github.com/openai/codex/issues/44739#issuecomment-5651700289)
+and is now closed. That crash keeps its own receipt, outside the input-failure graph.
+
+Two more pet-input reports join the map: [a pet behind the taskbar](https://github.com/openai/codex/issues/45253)
+and [click-through with a jumping drag](https://github.com/openai/codex/issues/45575).
+The first supplies no comparable version; the second is on older package `26.901.6511.0`.
+Neither establishes a regression in the newer package. The paperwork remains responsive.
 
 ## We brought receipts
 
