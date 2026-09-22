@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-16",
+  "reviewed_at": "2026-09-22",
   "counter_issue": 34227,
   "issues": [
     {
@@ -40,7 +40,7 @@
         "en": "Overlay + UI stalls"
       },
       "summary": {
-        "en": "Reports task-switching stalls and unresponsive dragging when the overlay is open. GitHub marked #33840 as a duplicate of this report. This broader mouse-stall family remains distinct from a demonstrated click-through mechanism."
+        "en": "Reports task-switching stalls and unresponsive dragging with the overlay open; GitHub marked #33840 as its duplicate. A September 19 follow-up narrows brief cursor stuttering to transitions that activate the main app while the pet is visible, with both built-in and custom pets at 100% scaling. It supplies no tested app version or recovery and does not establish a native root cause. This broader mouse-stall family remains distinct from demonstrated click-through."
       }
     },
     {

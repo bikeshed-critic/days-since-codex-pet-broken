@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "fetched_at": "2026-09-16T16:29:31Z",
+  "fetched_at": "2026-09-22T02:10:44Z",
   "issues": [
     {
       "number": 21359,
@@ -57,7 +57,7 @@
       "state": "open",
       "state_reason": null,
       "created_at": "2026-07-16T09:54:36Z",
-      "updated_at": "2026-08-15T16:03:56Z",
+      "updated_at": "2026-09-19T21:34:38Z",
       "closed_at": null,
       "labels": [
         "app",
