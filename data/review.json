@@ -1,55 +1,76 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-26",
+  "reviewed_at": "2026-09-28",
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
-      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-24",
-      "reported_total": 8,
-      "results_fetched": 8,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-24",
-      "reported_total": 9,
-      "results_fetched": 9,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-24",
-      "reported_total": 1,
-      "results_fetched": 1,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-24",
+      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-26",
       "reported_total": 10,
       "results_fetched": 10,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-24",
-      "reported_total": 8,
-      "results_fetched": 8,
+      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-26",
+      "reported_total": 12,
+      "results_fetched": 12,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-24",
+      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-26",
+      "reported_total": 2,
+      "results_fetched": 2,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-26",
+      "reported_total": 9,
+      "results_fetched": 9,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-26",
+      "reported_total": 5,
+      "results_fetched": 5,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-26",
       "reported_total": 0,
       "results_fetched": 0,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-24",
-      "reported_total": 0,
-      "results_fetched": 0,
+      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-26",
+      "reported_total": 1,
+      "results_fetched": 1,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue scrollbar updated:>=2026-09-26",
+      "reported_total": 10,
+      "results_fetched": 10,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"hit test\" updated:>=2026-09-26",
+      "reported_total": 7,
+      "results_fetched": 7,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"quick chat\" updated:>=2026-09-26",
+      "reported_total": 16,
+      "results_fetched": 16,
       "pages": 1,
       "incomplete_results": false
     },
@@ -75,9 +96,10 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 25,
+  "unique_search_results": 57,
   "reviewed_issue_numbers": [
     17596,
+    18658,
     18906,
     20048,
     20214,
@@ -103,6 +125,7 @@
     28361,
     28929,
     28995,
+    29908,
     30532,
     30622,
     32069,
@@ -112,6 +135,7 @@
     33471,
     33565,
     33840,
+    33977,
     33996,
     34012,
     34092,
@@ -123,6 +147,7 @@
     35349,
     35654,
     35868,
+    36158,
     36222,
     36498,
     36603,
@@ -132,6 +157,7 @@
     37073,
     37403,
     37978,
+    38059,
     38271,
     38300,
     38508,
@@ -142,8 +168,10 @@
     38988,
     39024,
     39178,
+    39851,
     40239,
     40352,
+    40531,
     40772,
     40778,
     41262,
@@ -151,6 +179,7 @@
     41304,
     41306,
     41323,
+    41446,
     41465,
     41485,
     41501,
@@ -185,9 +214,11 @@
     42862,
     42923,
     42927,
+    42937,
     42945,
     42946,
     42958,
+    42987,
     43061,
     43115,
     43127,
@@ -200,14 +231,17 @@
     43404,
     43493,
     43557,
+    43596,
     43654,
     43713,
     43717,
     43723,
+    43732,
     43737,
     43789,
     43817,
     44031,
+    44096,
     44140,
     44370,
     44504,
@@ -217,6 +251,7 @@
     44739,
     44765,
     44775,
+    44787,
     44809,
     44830,
     44858,
@@ -225,6 +260,8 @@
     45060,
     45098,
     45111,
+    45119,
+    45170,
     45197,
     45253,
     45299,
@@ -248,23 +285,62 @@
     46371,
     46396,
     46427,
+    46452,
     46771,
+    46788,
     47040,
+    47070,
     47090,
+    47133,
+    47202,
     47280,
     47469,
     47498,
     47545,
+    47669,
+    47770,
     47836,
     48018,
+    48024,
     48034,
     48040,
     48081,
     48092,
-    48216
+    48201,
+    48208,
+    48216,
+    48309,
+    48338,
+    48345,
+    48365,
+    48376,
+    48378,
+    48398,
+    48424,
+    48525,
+    48536,
+    48577,
+    48633,
+    48664,
+    48676,
+    48684,
+    48700,
+    48711,
+    48756,
+    48788,
+    48804,
+    48811,
+    48846,
+    48902,
+    48905,
+    48922,
+    48923,
+    48944,
+    48952,
+    48953
   ],
-  "discussion_comments_fetched": 1,
-  "method": "Incremental review since 2026-09-24T06:24:02Z: refreshed metadata for all 57 selected reports (no issue-record changes); paginated new or edited comments on every selected report (none returned). Screened 25 unique search hits using introductory body excerpts: 24 unselected issues and one unrelated TUI pull request. Read the full bodies of #47836 and #38802, paginated the complete discussion of #47836 (no comments), and new or edited comments on #38802 (one returned). Separately rechecked metadata and paginated new or edited comments on #44739, #38663, #46207, and #46771 (none returned). Recorded the unspecified-platform voice-drag report and the broader Windows memory/stutter follow-up separately; no new Windows click/drag report was selected. The graph remains at 57 reports, 47 open and ten closed, with 249 relationships and six open-report recovery dashes. Existing summaries, recovery classifications, and site copy remain accurate and unchanged. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked in this incremental pass. Review dates and snapshot timestamps use UTC.",
+  "discussion_comments_fetched": 16,
+  "method": "Incremental review since 2026-09-26T02:29:42Z: refreshed metadata for all 57 selected reports (no issue-record changes); paginated new or edited comments on every selected report (none returned). Screened 57 unique search hits by title, with introductory body excerpts for candidates; one hit was an unrelated TUI pull request. Read full bodies and complete paginated discussions of ten issues: #45098, #48905, #48952, #48811, #48953, #48365, #48525, #48338, #48378, #47669 (12 comments). Separately paginated new or edited comments on 13 context/recovery issues (four comments, on #47133 and #47202). The 16-comment count includes bot notices and a translation, not 16 independent observations. Incorporated the September 26 deep dive (22 searches, 138 unique title-screened issues, 18 full issue/discussion reads plus upstream Hyprland evidence) as dated context, without claiming all those discussions were re-read today. Added Linux keyboard-input, Windows scrollbar, Quick Chat hang, pet-related startup/jitter, and task-attention findings separately from the pointer graph. No new Windows pet click/drag report met the selection criteria. The graph remains at 57 reports, 47 open and ten closed, with 249 relationships and six open-report recovery dashes. Existing graph summaries, recovery classifications, and site copy remain accurate. Historical findings and exclusions remain unless qualified below. Public changelog not rechecked. Review dates and snapshot timestamps use UTC.",
   "selected_issue_count": 57,
   "relationship_counts": {
     "reference": 228,
@@ -577,7 +653,7 @@
     {
       "number": 45098,
       "url": "https://github.com/openai/codex/issues/45098",
-      "reason": "Linux Mint/Xfce/X11 keyboard input failure on app 26.908.40834, with working mouse focus and paste. Outside the Windows scope; not evidence of recurrence of the Windows pointer defect."
+      "reason": "Linux Pet/Quick Chat keyboard-input failure, with later Pop!_OS/COSMIC and CachyOS/KDE reports. The September 27 report reproduces on 26.917.71314 and says forcing X11 did not help. Outside the Windows pointer-input selection; neither distro advice nor backend switching establishes recovery."
     },
     {
       "number": 45111,
@@ -687,12 +763,12 @@
     {
       "number": 45460,
       "url": "https://github.com/openai/codex/issues/45460",
-      "reason": "Linux/Wayland voice-overlay geometry and input interception; outside the Windows comparison scope."
+      "reason": "Linux/Hyprland voice-overlay input interception. September 18 contributor and upstream reproduction attribute it to top-level input-region handling; candidate patch and procedural issue closure are not a shipped fix. Outside the Windows graph."
     },
     {
       "number": 45514,
       "url": "https://github.com/openai/codex/issues/45514",
-      "reason": "Linux/Wayland voice-overlay geometry and input interception; outside the Windows comparison scope."
+      "reason": "Linux/Hyprland voice-overlay input interception, with the same September 18 compositor diagnosis as #45460. Retained as cross-platform context, not independent Windows evidence."
     },
     {
       "number": 45583,
@@ -902,7 +978,7 @@
     {
       "number": 48018,
       "url": "https://github.com/openai/codex/issues/48018",
-      "reason": "Linux/Hyprland pet-overlay geometry and decorations, outside the Windows selection."
+      "reason": "Linux/Hyprland oversized pet-window geometry. The reported XWayland input shape is much smaller than the window bounds; native Wayland input region was not measured. Dimensions alone do not prove whole-window input capture. Outside Windows scope."
     },
     {
       "number": 48034,
@@ -918,6 +994,271 @@
       "number": 48216,
       "url": "https://github.com/openai/codex/issues/48216",
       "reason": "Windows main-window loading failure while backend tasks and pet progress remain active, not established as failed pet input delivery."
+    },
+    {
+      "number": 47070,
+      "url": "https://github.com/openai/codex/issues/47070",
+      "reason": "Windows main-app scrollbar/resize hit-area failures; no established pet-overlay connection."
+    },
+    {
+      "number": 47202,
+      "url": "https://github.com/openai/codex/issues/47202",
+      "reason": "Windows main-app scrollbar/resize hit-area failures; no established pet-overlay connection."
+    },
+    {
+      "number": 48309,
+      "url": "https://github.com/openai/codex/issues/48309",
+      "reason": "Windows main-app scrollbar/resize hit-area failures; no established pet-overlay connection."
+    },
+    {
+      "number": 48905,
+      "url": "https://github.com/openai/codex/issues/48905",
+      "reason": "Windows main-app scrollbar/resize hit-area failures; no established pet-overlay connection."
+    },
+    {
+      "number": 46788,
+      "url": "https://github.com/openai/codex/issues/46788",
+      "reason": "Windows product-selector click failure, outside pet scope. #47133 now has a Hebrew-to-English UI-language workaround and confirmation, not a shipped fix."
+    },
+    {
+      "number": 47133,
+      "url": "https://github.com/openai/codex/issues/47133",
+      "reason": "Windows product-selector click failure, outside pet scope. #47133 now has a Hebrew-to-English UI-language workaround and confirmation, not a shipped fix."
+    },
+    {
+      "number": 45170,
+      "url": "https://github.com/openai/codex/issues/45170",
+      "reason": "Disabled Windows main window after Computer Use, not established as pet hit-test failure."
+    },
+    {
+      "number": 46452,
+      "url": "https://github.com/openai/codex/issues/46452",
+      "reason": "Voice invocation/shortcut behavior, not confirmed pointer-input failure."
+    },
+    {
+      "number": 47669,
+      "url": "https://github.com/openai/codex/issues/47669",
+      "reason": "Main-window drag jitter with a pet-position-dependent follow-up; user-reported correlation, not verified pet-window identification or a recurrence of pet click-through."
+    },
+    {
+      "number": 48365,
+      "url": "https://github.com/openai/codex/issues/48365",
+      "reason": "Windows startup stalls more often with the pet enabled but also with it disabled; separate lifecycle context, not the earlier pet AppRoutes exception or pointer-input failure."
+    },
+    {
+      "number": 48338,
+      "url": "https://github.com/openai/codex/issues/48338",
+      "reason": "macOS pet-switch position jump with drag snap-back, outside the Windows selection."
+    },
+    {
+      "number": 48376,
+      "url": "https://github.com/openai/codex/issues/48376",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48378,
+      "url": "https://github.com/openai/codex/issues/48378",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48684,
+      "url": "https://github.com/openai/codex/issues/48684",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48711,
+      "url": "https://github.com/openai/codex/issues/48711",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48811,
+      "url": "https://github.com/openai/codex/issues/48811",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48952,
+      "url": "https://github.com/openai/codex/issues/48952",
+      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+    },
+    {
+      "number": 48525,
+      "url": "https://github.com/openai/codex/issues/48525",
+      "reason": "Pet-position pinning and voice-routing feature request, not failed click/drag input or a confirmed misrouting bug."
+    },
+    {
+      "number": 48953,
+      "url": "https://github.com/openai/codex/issues/48953",
+      "reason": "Pet overlay does not surface mid-turn questions or waiting animation; task-attention mapping rather than failed pointer delivery."
+    },
+    {
+      "number": 48922,
+      "url": "https://github.com/openai/codex/issues/48922",
+      "reason": "macOS Mini Appshot-removal discoverability report; outside Windows pointer scope."
+    },
+    {
+      "number": 48788,
+      "url": "https://github.com/openai/codex/issues/48788",
+      "reason": "Custom-pet sprite/animation or diagnostic-efficiency report, not pet pointer delivery."
+    },
+    {
+      "number": 48536,
+      "url": "https://github.com/openai/codex/issues/48536",
+      "reason": "Custom-pet sprite/animation or diagnostic-efficiency report, not pet pointer delivery."
+    },
+    {
+      "number": 48633,
+      "url": "https://github.com/openai/codex/issues/48633",
+      "reason": "macOS Mini/pet global-shortcut customization or keyboard conflict, outside Windows pointer scope."
+    },
+    {
+      "number": 48756,
+      "url": "https://github.com/openai/codex/issues/48756",
+      "reason": "macOS Mini/pet global-shortcut customization or keyboard conflict, outside Windows pointer scope."
+    },
+    {
+      "number": 48944,
+      "url": "https://github.com/openai/codex/issues/48944",
+      "reason": "macOS Mini/pet global-shortcut customization or keyboard conflict, outside Windows pointer scope."
+    },
+    {
+      "number": 47770,
+      "url": "https://github.com/openai/codex/issues/47770",
+      "reason": "Startup copy or browser-session performance failure without an established pet pointer-input connection; #48201 says hiding the pet did not prevent freezes."
+    },
+    {
+      "number": 48201,
+      "url": "https://github.com/openai/codex/issues/48201",
+      "reason": "Startup copy or browser-session performance failure without an established pet pointer-input connection; #48201 says hiding the pet did not prevent freezes."
+    },
+    {
+      "number": 18658,
+      "url": "https://github.com/openai/codex/issues/18658",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 36158,
+      "url": "https://github.com/openai/codex/issues/36158",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 48024,
+      "url": "https://github.com/openai/codex/issues/48024",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 48398,
+      "url": "https://github.com/openai/codex/issues/48398",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 48664,
+      "url": "https://github.com/openai/codex/issues/48664",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 48676,
+      "url": "https://github.com/openai/codex/issues/48676",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 48846,
+      "url": "https://github.com/openai/codex/issues/48846",
+      "reason": "CLI terminal scrolling, paste, or mouse capture, not desktop-pet pointer input."
+    },
+    {
+      "number": 33977,
+      "url": "https://github.com/openai/codex/issues/33977",
+      "reason": "Main-app keyboard, scrolling, or layout behavior without an established pet pointer-input connection."
+    },
+    {
+      "number": 39851,
+      "url": "https://github.com/openai/codex/issues/39851",
+      "reason": "Main-app keyboard, scrolling, or layout behavior without an established pet pointer-input connection."
+    },
+    {
+      "number": 41446,
+      "url": "https://github.com/openai/codex/issues/41446",
+      "reason": "Main-app keyboard, scrolling, or layout behavior without an established pet pointer-input connection."
+    },
+    {
+      "number": 48424,
+      "url": "https://github.com/openai/codex/issues/48424",
+      "reason": "Main-app keyboard, scrolling, or layout behavior without an established pet pointer-input connection."
+    },
+    {
+      "number": 48902,
+      "url": "https://github.com/openai/codex/issues/48902",
+      "reason": "Main-app keyboard, scrolling, or layout behavior without an established pet pointer-input connection."
+    },
+    {
+      "number": 29908,
+      "url": "https://github.com/openai/codex/issues/29908",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 42937,
+      "url": "https://github.com/openai/codex/issues/42937",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 42987,
+      "url": "https://github.com/openai/codex/issues/42987",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 43596,
+      "url": "https://github.com/openai/codex/issues/43596",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 43732,
+      "url": "https://github.com/openai/codex/issues/43732",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 45119,
+      "url": "https://github.com/openai/codex/issues/45119",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 48804,
+      "url": "https://github.com/openai/codex/issues/48804",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 48923,
+      "url": "https://github.com/openai/codex/issues/48923",
+      "reason": "Sandbox, agent, browser automation, Computer Use capability, or usage issue outside desktop-pet pointer scope."
+    },
+    {
+      "number": 44096,
+      "url": "https://github.com/openai/codex/issues/44096",
+      "reason": "Chat/Work mode availability or routing request, not pet pointer delivery."
+    },
+    {
+      "number": 48577,
+      "url": "https://github.com/openai/codex/issues/48577",
+      "reason": "Chat/Work mode availability or routing request, not pet pointer delivery."
+    },
+    {
+      "number": 48700,
+      "url": "https://github.com/openai/codex/issues/48700",
+      "reason": "Chat/Work mode availability or routing request, not pet pointer delivery."
+    },
+    {
+      "number": 44787,
+      "url": "https://github.com/openai/codex/issues/44787",
+      "reason": "Renderer/startup or hydration failure outside the selected Windows pet-input family."
+    },
+    {
+      "number": 48208,
+      "url": "https://github.com/openai/codex/issues/48208",
+      "reason": "Renderer/startup or hydration failure outside the selected Windows pet-input family."
+    },
+    {
+      "number": 48345,
+      "url": "https://github.com/openai/codex/issues/48345",
+      "reason": "Renderer/startup or hydration failure outside the selected Windows pet-input family."
     }
   ],
   "findings": [
@@ -1207,6 +1548,78 @@
       "sources": [
         "https://github.com/openai/codex/issues/38802#issuecomment-5815712905"
       ]
+    },
+    {
+      "finding": "September 26 deep-dive context: a repository contributor reports confirming correct app input-region commits and a Hyprland top-level click-through limitation. The upstream September 18 reproduction describes protocol traces, a Weston comparison, and a candidate patch. Hyprland #16300 was automatically closed under issue-intake policy, then followed up in discussion #11834; this is not a shipped fix. Contributor association is not treated as proof of an official OpenAI diagnosis. Repeated cross-posts are not independent reproductions. Large transparent window bounds alone do not establish a large input region, as #48018 reports a much smaller XWayland input shape.",
+      "sources": [
+        "https://github.com/openai/codex/issues/45460#issuecomment-5736112000",
+        "https://github.com/openai/codex/issues/45514#issuecomment-5736119860",
+        "https://github.com/hyprwm/Hyprland/issues/16300",
+        "https://github.com/hyprwm/Hyprland/discussions/11834#discussioncomment-18507706",
+        "https://github.com/openai/codex/issues/48018"
+      ]
+    },
+    {
+      "finding": "September 28 review: #45098 now includes a September 27 CachyOS/KDE Plasma/Wayland reproduction on app 26.917.71314, also tested on 26.908.40834. Forcing X11 reportedly did not help. This extends the earlier Pop!_OS/COSMIC report on 26.915.31945. A separate suggestion to try KDE is not recovery evidence, particularly alongside a KDE reproduction. This is Linux keyboard/Quick Chat context, not Windows pet pointer recurrence.",
+      "sources": [
+        "https://github.com/openai/codex/issues/45098#issuecomment-5768508405",
+        "https://github.com/openai/codex/issues/45098#issuecomment-5857538917",
+        "https://github.com/openai/codex/issues/45098#issuecomment-5858749693"
+      ]
+    },
+    {
+      "finding": "September 28 review: the Windows sidebar scrollbar/resize-handle overlap has a newer reproduction on package 26.924.2738.0 in #47202 and a new report #48905 on app 26.924.22138 describing narrow scrollbar hit areas. Retain this adjacent UI hit-testing family separately from pet-input reports; the duplicate bot linking #48905 to #48309 does not establish an official duplicate or shared root cause.",
+      "sources": [
+        "https://github.com/openai/codex/issues/47202#issuecomment-5856585039",
+        "https://github.com/openai/codex/issues/48905",
+        "https://github.com/openai/codex/issues/47070",
+        "https://github.com/openai/codex/issues/48309"
+      ]
+    },
+    {
+      "finding": "September 26-27 comments on #47133 report that changing the Windows app UI language from Hebrew to English restores product-selector clicks, followed by another confirmation. This narrows the earlier title-bar behavior to a possible RTL layout/hit-testing problem; the mechanism remains unverified. A language-change workaround is neither a shipped fix nor a pet recovery.",
+      "sources": [
+        "https://github.com/openai/codex/issues/47133#issuecomment-5844328993",
+        "https://github.com/openai/codex/issues/47133#issuecomment-5854961657"
+      ]
+    },
+    {
+      "finding": "September 28 review: new Quick Chat / More details hangs occur in Windows #48378 (app 26.924.20706, package 26.924.1866.0) and #48952 (version entered as 26924.22138), and macOS #48811 (26.924.22138). The latter reports sampled primary-renderer JavaScript activity and temporary renderer-reload recovery, not a resolved function or root cause. Keep these full-app/renderer hangs separate from the original pet click-through failure; neither restart nor speculative GPU explanations establish a fix.",
+      "sources": [
+        "https://github.com/openai/codex/issues/48378",
+        "https://github.com/openai/codex/issues/48952",
+        "https://github.com/openai/codex/issues/48811"
+      ]
+    },
+    {
+      "finding": "September 26 report #48365 describes Windows startup stalls on package 26.924.1866.0, with more failures when the pet is enabled but some failures when disabled. Its controlled state comparisons are user-reported evidence of correlation, not proof of a particular bootstrap race. It explicitly lacks the earlier #44739 exception; no reason to revoke that separate crash recovery based on this report alone.",
+      "sources": [
+        "https://github.com/openai/codex/issues/48365",
+        "https://github.com/openai/codex/issues/44739"
+      ]
+    },
+    {
+      "finding": "A September 27 follow-up on #47669 reports main-window drag jitter depending on pet position on Windows package 26.924.2738.0; moving the pet to the top-left or disabling it reportedly avoids the symptom. The English and Chinese comments describe the same observation, not independent confirmations. The claimed full-screen pet window is identified in the supplied diagnostic text as CodexComputerUseSwiftOverlay with a Computer Use title, so its identity as the pet window is not established. Retain the position-dependent observation without endorsing the proposed compositor mechanism or broad exclusions of graphics causes.",
+      "sources": [
+        "https://github.com/openai/codex/issues/47669#issuecomment-5858707668",
+        "https://github.com/openai/codex/issues/47669#issuecomment-5858743662"
+      ]
+    },
+    {
+      "finding": "New pet reports remain distinct: macOS #48338 describes a built-in-to-custom pet position jump and drag snap-back on 26.924.20706; Windows #48953 describes absent mid-turn question cards/waiting animation on package 26.924.2738.0. Neither establishes renewed Windows pet click-through. #48525 requests position pinning and clear voice ownership without claiming confirmed voice misrouting.",
+      "sources": [
+        "https://github.com/openai/codex/issues/48338",
+        "https://github.com/openai/codex/issues/48953",
+        "https://github.com/openai/codex/issues/48525"
+      ]
+    },
+    {
+      "finding": "September 26 deep-dive context: the pet-associated September 24 memory/stutter report in #38802 is cross-posted to #38059, not an independent confirmation. The latter is closed as completed but its reviewed discussion supplies no newer recovery or fixed build for that report. By contrast #48201 explicitly reports that hiding the pet did not prevent its browser-session freezes. Keep distinct performance failures and closure state separate from demonstrated recovery.",
+      "sources": [
+        "https://github.com/openai/codex/issues/38802#issuecomment-5815712905",
+        "https://github.com/openai/codex/issues/38059#issuecomment-5815724288",
+        "https://github.com/openai/codex/issues/48201"
+      ]
     }
   ],
   "limitations": [
@@ -1217,69 +1630,76 @@
   ],
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
-    "reviewed_at": "2026-09-24",
-    "unique_search_results": 19,
+    "reviewed_at": "2026-09-26",
+    "unique_search_results": 25,
     "discussion_comments_fetched": 1,
-    "snapshot_fetched_at": "2026-09-24T06:24:02Z",
-    "reviewed_issue_count": 172,
+    "snapshot_fetched_at": "2026-09-26T02:29:42Z",
+    "reviewed_issue_count": 185,
     "previous_review": {
-      "reviewed_at": "2026-09-22",
-      "unique_search_results": 40,
+      "reviewed_at": "2026-09-24",
+      "unique_search_results": 19,
       "discussion_comments_fetched": 1,
-      "snapshot_fetched_at": "2026-09-22T02:10:44Z",
-      "reviewed_issue_count": 161,
+      "snapshot_fetched_at": "2026-09-24T06:24:02Z",
+      "reviewed_issue_count": 172,
       "previous_review": {
-        "reviewed_at": "2026-09-16",
-        "unique_search_results": 5,
-        "discussion_comments_fetched": 0,
-        "snapshot_fetched_at": "2026-09-16T16:29:31Z",
-        "reviewed_issue_count": 143,
+        "reviewed_at": "2026-09-22",
+        "unique_search_results": 40,
+        "discussion_comments_fetched": 1,
+        "snapshot_fetched_at": "2026-09-22T02:10:44Z",
+        "reviewed_issue_count": 161,
         "previous_review": {
           "reviewed_at": "2026-09-16",
-          "unique_search_results": 41,
-          "discussion_comments_fetched": 8,
-          "snapshot_fetched_at": "2026-09-16T08:31:37Z",
-          "reviewed_issue_count": 142,
+          "unique_search_results": 5,
+          "discussion_comments_fetched": 0,
+          "snapshot_fetched_at": "2026-09-16T16:29:31Z",
+          "reviewed_issue_count": 143,
           "previous_review": {
-            "reviewed_at": "2026-09-13",
-            "unique_search_results": 15,
-            "discussion_comments_fetched": 7,
-            "snapshot_fetched_at": "2026-09-13T03:51:33Z",
-            "reviewed_issue_count": 117,
+            "reviewed_at": "2026-09-16",
+            "unique_search_results": 41,
+            "discussion_comments_fetched": 8,
+            "snapshot_fetched_at": "2026-09-16T08:31:37Z",
+            "reviewed_issue_count": 142,
             "previous_review": {
-              "reviewed_at": "2026-09-12",
-              "unique_search_results": 20,
-              "discussion_comments_fetched": 1,
-              "snapshot_fetched_at": "2026-09-12T06:40:11Z",
-              "reviewed_issue_count": 113,
+              "reviewed_at": "2026-09-13",
+              "unique_search_results": 15,
+              "discussion_comments_fetched": 7,
+              "snapshot_fetched_at": "2026-09-13T03:51:33Z",
+              "reviewed_issue_count": 117,
               "previous_review": {
-                "reviewed_at": "2026-09-11",
-                "unique_search_results": 33,
-                "discussion_comments_fetched": 6,
-                "snapshot_fetched_at": "2026-09-11T18:17:15Z",
-                "reviewed_issue_count": 111,
+                "reviewed_at": "2026-09-12",
+                "unique_search_results": 20,
+                "discussion_comments_fetched": 1,
+                "snapshot_fetched_at": "2026-09-12T06:40:11Z",
+                "reviewed_issue_count": 113,
                 "previous_review": {
-                  "reviewed_at": "2026-09-10",
-                  "unique_search_results": 12,
-                  "discussion_comments_fetched": 4,
-                  "snapshot_fetched_at": "2026-09-10T12:07:58Z",
-                  "reviewed_issue_count": 96,
+                  "reviewed_at": "2026-09-11",
+                  "unique_search_results": 33,
+                  "discussion_comments_fetched": 6,
+                  "snapshot_fetched_at": "2026-09-11T18:17:15Z",
+                  "reviewed_issue_count": 111,
                   "previous_review": {
                     "reviewed_at": "2026-09-10",
-                    "unique_search_results": 27,
-                    "discussion_comments_fetched": 7,
-                    "snapshot_fetched_at": "2026-09-10T05:07:48Z",
-                    "reviewed_issue_count": 94,
+                    "unique_search_results": 12,
+                    "discussion_comments_fetched": 4,
+                    "snapshot_fetched_at": "2026-09-10T12:07:58Z",
+                    "reviewed_issue_count": 96,
                     "previous_review": {
-                      "reviewed_at": "2026-09-09",
-                      "unique_search_results": 57,
-                      "discussion_comments_fetched": 347,
-                      "reviewed_issue_count": 83,
+                      "reviewed_at": "2026-09-10",
+                      "unique_search_results": 27,
+                      "discussion_comments_fetched": 7,
+                      "snapshot_fetched_at": "2026-09-10T05:07:48Z",
+                      "reviewed_issue_count": 94,
                       "previous_review": {
-                        "reviewed_at": "2026-09-07",
-                        "unique_search_results": 387,
-                        "reviewed_issue_count": 69,
-                        "discussion_comments_fetched": 321
+                        "reviewed_at": "2026-09-09",
+                        "unique_search_results": 57,
+                        "discussion_comments_fetched": 347,
+                        "reviewed_issue_count": 83,
+                        "previous_review": {
+                          "reviewed_at": "2026-09-07",
+                          "unique_search_results": 387,
+                          "reviewed_issue_count": 69,
+                          "discussion_comments_fetched": 321
+                        }
                       }
                     }
                   }
@@ -1292,34 +1712,29 @@
     }
   },
   "refreshed_issue_numbers": [
-    17596,
-    20214,
+    18658,
     21359,
     21508,
-    23139,
-    25178,
-    28995,
+    29908,
     33224,
-    33471,
     33565,
     33840,
+    33977,
     34012,
     34227,
     34309,
-    34349,
-    35654,
     35868,
-    36222,
+    36158,
     37978,
-    38300,
-    38663,
-    38802,
     39024,
+    39851,
     40239,
+    40531,
     41262,
     41267,
     41306,
     41323,
+    41446,
     41465,
     41485,
     41501,
@@ -1337,45 +1752,78 @@
     42190,
     42225,
     42230,
-    42243,
     42255,
     42289,
     42382,
     42469,
     42661,
+    42766,
     42813,
     42839,
     42862,
     42923,
     42927,
+    42937,
     42945,
     42946,
+    42987,
     43061,
     43115,
     43200,
     43226,
     43346,
     43493,
+    43596,
     43713,
     43717,
     43723,
+    43732,
     43789,
     44031,
+    44096,
     44504,
-    44739,
-    45060,
+    44787,
+    45098,
+    45119,
     45253,
+    45299,
     45575,
-    45652,
-    46207,
-    46771,
-    47090,
-    47836,
-    48018,
-    48034,
+    47133,
+    47202,
+    47469,
+    47669,
+    48024,
     48040,
-    48081,
-    48092,
-    48216
+    48208,
+    48216,
+    48309,
+    48338,
+    48345,
+    48365,
+    48376,
+    48378,
+    48398,
+    48424,
+    48525,
+    48536,
+    48577,
+    48633,
+    48664,
+    48676,
+    48684,
+    48700,
+    48711,
+    48756,
+    48788,
+    48804,
+    48811,
+    48846,
+    48902,
+    48905,
+    48922,
+    48923,
+    48944,
+    48952,
+    48953
   ]
 }
