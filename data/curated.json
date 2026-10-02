@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-28",
+  "reviewed_at": "2026-10-02",
   "counter_issue": 34227,
   "issues": [
     {
@@ -307,13 +307,14 @@
         "en": "Partial click-through"
       },
       "summary": {
-        "en": "Originally reports click-through and failed dragging. Follow-ups report recovery on app version 26.903.61454 and, later on September 10, package 26.903.9818.0 / internal app 26.903.71938 after updating and restarting on the same dual-monitor setup. A reported passthrough-policy code change is consistent with recovery, but the exact implementing fix and first working build are unconfirmed."
+        "en": "Originally reports click-through and failed dragging, with September recovery reports on app 26.903.61454 and package 26.903.9818.0. A September 30 follow-up reports noninteractive built-in pet/Mini controls after an update on Windows package 26.928.2636.0; a clean uninstall/reinstall restored dragging and controls on that machine. Recovery is now mixed: the newer failure qualifies the earlier reports, while the reinstall outcome does not establish an updater root cause or a generally fixed build."
       },
       "recovery": {
-        "status": "uncontradicted",
+        "status": "mixed",
         "sources": [
           "https://github.com/openai/codex/issues/41535#issuecomment-5614342945",
-          "https://github.com/openai/codex/issues/41535#issuecomment-5625133108"
+          "https://github.com/openai/codex/issues/41535#issuecomment-5625133108",
+          "https://github.com/openai/codex/issues/41535#issuecomment-5907554432"
         ]
       }
     },

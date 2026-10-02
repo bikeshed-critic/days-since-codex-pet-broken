@@ -1,76 +1,76 @@
 {
   "schema_version": 1,
   "repository": "openai/codex",
-  "reviewed_at": "2026-09-28",
+  "reviewed_at": "2026-10-02",
   "scope": "Windows desktop-pet click, drag, input-region, and input-capture failures, with explicitly labeled voice-overlay comparisons, representative mouse-stall context, and one withdrawn drag-related diagnosis.",
   "searches": [
     {
-      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-26",
-      "reported_total": 10,
-      "results_fetched": 10,
+      "query": "repo:openai/codex is:issue pet in:title updated:>=2026-09-28",
+      "reported_total": 22,
+      "results_fetched": 22,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-26",
-      "reported_total": 12,
-      "results_fetched": 12,
+      "query": "repo:openai/codex is:issue label:pets updated:>=2026-09-28",
+      "reported_total": 27,
+      "results_fetched": 27,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-26",
-      "reported_total": 2,
-      "results_fetched": 2,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-26",
-      "reported_total": 9,
-      "results_fetched": 9,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-26",
-      "reported_total": 5,
-      "results_fetched": 5,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-26",
-      "reported_total": 0,
-      "results_fetched": 0,
-      "pages": 1,
-      "incomplete_results": false
-    },
-    {
-      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-26",
+      "query": "repo:openai/codex is:issue hitbox updated:>=2026-09-28",
       "reported_total": 1,
       "results_fetched": 1,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue scrollbar updated:>=2026-09-26",
-      "reported_total": 10,
-      "results_fetched": 10,
+      "query": "repo:openai/codex is:issue \"click-through\" updated:>=2026-09-28",
+      "reported_total": 28,
+      "results_fetched": 28,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue \"hit test\" updated:>=2026-09-26",
-      "reported_total": 7,
-      "results_fetched": 7,
+      "query": "repo:openai/codex is:issue overlay drag updated:>=2026-09-28",
+      "reported_total": 12,
+      "results_fetched": 12,
       "pages": 1,
       "incomplete_results": false
     },
     {
-      "query": "repo:openai/codex is:issue \"quick chat\" updated:>=2026-09-26",
-      "reported_total": 16,
-      "results_fetched": 16,
+      "query": "repo:openai/codex is:issue mascot in:title updated:>=2026-09-28",
+      "reported_total": 0,
+      "results_fetched": 0,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue avatar in:title updated:>=2026-09-28",
+      "reported_total": 1,
+      "results_fetched": 1,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue scrollbar updated:>=2026-09-28",
+      "reported_total": 14,
+      "results_fetched": 14,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"hit test\" updated:>=2026-09-28",
+      "reported_total": 15,
+      "results_fetched": 15,
+      "pages": 1,
+      "incomplete_results": false
+    },
+    {
+      "query": "repo:openai/codex is:issue \"quick chat\" updated:>=2026-09-28",
+      "reported_total": 26,
+      "results_fetched": 26,
       "pages": 1,
       "incomplete_results": false
     },
@@ -96,15 +96,19 @@
       "incomplete_results": false
     }
   ],
-  "unique_search_results": 57,
+  "unique_search_results": 108,
   "reviewed_issue_numbers": [
+    13036,
+    13733,
     17596,
     18658,
     18906,
+    19276,
     20048,
     20214,
     20730,
     20778,
+    20863,
     21064,
     21136,
     21211,
@@ -116,22 +120,28 @@
     21713,
     23139,
     25178,
+    25220,
     25695,
     26577,
     27335,
     27582,
     27583,
     27874,
+    27997,
     28361,
     28929,
     28995,
     29908,
+    30026,
+    30230,
     30532,
     30622,
+    31433,
     32069,
     32454,
     33192,
     33224,
+    33356,
     33471,
     33565,
     33840,
@@ -149,10 +159,12 @@
     35868,
     36158,
     36222,
+    36459,
     36498,
     36603,
     36675,
     36700,
+    36837,
     36980,
     37073,
     37403,
@@ -168,6 +180,8 @@
     38988,
     39024,
     39178,
+    39558,
+    39573,
     39851,
     40239,
     40352,
@@ -196,6 +210,7 @@
     42035,
     42061,
     42190,
+    42215,
     42225,
     42229,
     42230,
@@ -206,6 +221,7 @@
     42382,
     42433,
     42469,
+    42628,
     42661,
     42766,
     42813,
@@ -220,6 +236,7 @@
     42958,
     42987,
     43061,
+    43067,
     43115,
     43127,
     43137,
@@ -266,9 +283,11 @@
     45253,
     45299,
     45344,
+    45360,
     45397,
     45451,
     45460,
+    45478,
     45514,
     45575,
     45583,
@@ -281,6 +300,7 @@
     46191,
     46207,
     46236,
+    46338,
     46369,
     46371,
     46396,
@@ -294,8 +314,10 @@
     47133,
     47202,
     47280,
+    47289,
     47469,
     47498,
+    47542,
     47545,
     47669,
     47770,
@@ -306,6 +328,7 @@
     48040,
     48081,
     48092,
+    48125,
     48201,
     48208,
     48216,
@@ -319,11 +342,13 @@
     48424,
     48525,
     48536,
+    48563,
     48577,
     48633,
     48664,
     48676,
     48684,
+    48699,
     48700,
     48711,
     48756,
@@ -337,10 +362,36 @@
     48923,
     48944,
     48952,
-    48953
+    48953,
+    49047,
+    49101,
+    49194,
+    49201,
+    49255,
+    49274,
+    49348,
+    49365,
+    49366,
+    49374,
+    49477,
+    49488,
+    49529,
+    49537,
+    49594,
+    49604,
+    49616,
+    49834,
+    49886,
+    49928,
+    49938,
+    49983,
+    49984,
+    50004,
+    50006,
+    50224
   ],
-  "discussion_comments_fetched": 16,
-  "method": "Incremental review since 2026-09-26T02:29:42Z: refreshed metadata for all 57 selected reports (no issue-record changes); paginated new or edited comments on every selected report (none returned). Screened 57 unique search hits by title, with introductory body excerpts for candidates; one hit was an unrelated TUI pull request. Read full bodies and complete paginated discussions of ten issues: #45098, #48905, #48952, #48811, #48953, #48365, #48525, #48338, #48378, #47669 (12 comments). Separately paginated new or edited comments on 13 context/recovery issues (four comments, on #47133 and #47202). The 16-comment count includes bot notices and a translation, not 16 independent observations. Incorporated the September 26 deep dive (22 searches, 138 unique title-screened issues, 18 full issue/discussion reads plus upstream Hyprland evidence) as dated context, without claiming all those discussions were re-read today. Added Linux keyboard-input, Windows scrollbar, Quick Chat hang, pet-related startup/jitter, and task-attention findings separately from the pointer graph. No new Windows pet click/drag report met the selection criteria. The graph remains at 57 reports, 47 open and ten closed, with 249 relationships and six open-report recovery dashes. Existing graph summaries, recovery classifications, and site copy remain accurate. Historical findings and exclusions remain unless qualified below. Public changelog not rechecked. Review dates and snapshot timestamps use UTC.",
+  "discussion_comments_fetched": 47,
+  "method": "Incremental review since 2026-09-28T12:40:07Z: refreshed metadata for all 57 selected reports; only #41535's updated_at changed, with no selected state changes. Paginated new or edited comments on every selected report (one returned on #41535) and 21 context/recovery issues (seven returned). Screened 108 unique search hits by title; one hit was an unrelated TUI pull request. Read complete bodies and paginated discussions of nine issues: #49366, #49101, #49938, #49537, #48811, #41535, #45397, #42243, #39573 (39 comments). The 47 fetched-comment count includes the #41535 follow-up twice because its complete discussion was then read; 46 unique comments were examined, including historical discussion and bot notices. Reclassified #41535 recovery as mixed after newer Windows failure followed by clean-reinstall recovery; retained both earlier recovery sources and the qualifying comment. No new graph node or relationship was added. The graph remains at 57 reports, 47 open and ten closed, with 249 relationships; open-report recovery dashes decrease from six to five. Updated the public status note and README to explain the qualified recovery. New macOS, loader/catalog, rendering-only, scrolling, and Quick Chat evidence remains separate from Windows pet pointer failures. Counts describe this refresh; historical findings and exclusions remain unless qualified below. The public changelog was not rechecked. Review dates and snapshot timestamps use UTC.",
   "selected_issue_count": 57,
   "relationship_counts": {
     "reference": 228,
@@ -753,7 +804,7 @@
     {
       "number": 45397,
       "url": "https://github.com/openai/codex/issues/45397",
-      "reason": "macOS pet input/visibility failure; outside the Windows selection and not evidence of a Windows regression."
+      "reason": "macOS pet input/drag failures, outside the Windows graph. October 2 comments include an unspecified-version prolonged-runtime input failure and a 26.928.31416 case where native drag events arrive but position does not change; restart recovery is not a shipped fix."
     },
     {
       "number": 45623,
@@ -1073,7 +1124,7 @@
     {
       "number": 48811,
       "url": "https://github.com/openai/codex/issues/48811",
-      "reason": "Quick Chat or More details whole-app/renderer hangs, kept separate from pet pointer delivery; shared cause not established."
+      "reason": "macOS Quick Chat: October 2 body update on 26.928.40906 reports no main-UI freeze but still no visible Quick Chat. Partial symptom improvement, not full recovery or Windows pet pointer evidence."
     },
     {
       "number": 48952,
@@ -1259,6 +1310,61 @@
       "number": 48345,
       "url": "https://github.com/openai/codex/issues/48345",
       "reason": "Renderer/startup or hydration failure outside the selected Windows pet-input family."
+    },
+    {
+      "number": 49366,
+      "url": "https://github.com/openai/codex/issues/49366",
+      "reason": "Windows voice-pet rendering title on app 26.928.20755, but no public symptom description or reproduction beyond a feedback identifier. Insufficient evidence for a pointer-input graph node; feedback identifier not retained."
+    },
+    {
+      "number": 49101,
+      "url": "https://github.com/openai/codex/issues/49101",
+      "reason": "macOS detached-window geometry and title-bar hit-testing report on 26.924.22138; pet-disabled comparison reportedly leaves the hit-test defect. Outside Windows scope and not a verified shared pet cause."
+    },
+    {
+      "number": 49938,
+      "url": "https://github.com/openai/codex/issues/49938",
+      "reason": "Windows/WSL custom-pet discovery failure on package 26.928.3736.0; loader path-handling harness evidence, not failed input to a visible pet."
+    },
+    {
+      "number": 49537,
+      "url": "https://github.com/openai/codex/issues/49537",
+      "reason": "macOS large-custom-pet-catalog startup SIGTRAP, with a later-build reproduction and catalog-reduction workaround. Separate from pointer delivery and prior AppRoutes crashes; proposed allocation/serialization cause unverified."
+    },
+    {
+      "number": 39573,
+      "url": "https://github.com/openai/codex/issues/39573",
+      "reason": "macOS pet drag-release focus activation; now closed as completed with no comments or fixed-build evidence, outside Windows selection."
+    },
+    {
+      "number": 49529,
+      "url": "https://github.com/openai/codex/issues/49529",
+      "reason": "Windows dot menu wheel routing to background chat, not established as pet pointer-delivery failure."
+    },
+    {
+      "number": 49983,
+      "url": "https://github.com/openai/codex/issues/49983",
+      "reason": "Windows conversation scrollbar covered by composer, separate app UI geometry rather than pet input."
+    },
+    {
+      "number": 49201,
+      "url": "https://github.com/openai/codex/issues/49201",
+      "reason": "macOS pet/Mini shortcut configuration conflict, outside Windows pointer scope."
+    },
+    {
+      "number": 49274,
+      "url": "https://github.com/openai/codex/issues/49274",
+      "reason": "macOS global shortcut interception, outside Windows pointer scope."
+    },
+    {
+      "number": 49348,
+      "url": "https://github.com/openai/codex/issues/49348",
+      "reason": "Pet/Dot persistent-agent avatar feature request, not an input failure."
+    },
+    {
+      "number": 50006,
+      "url": "https://github.com/openai/codex/issues/50006",
+      "reason": "Windows dot dictation completion failure, not established as pet mouse-input failure."
     }
   ],
   "findings": [
@@ -1620,6 +1726,65 @@
         "https://github.com/openai/codex/issues/38059#issuecomment-5815724288",
         "https://github.com/openai/codex/issues/48201"
       ]
+    },
+    {
+      "finding": "October 2 review: a September 30 follow-up on #41535 reports a built-in pet/Mini overlay that cannot be dragged, dismissed, or controlled after an update, with Windows package 26.928.2636.0 verified locally. Uninstalling removed it and a clean reinstall restored interaction on the same machine. This newer failure qualifies the September recovery reports, so recovery is mixed and the purple dash is removed. The reinstall outcome is preserved as conditional recovery; an incomplete update, stale state, or partial registration remains a hypothesis, not a verified cause or shipped fix. The remaining five open-report recovery dashes are unchanged.",
+      "sources": [
+        "https://github.com/openai/codex/issues/41535#issuecomment-5907554432"
+      ]
+    },
+    {
+      "finding": "October 2 comments on macOS #45397 describe two different observations: an unspecified latest-version overlay becomes noninteractive after prolonged use, while a versioned 26.928.31416 report records native drag handoff/release events but no pet movement. The latter needed a full restart after hide/wake, reselection and keyboard movement attempts failed. It explicitly has not tested the offered 26.930.21537 update. Do not merge input-delivery loss and failed movement despite delivered gestures, or transfer these observations to Windows.",
+      "sources": [
+        "https://github.com/openai/codex/issues/45397#issuecomment-5948714145",
+        "https://github.com/openai/codex/issues/45397#issuecomment-5951657044"
+      ]
+    },
+    {
+      "finding": "Quick Chat remains impaired in newer follow-ups: Windows #48378 on package 26.928.3736.0 reports no visible Quick Chat after either its open action or Alt+Space despite Repair/Reset. The October 2 body update to macOS #48811 on 26.928.40906 says the main UI no longer freezes but Quick Chat still fails to appear, with repeated error-boundary entries lacking the underlying exception. These are changed symptoms rather than full recovery. Earlier September 29 Windows and macOS freeze confirmations remain historical context; shutdown/IPC or uncorrelated ResizeObserver messages do not establish a cause.",
+      "sources": [
+        "https://github.com/openai/codex/issues/48378#issuecomment-5929215334",
+        "https://github.com/openai/codex/issues/48811",
+        "https://github.com/openai/codex/issues/48378#issuecomment-5885095215",
+        "https://github.com/openai/codex/issues/48378#issuecomment-5888006379",
+        "https://github.com/openai/codex/issues/48952#issuecomment-5885149737"
+      ]
+    },
+    {
+      "finding": "The edited October 1 comment on #48309 reports macOS sidebar scrolling apparently fixed in 26.928.31416 after reproducing on 26.928.21956. This is explicitly macOS recovery and does not establish a Windows scrollbar fix. #47070 has an additional unversioned complaint. Neither changes pet graph recovery markers.",
+      "sources": [
+        "https://github.com/openai/codex/issues/48309#issuecomment-5908666477",
+        "https://github.com/openai/codex/issues/47070#issuecomment-5893543981"
+      ]
+    },
+    {
+      "finding": "An October 2 comment on #47669 reproduces main-window jitter on Windows 10 package 26.930.2377.0 when dragging from the right side of the title bar, but not the left or middle. It does not independently confirm pet-position dependence or the earlier proposed compositor cause.",
+      "sources": [
+        "https://github.com/openai/codex/issues/47669#issuecomment-5949939495"
+      ]
+    },
+    {
+      "finding": "New separate pet failures: #49938 reproduces a custom-pet discovery path mismatch in a Windows/WSL loader harness on package 26.928.3736.0, without a trace of running-app IPC. #49537 reports macOS startup SIGTRAP with a large pet catalog on 26.928.21956, followed by a second-machine report on 26.928.31416. Catalog reduction restores launch in the reports; the measured threshold is dataset/machine-specific, and approximate serialization frames and allocation estimates do not prove a universal byte limit or native cause. These are loader/catalog problems, not visible-pet input failures.",
+      "sources": [
+        "https://github.com/openai/codex/issues/49938",
+        "https://github.com/openai/codex/issues/49537",
+        "https://github.com/openai/codex/issues/49537#issuecomment-5939545055"
+      ]
+    },
+    {
+      "finding": "Windows voice-pet report #49366 names app 26.928.20755 but supplies no public behavioral description beyond its rendering title and a feedback identifier; it cannot substantiate a new pointer-input node. macOS #49101 reports offscreen/detached-window behavior and title-bar click mismatch, including persistence of hit-test trouble with pets disabled. Its window identity and geometry diagnosis remain reporter analysis, outside Windows scope.",
+      "sources": [
+        "https://github.com/openai/codex/issues/49366",
+        "https://github.com/openai/codex/issues/49101"
+      ]
+    },
+    {
+      "finding": "macOS #42243 has newer shortcut-disable and persistent-visibility workaround discussion, not a verified shipped resolution. Separate drag-release focus report #39573 is closed as completed with no comments or fixed-build evidence in this review. Neither changes Windows pet-input recovery.",
+      "sources": [
+        "https://github.com/openai/codex/issues/42243#issuecomment-5889590421",
+        "https://github.com/openai/codex/issues/42243#issuecomment-5928540225",
+        "https://github.com/openai/codex/issues/39573"
+      ]
     }
   ],
   "limitations": [
@@ -1630,75 +1795,82 @@
   ],
   "privacy": "Only review metadata, issue numbers, short editorial findings, and public source links are retained. Raw bodies, comments, profiles, native window/process/display identifiers, attachments, and diagnostics are not copied into the repository.",
   "previous_review": {
-    "reviewed_at": "2026-09-26",
-    "unique_search_results": 25,
-    "discussion_comments_fetched": 1,
-    "snapshot_fetched_at": "2026-09-26T02:29:42Z",
-    "reviewed_issue_count": 185,
+    "reviewed_at": "2026-09-28",
+    "unique_search_results": 57,
+    "discussion_comments_fetched": 16,
+    "snapshot_fetched_at": "2026-09-28T12:40:07Z",
+    "reviewed_issue_count": 240,
     "previous_review": {
-      "reviewed_at": "2026-09-24",
-      "unique_search_results": 19,
+      "reviewed_at": "2026-09-26",
+      "unique_search_results": 25,
       "discussion_comments_fetched": 1,
-      "snapshot_fetched_at": "2026-09-24T06:24:02Z",
-      "reviewed_issue_count": 172,
+      "snapshot_fetched_at": "2026-09-26T02:29:42Z",
+      "reviewed_issue_count": 185,
       "previous_review": {
-        "reviewed_at": "2026-09-22",
-        "unique_search_results": 40,
+        "reviewed_at": "2026-09-24",
+        "unique_search_results": 19,
         "discussion_comments_fetched": 1,
-        "snapshot_fetched_at": "2026-09-22T02:10:44Z",
-        "reviewed_issue_count": 161,
+        "snapshot_fetched_at": "2026-09-24T06:24:02Z",
+        "reviewed_issue_count": 172,
         "previous_review": {
-          "reviewed_at": "2026-09-16",
-          "unique_search_results": 5,
-          "discussion_comments_fetched": 0,
-          "snapshot_fetched_at": "2026-09-16T16:29:31Z",
-          "reviewed_issue_count": 143,
+          "reviewed_at": "2026-09-22",
+          "unique_search_results": 40,
+          "discussion_comments_fetched": 1,
+          "snapshot_fetched_at": "2026-09-22T02:10:44Z",
+          "reviewed_issue_count": 161,
           "previous_review": {
             "reviewed_at": "2026-09-16",
-            "unique_search_results": 41,
-            "discussion_comments_fetched": 8,
-            "snapshot_fetched_at": "2026-09-16T08:31:37Z",
-            "reviewed_issue_count": 142,
+            "unique_search_results": 5,
+            "discussion_comments_fetched": 0,
+            "snapshot_fetched_at": "2026-09-16T16:29:31Z",
+            "reviewed_issue_count": 143,
             "previous_review": {
-              "reviewed_at": "2026-09-13",
-              "unique_search_results": 15,
-              "discussion_comments_fetched": 7,
-              "snapshot_fetched_at": "2026-09-13T03:51:33Z",
-              "reviewed_issue_count": 117,
+              "reviewed_at": "2026-09-16",
+              "unique_search_results": 41,
+              "discussion_comments_fetched": 8,
+              "snapshot_fetched_at": "2026-09-16T08:31:37Z",
+              "reviewed_issue_count": 142,
               "previous_review": {
-                "reviewed_at": "2026-09-12",
-                "unique_search_results": 20,
-                "discussion_comments_fetched": 1,
-                "snapshot_fetched_at": "2026-09-12T06:40:11Z",
-                "reviewed_issue_count": 113,
+                "reviewed_at": "2026-09-13",
+                "unique_search_results": 15,
+                "discussion_comments_fetched": 7,
+                "snapshot_fetched_at": "2026-09-13T03:51:33Z",
+                "reviewed_issue_count": 117,
                 "previous_review": {
-                  "reviewed_at": "2026-09-11",
-                  "unique_search_results": 33,
-                  "discussion_comments_fetched": 6,
-                  "snapshot_fetched_at": "2026-09-11T18:17:15Z",
-                  "reviewed_issue_count": 111,
+                  "reviewed_at": "2026-09-12",
+                  "unique_search_results": 20,
+                  "discussion_comments_fetched": 1,
+                  "snapshot_fetched_at": "2026-09-12T06:40:11Z",
+                  "reviewed_issue_count": 113,
                   "previous_review": {
-                    "reviewed_at": "2026-09-10",
-                    "unique_search_results": 12,
-                    "discussion_comments_fetched": 4,
-                    "snapshot_fetched_at": "2026-09-10T12:07:58Z",
-                    "reviewed_issue_count": 96,
+                    "reviewed_at": "2026-09-11",
+                    "unique_search_results": 33,
+                    "discussion_comments_fetched": 6,
+                    "snapshot_fetched_at": "2026-09-11T18:17:15Z",
+                    "reviewed_issue_count": 111,
                     "previous_review": {
                       "reviewed_at": "2026-09-10",
-                      "unique_search_results": 27,
-                      "discussion_comments_fetched": 7,
-                      "snapshot_fetched_at": "2026-09-10T05:07:48Z",
-                      "reviewed_issue_count": 94,
+                      "unique_search_results": 12,
+                      "discussion_comments_fetched": 4,
+                      "snapshot_fetched_at": "2026-09-10T12:07:58Z",
+                      "reviewed_issue_count": 96,
                       "previous_review": {
-                        "reviewed_at": "2026-09-09",
-                        "unique_search_results": 57,
-                        "discussion_comments_fetched": 347,
-                        "reviewed_issue_count": 83,
+                        "reviewed_at": "2026-09-10",
+                        "unique_search_results": 27,
+                        "discussion_comments_fetched": 7,
+                        "snapshot_fetched_at": "2026-09-10T05:07:48Z",
+                        "reviewed_issue_count": 94,
                         "previous_review": {
-                          "reviewed_at": "2026-09-07",
-                          "unique_search_results": 387,
-                          "reviewed_issue_count": 69,
-                          "discussion_comments_fetched": 321
+                          "reviewed_at": "2026-09-09",
+                          "unique_search_results": 57,
+                          "discussion_comments_fetched": 347,
+                          "reviewed_issue_count": 83,
+                          "previous_review": {
+                            "reviewed_at": "2026-09-07",
+                            "unique_search_results": 387,
+                            "reviewed_issue_count": 69,
+                            "discussion_comments_fetched": 321
+                          }
                         }
                       }
                     }
@@ -1712,29 +1884,46 @@
     }
   },
   "refreshed_issue_numbers": [
-    18658,
+    13036,
+    13733,
+    19276,
+    20863,
     21359,
     21508,
+    21657,
+    25178,
+    25220,
+    27997,
     29908,
+    30026,
+    30230,
+    31433,
     33224,
+    33356,
+    33471,
     33565,
     33840,
     33977,
     34012,
     34227,
     34309,
+    34349,
     35868,
     36158,
+    36459,
+    36837,
     37978,
+    38988,
     39024,
+    39558,
+    39573,
     39851,
     40239,
-    40531,
+    40778,
     41262,
     41267,
     41306,
     41323,
-    41446,
     41465,
     41485,
     41501,
@@ -1750,12 +1939,16 @@
     41963,
     42061,
     42190,
+    42215,
     42225,
     42230,
+    42243,
     42255,
     42289,
     42382,
+    42433,
     42469,
+    42628,
     42661,
     42766,
     42813,
@@ -1766,12 +1959,14 @@
     42937,
     42945,
     42946,
-    42987,
+    42958,
     43061,
+    43067,
     43115,
     43200,
     43226,
     43346,
+    43404,
     43493,
     43596,
     43713,
@@ -1781,41 +1976,42 @@
     43789,
     44031,
     44096,
-    44504,
-    44787,
-    45098,
+    44546,
+    45060,
     45119,
     45253,
     45299,
+    45360,
+    45397,
+    45478,
     45575,
-    47133,
-    47202,
+    45652,
+    46338,
+    47070,
+    47280,
+    47289,
     47469,
+    47542,
     47669,
     48024,
     48040,
+    48125,
     48208,
     48216,
     48309,
     48338,
     48345,
-    48365,
     48376,
     48378,
     48398,
     48424,
-    48525,
-    48536,
-    48577,
+    48563,
     48633,
     48664,
-    48676,
-    48684,
+    48699,
     48700,
     48711,
     48756,
-    48788,
-    48804,
     48811,
     48846,
     48902,
@@ -1824,6 +2020,32 @@
     48923,
     48944,
     48952,
-    48953
+    48953,
+    49047,
+    49101,
+    49194,
+    49201,
+    49255,
+    49274,
+    49348,
+    49365,
+    49366,
+    49374,
+    49477,
+    49488,
+    49529,
+    49537,
+    49594,
+    49604,
+    49616,
+    49834,
+    49886,
+    49928,
+    49938,
+    49983,
+    49984,
+    50004,
+    50006,
+    50224
   ]
 }
